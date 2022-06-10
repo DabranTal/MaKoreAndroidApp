@@ -2,7 +2,7 @@ package com.example.makoreandroid;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+/*
 @Entity
 public class User {
     @PrimaryKey()
@@ -46,3 +46,4 @@ public class User {
         NickName = nickName;
     }
 }
+*/

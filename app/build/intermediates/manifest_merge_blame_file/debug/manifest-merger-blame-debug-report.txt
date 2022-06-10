@@ -6,49 +6,58 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
+8-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
+9-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:6:5-25:19
+11-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:5-25:19
 12        android:allowBackup="true"
-12-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:7:9-35
+12-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.5.0] C:\Users\coral\.gradle\caches\transforms-3\4cb2d3ae910a25e4d3b75b6b0d8d1b11\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.5.0] C:\Users\idota\.gradle\caches\transforms-3\4cb2d3ae910a25e4d3b75b6b0d8d1b11\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 14        android:dataExtractionRules="@xml/data_extraction_rules"
-14-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:8:9-65
+14-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:8:9-65
 15        android:debuggable="true"
 16        android:fullBackupContent="@xml/backup_rules"
-16-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:9:9-54
+16-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:9:9-54
 17        android:icon="@mipmap/ic_launcher"
-17-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:10:9-43
+17-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:10:9-43
 18        android:label="@string/app_name"
-18-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:11:9-41
+18-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:11:9-41
 19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:12:9-54
+19-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:12:9-54
 20        android:supportsRtl="true"
-20-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:13:9-35
+20-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:13:9-35
 21        android:testOnly="true"
 22        android:theme="@style/Theme.MaKoreAndroid" >
-22-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:14:9-51
+22-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:14:9-51
 23        <activity
-23-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:16:9-24:20
-24            android:name="com.example.makoreandroid.MainActivity"
-24-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-41
+23-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:16:9-24:20
+24            android:name="com.example.makoreandroid.ContactActivity"
+24-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:17:13-44
 25            android:exported="true" >
-25-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:13-36
+25-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:18:13-36
 26            <intent-filter>
-26-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:19:13-23:29
+26-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:13-23:29
 27                <action android:name="android.intent.action.MAIN" />
-27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:17-69
-27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:25-66
+27-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:17-69
+27-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:25-66
 28
 29                <category android:name="android.intent.category.LAUNCHER" />
-29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:17-77
-29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:27-74
+29-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:17-77
+29-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:27-74
 30            </intent-filter>
 31        </activity>
-32    </application>
-33
-34</manifest>
+32
+33        <service
+33-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
+34            android:name="androidx.room.MultiInstanceInvalidationService"
+34-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
+35            android:directBootAware="true"
+35-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
+36            android:exported="false" />
+36-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
+37    </application>
+38
+39</manifest>
