@@ -1,18 +1,34 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color gray_700
+color purple_100
 color purple_200
 color purple_500
 color purple_700
 color teal_200
 color teal_700
 color white
+drawable background
+drawable conversation_background
+drawable conversation_background_android
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_send_btn
+drawable tal
+id button_send
+id contact_bar
+id contact_prop
+id recycler_gchat
+id text_bar
+id typing_board
+id wraper_typing_board
+layout activity_conversation
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string new_message_here
 style Theme.MaKoreAndroid
 xml backup_rules
 xml data_extraction_rules

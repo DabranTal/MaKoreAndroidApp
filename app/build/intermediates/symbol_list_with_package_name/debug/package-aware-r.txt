@@ -1059,6 +1059,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray_700
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1156,6 +1157,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_100
 color purple_200
 color purple_500
 color purple_700
@@ -1682,6 +1684,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1690,6 +1693,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable conversation_background
+drawable conversation_background_android
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -1703,6 +1708,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_send_btn
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1736,6 +1742,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable tal
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1828,6 +1835,7 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
+id button_send
 id cache_measures
 id cancel_button
 id center
@@ -1850,6 +1858,8 @@ id clip_vertical
 id clockwise
 id collapseActionView
 id confirm_button
+id contact_bar
+id contact_prop
 id container
 id content
 id contentPanel
@@ -2034,6 +2044,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycler_gchat
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2121,6 +2132,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_bar
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2146,6 +2158,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id typing_board
 id unchecked
 id uniform
 id unlabeled
@@ -2161,6 +2174,7 @@ id withText
 id withinBounds
 id wrap
 id wrap_content
+id wraper_typing_board
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2229,6 +2243,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_conversation
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2415,6 +2430,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string new_message_here
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaKoreAndroid</string>
+    <string name="new_message_here">New message here...</string>
 </resources>

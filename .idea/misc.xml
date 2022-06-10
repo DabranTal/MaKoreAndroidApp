@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/drawable-anydpi/ic_send_btn.xml" value="0.294" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.294" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/drawable/sendder_message_tail.xml" value="0.293" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/layout/activity_conversation.xml" value="0.33" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/layout/activity_main.xml" value="0.40037071362372567" />
+        <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/layout/message.xml" value="0.29010416666666666" />
       </map>
     </option>
   </component>
