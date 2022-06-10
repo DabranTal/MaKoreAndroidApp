@@ -31,14 +31,9 @@ public class ContactActivity extends AppCompatActivity {
 
         ActionBar actionBar;
         actionBar = getSupportActionBar();
-
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#edc3f7"));
 
-        // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
         setContentView(R.layout.activity_contacts_list);
