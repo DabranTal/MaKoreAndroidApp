@@ -77,7 +77,7 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         remoteName.setText(remote.getUserName());
         lastMessage.setText(remote.getLastMessage());
         time.setText(remote.getTime());
-
+        //notifyDataSetChanged();
         return convertView;
 
     }

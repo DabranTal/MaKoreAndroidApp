@@ -10,7 +10,12 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="add">add</string>
     <string name="app_name">MaKoreAndroid</string>
+    <string name="enter_nickname">Enter NickName</string>
+    <string name="enter_server_ip">Enter Server IP</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_username">Enter UserName</string>
     <style name="Circular">
         <item name="cornerSize">50%</item>
     </style>

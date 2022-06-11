@@ -4,6 +4,50 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-24:/layout_activity_contacts_list.xml.flat",
+        "source": "com.example.makoreandroid.app-main-26:/layout/activity_contacts_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-pngs-19:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-v24_avatar.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-v24\\avatar.png"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\layout_custom_list_item.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\layout\\custom_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-xhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-xhdpi\\ic_add.png"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-mdpi\\ic_launcher.webp"
     },
@@ -24,8 +68,20 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable\\rounded_img.xml"
     },
     {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-mdpi_ic_add.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-mdpi\\ic_add.png"
+    },
+    {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\menu_menu.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\menu\\menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-hdpi_ic_add.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-hdpi\\ic_add.png"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\layout_activity_main.xml.flat",
@@ -36,28 +92,16 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-24:/menu_menu.xml.flat",
-        "source": "com.example.makoreandroid.app-main-26:/menu/menu.xml"
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\layout_pop_up.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\layout\\pop_up.xml"
     },
     {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-pngs-19:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-v24_avatar.png.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-v24\\avatar.png"
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-xxhdpi_ic_add.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-xxhdpi\\ic_add.png"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\xml\\data_extraction_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\layout_custom_list_item.xml.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\layout\\custom_list_item.xml"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -68,23 +112,7 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-anydpi_ic_add.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\drawable-anydpi\\ic_add.xml"
     }
 ]
