@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,9 +32,11 @@ public class ContactActivity extends AppCompatActivity {
     private final String[] rNickName = {"idodo", "corali", "talush", "Tani", "tamTam"};
     private final String[] rLastMessage = {"hey there !", "whats up?", "hey !!", "hey", ""};
     private final String[] rTime = {"13:33", "12:01", "00:32", "02:32", ""};
-    private final String[] displayingError = {"You can't add yourself as a new contact!",
-                                                "This contact is already exists!",
-                                                "There is no such user!"};
+    private final String[] displayingError = {"You can't add your self as a user!",
+                                                "This user already exists!",
+                                                "There is no such user!",
+                                                "This server could not be reached",
+                                                "This may take awhile. Please don't Add again"};
     FloatingActionButton addBtn;
     ListView listView;
     CustomListAdapter adapter;
@@ -79,6 +82,7 @@ public class ContactActivity extends AppCompatActivity {
         EditText userName = view.findViewById(R.id.AddUserName);
         EditText NickName = view.findViewById(R.id.AddNickName);
         EditText Server = view.findViewById(R.id.AddServer);
+        TextView error = (TextView) view.findViewById(R.id.error);
         dialog.setView(view);
         dialog.create();
         Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
@@ -105,8 +109,16 @@ public class ContactActivity extends AppCompatActivity {
                     userName.setText("");
                     NickName.setText("");
                     Server.setText("");
+                    Toast.makeText(ContactActivity.this, "New Contact has been added",
+                            Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 }
+                if(isUser)
+                    error.setText(displayingError[0]);
+                else if(!isExists)
+                        error.setText(displayingError[2]);
+                else if(isAlreadyExists)
+                    error.setText(displayingError[1]);
             }
         });
 

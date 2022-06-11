@@ -34,6 +34,14 @@
         android:hint="@string/enter_server_ip"
         android:inputType="text"
         android:autofillHints="Server" />
-
+    
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
 
 </LinearLayout>
