@@ -19,14 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView  lstMessages= findViewById(R.id.recycler_conversaion);
+        RecyclerView lstMessages = findViewById(R.id.recycler_conversaion);
         final MessageListAdapter adapter = new MessageListAdapter(this);
         lstMessages.setAdapter(adapter);
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
         List<Message> messages = new ArrayList<>();
-        messages.add(new Message(0,"hi","20:41",true));
-        messages.add(new Message(1,"friend","20:41",true));
+        messages.add(new Message(0, "hi", "20:40", true));
+        messages.add(new Message(1, "friend", "20:42", true));
+        messages.add(new Message(0, "hi", "20:43", true));
+        messages.add(new Message(1, "friend", "20:44", true));
+        messages.add(new Message(0, "hi", "20:45", true));
+        messages.add(new Message(1, "friend", "20:46", true));
+        messages.add(new Message(0, "hi", "20:40", true));
+        messages.add(new Message(1, "friend", "20:42", true));
         adapter.setMessages(messages);
 
     }

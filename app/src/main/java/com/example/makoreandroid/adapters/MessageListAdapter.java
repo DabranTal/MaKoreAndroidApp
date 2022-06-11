@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,13 +16,13 @@ import java.util.List;
 public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.MessagesViewHolder> {
 
     class MessagesViewHolder extends RecyclerView.ViewHolder {
-        private final EditText content;
-        private final EditText time;
+        private final TextView content;
+        private final TextView time;
 
         private MessagesViewHolder(View itemView) {
             super(itemView);
             content = itemView.findViewById(R.id.content_sender_message);
-            time = itemView.findViewById(R.id.time_partner_message);
+            time = itemView.findViewById(R.id.time_sender_message);
 
         }
     }
@@ -30,24 +30,27 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
     private final LayoutInflater mInflater;
     private List<Message> messages;
 
-    public MessageListAdapter(Context context) {mInflater = LayoutInflater.from(context);}
+    public MessageListAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+    }
 
     @Override
-    public MessagesViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {
+    public MessagesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.sender_message, parent, false);
         return new MessagesViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder (MessagesViewHolder holder, int position) {
+    public void onBindViewHolder(MessagesViewHolder holder, int position) {
         if (messages != null) {
-            final  Message current = messages.get(position);
+            final Message current = messages.get(position);
             holder.content.setText(current.getContent());
             holder.time.setText(current.getTime());
+            int a = 5;
         }
     }
 
-    public void setMessages (List<Message> m) {
+    public void setMessages(List<Message> m) {
         messages = m;
         notifyDataSetChanged();
     }
@@ -61,6 +64,8 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
         }
     }
 
-    public List<Message> getMessages() { return messages; }
+    public List<Message> getMessages() {
+        return messages;
+    }
 
 }
