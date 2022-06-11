@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/background.xml" value="0.225" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/btn_costume.xml" value="0.226" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/btn_custom.xml" value="0.1675" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/et_custom.xml" value="0.209" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/gradient_drawable.xml" value="0.204" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.226" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/n.xml" value="0.188" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/font/anton.xml" value="0.28020833333333334" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_fake_chat.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_login.xml" value="0.234375" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_main.xml" value="0.32235294117647056" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/mipmap-anydpi-v26/MK.xml" value="0.209" />
       </map>
     </option>
   </component>

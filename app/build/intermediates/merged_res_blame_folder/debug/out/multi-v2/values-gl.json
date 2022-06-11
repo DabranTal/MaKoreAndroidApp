@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-17:/values-gl/values-gl.xml",
+            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-21:/values-gl/values-gl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\4cb2d3ae910a25e4d3b75b6b0d8d1b11\\transformed\\core-1.5.0\\res\\values-gl\\values-gl.xml",

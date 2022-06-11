@@ -1,70 +1,178 @@
 [
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_mk.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-hdpi\\mk.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\font_anton.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\font\\anton.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.makoreandroid.app-pngs-14:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-pngs-18:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.makoreandroid.app-merged_res-23:/layout_activity_register.xml.flat",
+        "source": "com.example.makoreandroid.app-main-25:/layout/activity_register.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_mk_round.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\mk_round.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/layout_activity_main.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/layout/activity_main.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_mk_foreground.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\mk_foreground.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_mk.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\mk.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-mdpi_mk.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-mdpi\\mk.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable_et_custom.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\et_custom.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/xml_backup_rules.xml.flat",
-        "source": "com.example.makoreandroid.app-main-21:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-anydpi-v26_mk.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-anydpi-v26\\mk.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-mdpi_mk_round.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-mdpi\\mk_round.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-19:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.makoreandroid.app-main-21:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xhdpi_mk_round.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xhdpi\\mk_round.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-mdpi_mk_foreground.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-mdpi\\mk_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_mk.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\mk.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xhdpi_mk_foreground.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xhdpi\\mk_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable_gradient_drawable.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\gradient_drawable.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\color_button_background_color.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\color\\button_background_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_mk_round.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-hdpi\\mk_round.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\color_button_color.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\color\\button_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_mk_round.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\mk_round.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-anydpi-v26_mk_round.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-anydpi-v26\\mk_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable_btn_custom.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\btn_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\layout_activity_fake_chat.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_fake_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xhdpi_mk.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xhdpi\\mk.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_mk_foreground.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\mk_foreground.png"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-merged_res-23:/layout_activity_main.xml.flat",
+        "source": "com.example.makoreandroid.app-main-25:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_mk_foreground.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-hdpi\\mk_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\ic_launcher_background.xml"
     }
 ]

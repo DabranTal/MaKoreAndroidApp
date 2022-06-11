@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-22:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-22:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-22:\\layout\\activity_fake_chat.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_fake_chat.xml"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-mergeDebugResources-22:/layout/activity_register.xml",
+        "source": "com.example.makoreandroid.app-main-25:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-mergeDebugResources-22:/layout/activity_main.xml",
+        "source": "com.example.makoreandroid.app-main-25:/layout/activity_main.xml"
+    }
+]

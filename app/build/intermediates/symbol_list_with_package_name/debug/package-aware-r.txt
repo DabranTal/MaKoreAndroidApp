@@ -57,6 +57,10 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1006,6 +1010,7 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color button_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1095,6 +1100,7 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
+color mk_background
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -1261,6 +1267,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -1695,6 +1703,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable et_custom
+drawable gradient_drawable
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1739,6 +1749,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font anton
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1899,6 +1910,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id fakeChat
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1929,6 +1941,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView4
 id info
 id invisible
 id inward
@@ -1943,8 +1956,13 @@ id leftToRight
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
+id login_btnLogin
+id login_password
+id login_register
+id login_userName
 id masked
 id material_clock_display
 id material_clock_face
@@ -2034,6 +2052,12 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id register_btnRegister
+id register_login
+id register_nickName
+id register_password
+id register_userName
+id register_vPassword
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2146,6 +2170,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_title
 id unchecked
 id uniform
 id unlabeled
@@ -2229,7 +2254,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_fake_chat
 layout activity_main
+layout activity_register
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2316,6 +2343,9 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap mk
+mipmap mk_foreground
+mipmap mk_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2345,6 +2375,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string app_name_clean
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
@@ -2357,9 +2388,14 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fake_chat_string
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string login_btnLogin
+string login_login
+string login_password
+string login_userName
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2420,6 +2456,12 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string register_VPassword
+string register_btnRegister
+string register_nickname
+string register_password
+string register_register
+string register_userName
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat

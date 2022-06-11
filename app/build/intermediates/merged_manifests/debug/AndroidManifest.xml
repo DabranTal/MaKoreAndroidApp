@@ -21,6 +21,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.MaKoreAndroid" >
         <activity
+            android:name="com.example.makoreandroid.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.makoreandroid.FakeChatActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.makoreandroid.MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -29,6 +35,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
     </application>
 
 </manifest>

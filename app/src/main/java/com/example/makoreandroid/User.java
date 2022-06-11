@@ -1,32 +1,40 @@
 package com.example.makoreandroid;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class User {
-    @PrimaryKey()
+    @PrimaryKey() @NonNull
     private String UserName;
     private String Password;
     private String NickName;
     //private List<Conversation> ConversationList
 
-    public User(String userName, String password, String nickName) {
+    public User(@NonNull String userName, String password, String nickName) {
         UserName = userName;
         Password = password;
         NickName = nickName;
     }
 
-    public User(String userName, String password) {
+    public User() {
+        UserName = "coral";
+        Password = "1234";
+        NickName = "corali";
+    }
+
+    public User(@NonNull String userName, String password) {
         UserName = userName;
         Password = password;
     }
 
+    @NonNull
     public String getUserName() {
         return UserName;
     }
 
-    public void setUserName(String userName) {
+    public void setUserName(@NonNull String userName) {
         UserName = userName;
     }
 

@@ -11,7 +11,7 @@
 9-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:6:5-25:19
+11-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:6:5-35:19
 12        android:allowBackup="true"
 12-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -33,22 +33,50 @@
 22        android:theme="@style/Theme.MaKoreAndroid" >
 22-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:14:9-51
 23        <activity
-23-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:16:9-24:20
-24            android:name="com.example.makoreandroid.MainActivity"
-24-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-41
-25            android:exported="true" >
-25-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:13-36
-26            <intent-filter>
-26-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:19:13-23:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:17-69
-27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:17-77
-29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+23-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:16:9-18:40
+24            android:name="com.example.makoreandroid.RegisterActivity"
+24-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-45
+25            android:exported="false" />
+25-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:13-37
+26        <activity
+26-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:19:9-21:40
+27            android:name="com.example.makoreandroid.FakeChatActivity"
+27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:13-45
+28            android:exported="false" />
+28-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:21:13-37
+29        <activity
+29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:9-30:20
+30            android:name="com.example.makoreandroid.MainActivity"
+30-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-41
+31            android:exported="true" >
+31-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:24:13-36
+32            <intent-filter>
+32-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:25:13-29:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:26:17-69
+33-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:26:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:28:17-77
+35-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:28:27-74
+36            </intent-filter>
+37        </activity>
+38
+39        <meta-data
+39-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:32:9-34:57
+40            android:name="preloaded_fonts"
+40-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:33:13-43
+41            android:resource="@array/preloaded_fonts" />
+41-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:34:13-54
+42
+43        <service
+43-->[androidx.room:room-runtime:2.4.2] C:\Users\coral\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
+44            android:name="androidx.room.MultiInstanceInvalidationService"
+44-->[androidx.room:room-runtime:2.4.2] C:\Users\coral\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
+45            android:directBootAware="true"
+45-->[androidx.room:room-runtime:2.4.2] C:\Users\coral\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
+46            android:exported="false" />
+46-->[androidx.room:room-runtime:2.4.2] C:\Users\coral\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
+47    </application>
+48
+49</manifest>
