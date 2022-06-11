@@ -2,10 +2,10 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/conversation_background_android">
+    android:background="@drawable/conversation_background_android"
+    android:orientation="vertical">
     <!--contact bar-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/contact_bar"
@@ -21,10 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/purple_100" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wraper_recycler_conversation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="50"

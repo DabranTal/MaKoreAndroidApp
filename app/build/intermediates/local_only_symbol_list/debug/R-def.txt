@@ -33,6 +33,7 @@ id time_partner_message
 id time_sender_message
 id typing_board
 id wraper_partner_message
+id wraper_recycler_conversation
 id wraper_sender_message
 id wraper_typing_board
 layout activity_conversation

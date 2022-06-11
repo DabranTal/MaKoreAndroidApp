@@ -56,10 +56,6 @@
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_conversation.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-23:/layout_sender_message.xml.flat",
-        "source": "com.example.makoreandroid.app-main-25:/layout/sender_message.xml"
-    },
-    {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -110,6 +106,10 @@
     {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable-mdpi_ic_send_btn.png.flat",
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable-mdpi\\ic_send_btn.png"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-merged_res-23:/layout_activity_main.xml.flat",
+        "source": "com.example.makoreandroid.app-main-25:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_ic_launcher.webp.flat",
