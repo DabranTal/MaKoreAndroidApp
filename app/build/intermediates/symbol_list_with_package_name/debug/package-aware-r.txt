@@ -2968,6 +2968,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_contacts_list
 layout activity_main
+layout activity_main2
 layout custom_dialog
 layout custom_list_item
 layout design_bottom_navigation_item

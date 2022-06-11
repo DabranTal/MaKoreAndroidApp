@@ -30,6 +30,7 @@ id profile_image
 id time
 layout activity_contacts_list
 layout activity_main
+layout activity_main2
 layout custom_list_item
 layout pop_up
 menu menu
