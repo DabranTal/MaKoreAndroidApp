@@ -33,7 +33,7 @@
 
 
         <LinearLayout
-            android:id="@+id/content_sender_message"
+            android:id="@+id/wraper_sender_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -41,7 +41,7 @@
 
             <!--message content-->
             <TextView
-                android:id="@+id/text_gchat_message_me"
+                android:id="@+id/content_sender_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -54,7 +54,7 @@
                 android:textSize="16sp" />
             <!--time-->
             <TextView
-                android:id="@+id/text_gchat_timestamp_me"
+                android:id="@+id/time_sender_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
@@ -62,7 +62,7 @@
                 android:text="10:00"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/content_sender_message"
+                app:layout_constraintBottom_toBottomOf="@+id/wraper_sender_message"
                 app:layout_constraintEnd_toEndOf="parent" />
         </LinearLayout>
 
