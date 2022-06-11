@@ -84,6 +84,25 @@ public class ContactActivity extends AppCompatActivity {
         EditText Server = view.findViewById(R.id.AddServer);
         TextView error = (TextView) view.findViewById(R.id.error);
         dialog.setView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        userName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                error.setText("");
+            }
+        });
+        NickName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                error.setText("");
+            }
+        });
+        Server.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                error.setText("");
+            }
+        });
         dialog.create();
         Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         positiveButton.setOnClickListener(new View.OnClickListener() {
