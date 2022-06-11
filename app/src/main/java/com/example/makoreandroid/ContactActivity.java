@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -24,15 +25,22 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class ContactActivity extends AppCompatActivity {
-    private String[] rUserName = {"Ido", "Coral", "Tal", "Matan", "Itamar"};
-    private String[] rNickName = {"idodo", "corali", "talush", "Tani", "tamTam"};
-    private String[] rLastMessage = {"hey there !", "whats up?", "hey !!", "hey", ""};
-    private String[] rTime = {"13:33", "12:01", "00:32", "02:32", ""};
+    private final String[] allUsers = {"Ido", "Coral", "Tal", "Matan", "Itamar", "Roni", "Eden",
+            "Guy"};
+    private final String[] rUserName = {"Ido", "Coral", "Tal", "Matan", "Itamar"};
+    private final String[] rNickName = {"idodo", "corali", "talush", "Tani", "tamTam"};
+    private final String[] rLastMessage = {"hey there !", "whats up?", "hey !!", "hey", ""};
+    private final String[] rTime = {"13:33", "12:01", "00:32", "02:32", ""};
+    private final String[] displayingError = {"You can't add yourself as a new contact!",
+                                                "This contact is already exists!",
+                                                "There is no such user!"};
     FloatingActionButton addBtn;
     ListView listView;
     CustomListAdapter adapter;
     AlertDialog dialog;
     ArrayList<RemoteUser> remote = new ArrayList<>();
+    String Name = "Roni";
+
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -54,7 +62,7 @@ public class ContactActivity extends AppCompatActivity {
 
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        for(int i = 0; i < rUserName.length; i++) {
+        for (int i = 0; i < rUserName.length; i++) {
             RemoteUser r = new RemoteUser(rNickName[i], rUserName[i], rLastMessage[i], rTime[i]);
             remote.add(r);
         }
@@ -65,38 +73,51 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     private void buildDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        dialog = new AlertDialog.Builder(this).setTitle("Add new contact")
+                .setPositiveButton("Add", null).setNegativeButton("Cancel", null).create();
         View view = getLayoutInflater().inflate(R.layout.pop_up, null);
         EditText userName = view.findViewById(R.id.AddUserName);
         EditText NickName = view.findViewById(R.id.AddNickName);
         EditText Server = view.findViewById(R.id.AddServer);
-        builder.setView(view);
-        builder.setTitle("Add new contact").setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        addRemoteUser(userName.getText().toString(), NickName.getText().toString(),
-                                Server.getText().toString());
-                        userName.setText("");
-                        NickName.setText("");
-                        Server.setText("");
+        dialog.setView(view);
+        dialog.create();
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean isUser = userName.getText().toString().equals(Name),
+                        isExists = false, isAlreadyExists = false;
+                for (RemoteUser r : remote) {
+                    if(r.getUserName().equals(userName.getText().toString())) {
+                        isAlreadyExists = true;
+                        break;
                     }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
+                }
+                for (String r : allUsers) {
+                    if(r.equals(userName.getText().toString())) {
+                        isExists = true;
+                        break;
                     }
-                });
-        dialog = builder.create();
+                }
+                if (!isUser && isExists && !isAlreadyExists) {
+                    addRemoteUser(userName.getText().toString(), NickName.getText().toString(),
+                            Server.getText().toString());
+                    userName.setText("");
+                    NickName.setText("");
+                    Server.setText("");
+                    dialog.dismiss();
+                }
+            }
+        });
 
     }
 
     private void addRemoteUser(String userName, String NickName, String Server) {
-            RemoteUser r = new RemoteUser(NickName, userName, "", "");
-            remote.add(r);
-            adapter = new CustomListAdapter(getApplicationContext(), remote);
-            listView.setAdapter(adapter);
-            listView.setClickable(true);
+        RemoteUser r = new RemoteUser(NickName, userName, "", "");
+        remote.add(r);
+        adapter = new CustomListAdapter(getApplicationContext(), remote);
+        listView.setAdapter(adapter);
+        listView.setClickable(true);
     }
 
     @Override
