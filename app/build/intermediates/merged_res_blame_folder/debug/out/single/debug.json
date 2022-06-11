@@ -36,8 +36,8 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-24:/layout_activity_main2.xml.flat",
-        "source": "com.example.makoreandroid.app-main-26:/layout/activity_main2.xml"
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\layout_activity_main2.xml.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-26:\\layout\\activity_main2.xml"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-24:\\drawable-xhdpi_ic_add.png.flat",

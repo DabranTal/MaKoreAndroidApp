@@ -74,7 +74,7 @@ public class ContactActivity extends AppCompatActivity {
         adapter = new CustomListAdapter(getApplicationContext(), remote);
         listView.setAdapter(adapter);
         listView.setClickable(true);
-
+/*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -85,7 +85,7 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
     }
 
     private void buildDialog() {

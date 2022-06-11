@@ -21,9 +21,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.MaKoreAndroid" >
         <activity
-            android:name="com.example.makoreandroid.MainActivity2"
-            android:exported="false" />
-        <activity
             android:name="com.example.makoreandroid.ContactActivity"
             android:exported="true" >
             <intent-filter>

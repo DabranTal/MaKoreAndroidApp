@@ -1,5 +1,5 @@
 package com.example.makoreandroid;
-
+/*
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,3 +11,4 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+*/
