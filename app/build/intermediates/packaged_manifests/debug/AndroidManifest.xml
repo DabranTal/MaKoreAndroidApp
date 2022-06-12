@@ -21,10 +21,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.MaKoreAndroid" >
         <activity
-            android:name="com.example.makoreandroid.conversation.ConversationActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.makoreandroid.MainActivity"
+            android:name="com.example.makoreandroid.activities.ConversationActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

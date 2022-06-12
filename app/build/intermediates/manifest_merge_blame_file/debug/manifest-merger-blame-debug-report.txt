@@ -11,7 +11,7 @@
 9-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:5-28:19
+11-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:5-24:19
 12        android:allowBackup="true"
 12-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -33,37 +33,31 @@
 22        android:theme="@style/Theme.MaKoreAndroid" >
 22-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:14:9-51
 23        <activity
-23-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:16:9-18:40
-24            android:name="com.example.makoreandroid.conversation.ConversationActivity"
-24-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:17:13-62
-25            android:exported="false" />
-25-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:18:13-37
-26        <activity
-26-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:9-27:20
-27            android:name="com.example.makoreandroid.MainActivity"
-27-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:13-41
-28            android:exported="true" >
-28-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:13-36
-29            <intent-filter>
-29-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:13-26:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:17-69
-30-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:17-77
-32-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:27-74
-33            </intent-filter>
-34        </activity>
-35
-36        <service
-36-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
-37            android:name="androidx.room.MultiInstanceInvalidationService"
-37-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
-38            android:directBootAware="true"
-38-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
-39            android:exported="false" />
-39-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
-40    </application>
-41
-42</manifest>
+23-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:16:9-23:20
+24            android:name="com.example.makoreandroid.activities.ConversationActivity"
+24-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:17:13-60
+25            android:exported="true" >
+25-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:18:13-36
+26            <intent-filter>
+26-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:13-22:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:17-69
+27-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:17-77
+29-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:27-74
+30            </intent-filter>
+31        </activity>
+32
+33        <service
+33-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
+34            android:name="androidx.room.MultiInstanceInvalidationService"
+34-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
+35            android:directBootAware="true"
+35-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
+36            android:exported="false" />
+36-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
+37    </application>
+38
+39</manifest>

@@ -46,7 +46,6 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
             final Message current = messages.get(position);
             holder.content.setText(current.getContent());
             holder.time.setText(current.getTime());
-            int a = 5;
         }
     }
 
