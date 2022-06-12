@@ -1,9 +1,9 @@
-#Sat Jun 11 22:52:28 IDT 2022
-base.2=C\:\\Users\\idota\\StudioProjects\\MaKoreAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+#Thu Jun 09 13:39:11 IDT 2022
+base.2=C\:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
 path.2=13/classes.dex
-base.1=C\:\\Users\\idota\\StudioProjects\\MaKoreAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=C\:\\Users\\idota\\StudioProjects\\MaKoreAndroid\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=C\:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
