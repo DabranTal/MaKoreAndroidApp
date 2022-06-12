@@ -52,6 +52,9 @@
             android:resource="@array/preloaded_fonts" />
 
         <service
+            android:name="com.example.makoreandroid.activities.BackgroundService"
+            android:enabled="true" />
+        <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
