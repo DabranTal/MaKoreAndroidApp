@@ -1,6 +1,8 @@
 package com.example.makoreandroid.activities;
 
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +16,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ConversationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_conversation);
 
         RecyclerView lstMessages = findViewById(R.id.recycler_conversaion);

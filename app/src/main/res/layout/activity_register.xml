@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_drawable"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_register"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/register_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/register_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_color"
+        android:text="click to login"
+        android:layout_marginRight="80dp"
+        android:layout_marginLeft="80dp"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="#00BF2222"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/register_userName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:hint="@string/register_userName"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/register_nickName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:hint="@string/register_nickname"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:hint="@string/register_password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/register_vPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/et_custom"
+            android:hint="@string/register_VPassword"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/register_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/register_btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/button_color"
+            android:text="@string/register_btnRegister"
+            android:textColor="@android:color/white"
+            android:textColorHighlight="#00BF2222"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="409dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/mktran" />
+    </TableRow>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
