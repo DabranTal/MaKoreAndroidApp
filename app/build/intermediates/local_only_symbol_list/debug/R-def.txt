@@ -103,6 +103,7 @@ mipmap ic_launcher_round
 mipmap mk
 mipmap mk_foreground
 mipmap mk_round
+string BaseUrl
 string add
 string app_name
 string app_name_clean

@@ -3367,6 +3367,7 @@ mipmap mk
 mipmap mk_foreground
 mipmap mk_round
 plurals mtrl_badge_content_description
+string BaseUrl
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
