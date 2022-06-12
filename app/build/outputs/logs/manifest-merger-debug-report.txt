@@ -1,12 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\dabra\.gradle\caches\transforms-3\6509385ff8ec8e676099ca8dd74d3249\transformed\viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\dabra\.gradle\caches\transforms-3\bfec8dfcaf6c34e166a516bbd7a3f400\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dabra\.gradle\caches\transforms-3\8ad4b0562467dfb6f3cd10869bd03e3f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\dabra\.gradle\caches\transforms-3\62c8ae69c95c9ecf28eae07b7b818a7e\transformed\preference-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\dabra\.gradle\caches\transforms-3\f053ca72a4906620f9d7f529c412475e\transformed\appcompat-1.4.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\558a376c9715ce970c82065b28321b39\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -50,22 +51,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dabra\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\daafd13ed6472e5d90ee94a442cae491\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\bd2b858bc6569916fd0b165974e7ef03\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\dabra\.gradle\caches\transforms-3\2af33ecfc53e92df0b334d3008fd6eb8\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:1-52:12
 		INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:2:11-69
@@ -74,7 +75,7 @@ ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:8:5-40:19
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:8:5-50:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\dabra\.gradle\caches\transforms-3\bfec8dfcaf6c34e166a516bbd7a3f400\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\dabra\.gradle\caches\transforms-3\bfec8dfcaf6c34e166a516bbd7a3f400\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dabra\.gradle\caches\transforms-3\8ad4b0562467dfb6f3cd10869bd03e3f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -115,46 +116,60 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\dabra\.gradle\cach
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:9-44
 	android:name
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:9:9-38
-activity#com.example.makoreandroid.activities.RegisterActivity
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:9-22:40
+activity#com.example.makoreandroid.activities.SettingsActivity
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:9-23:63
+	android:label
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:13-60
 	android:exported
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
 		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:13-56
+activity#com.example.makoreandroid.activities.RegisterActivity
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:24:9-26:40
+	android:exported
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:13-56
 activity#com.example.makoreandroid.activities.ContactActivity
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:9-25:40
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:13-37
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:24:13-55
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:28:13-55
 activity#com.example.makoreandroid.activities.ConversationActivity
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:26:9-28:40
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:28:13-37
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:27:13-60
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:31:13-60
 activity#com.example.makoreandroid.activities.LoginActivity
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:9-36:20
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:33:9-41:20
 	android:exported
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:13-53
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:34:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:39:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:37:9-39:57
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:43:9-45:57
 	android:resource
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:39:13-54
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:45:13-54
 	android:name
-		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:38:13-43
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:44:13-43
+service#com.example.makoreandroid.activities.BackgroundService
+ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:47:9-49:38
+	android:enabled
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:49:13-35
+	android:name
+		ADDED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:48:13-82
 uses-sdk
 INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
@@ -165,6 +180,8 @@ MERGED from [com.google.android.material:material:1.6.1] C:\Users\dabra\.gradle\
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\dabra\.gradle\caches\transforms-3\bfec8dfcaf6c34e166a516bbd7a3f400\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dabra\.gradle\caches\transforms-3\8ad4b0562467dfb6f3cd10869bd03e3f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dabra\.gradle\caches\transforms-3\8ad4b0562467dfb6f3cd10869bd03e3f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\dabra\.gradle\caches\transforms-3\62c8ae69c95c9ecf28eae07b7b818a7e\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] C:\Users\dabra\.gradle\caches\transforms-3\62c8ae69c95c9ecf28eae07b7b818a7e\transformed\preference-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\dabra\.gradle\caches\transforms-3\f053ca72a4906620f9d7f529c412475e\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\dabra\.gradle\caches\transforms-3\f053ca72a4906620f9d7f529c412475e\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:20:5-22:41

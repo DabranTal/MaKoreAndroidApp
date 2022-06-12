@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-31:/values-land/values-land.xml",
+            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-32:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dabra\\.gradle\\caches\\transforms-3\\f053ca72a4906620f9d7f529c412475e\\transformed\\appcompat-1.4.2\\res\\values-land\\values-land.xml",

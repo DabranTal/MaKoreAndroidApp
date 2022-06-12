@@ -17,6 +17,14 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/anton</item>
     </array>
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="gray_700">#808080</color>
     <color name="grey">#B5B5B5</color>
@@ -36,15 +44,22 @@
     <string name="add">add</string>
     <string name="app_name">MaKoreAndroid</string>
     <string name="app_name_clean">MaKore</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_title">Download incoming attachments</string>
     <string name="enter_nickname">Enter NickName</string>
     <string name="enter_server_ip">Enter Server IP</string>
     <string name="enter_user_name">Enter User Name</string>
     <string name="enter_username">Enter UserName</string>
     <string name="fake_chat_string">hey</string>
     <string name="login_btnLogin">Login</string>
+    <string name="login_invalid_details">Invalid details. Not registerd? Sign up now!</string>
     <string name="login_login">Login</string>
     <string name="login_password">Password</string>
+    <string name="login_required_username">UserName is required</string>
     <string name="login_userName">UserName</string>
+    <string name="messages_header">Messages</string>
     <string name="new_message_here">New message here...</string>
     <string name="register_VPassword">Password Again</string>
     <string name="register_btnRegister">Register</string>
@@ -52,6 +67,13 @@
     <string name="register_password">Password</string>
     <string name="register_register">Register</string>
     <string name="register_userName">UserName</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="signature_title">Your signature</string>
+    <string name="sync_header">Sync</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="title_activity_settings">SettingsActivity</string>
     <style name="Circular">
         <item name="cornerSize">50%</item>
     </style>

@@ -36,7 +36,7 @@ public class ConversationActivity extends AppCompatActivity {
 
         List<Message> messages = new ArrayList<>();
         MessageAPI messageAPI = new MessageAPI();
-        messageAPI.get(adapter);
+        messageAPI.get(adapter, this);
         adapter.setMessages(messages);
         if (messages.size() > 1)
             lstMessages.scrollToPosition(messages.size() - 1);
