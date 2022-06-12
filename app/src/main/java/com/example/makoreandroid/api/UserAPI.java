@@ -1,6 +1,8 @@
 package com.example.makoreandroid.api;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,8 @@ public class UserAPI {
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
     String token;
+    SharedPreferences prefs;
+
 
     public UserAPI() {
         Gson gson = new GsonBuilder()
@@ -35,6 +39,7 @@ public class UserAPI {
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
+
     public void loginUser(UsersRepository usersRepository, User u,  AppCompatActivity activity) {
         Call<String> call = webServiceAPI.loginGetToken(u);
         call.enqueue(new Callback<String>() {
@@ -46,6 +51,20 @@ public class UserAPI {
                     Intent intent = new Intent(activity, ContactActivity.class);
                     intent.putExtra("UserName", u.getUserName());
                     activity.startActivity(intent);
+
+                    SharedPreferences.Editor edit;
+                    prefs=activity.getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+                    edit=prefs.edit();
+                    try {
+                        String saveToken=response.body();
+                        edit.putString("token",saveToken);
+                        Log.i("Login",saveToken);
+                        edit.commit();
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
                 } else {
                     Log.e("Hemi", "hemi");
                     //activity.binding.loginError.setText(R.string.login_invalid_details);

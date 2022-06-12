@@ -2,8 +2,12 @@ package com.example.makoreandroid.activities;
 
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -14,21 +18,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
-import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.R;
+import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class ContactActivity extends AppCompatActivity {
     private final String[] allUsers = {"Ido", "Coral", "Tal", "Matan", "Itamar", "Roni", "Eden",
@@ -60,6 +61,8 @@ public class ContactActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+                String token = prefs.getString("token","");
                 dialog.show();
             }
         });
