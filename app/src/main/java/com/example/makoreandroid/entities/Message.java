@@ -11,7 +11,6 @@ public class Message {
     private String created;
     private boolean sent;
 
-
     public Message(int id, String content, String created, boolean sent) {
         this.id = id;
         this.content = content;
