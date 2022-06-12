@@ -1722,6 +1722,7 @@ int drawable material_ic_keyboard_arrow_previous_black_24dp 0x7f080075
 int drawable material_ic_keyboard_arrow_right_black_24dp 0x7f080076
 int drawable material_ic_menu_arrow_down_black_24dp 0x7f080077
 int drawable material_ic_menu_arrow_up_black_24dp 0x7f080078
+int drawable mktran 0x7f080093
 int drawable mtrl_dialog_background 0x7f080079
 int drawable mtrl_dropdown_arrow 0x7f08007a
 int drawable mtrl_ic_arrow_drop_down 0x7f08007b
@@ -1959,6 +1960,7 @@ int id linearLayout 0x7f0a00ce
 int id listMode 0x7f0a00cf
 int id list_item 0x7f0a00d0
 int id login_btnLogin 0x7f0a00d1
+int id login_error 0x7f0a01b7
 int id login_password 0x7f0a00d2
 int id login_register 0x7f0a01b5
 int id login_userName 0x7f0a00d3
@@ -2052,6 +2054,7 @@ int id radio 0x7f0a012a
 int id ratio 0x7f0a012b
 int id rectangles 0x7f0a012c
 int id register_btnRegister 0x7f0a012d
+int id register_error 0x7f0a01b8
 int id register_login 0x7f0a01b6
 int id register_nickName 0x7f0a012e
 int id register_password 0x7f0a012f
@@ -2120,6 +2123,7 @@ int id stretch 0x7f0a016d
 int id submenuarrow 0x7f0a016e
 int id submit_area 0x7f0a016f
 int id tabMode 0x7f0a0170
+int id tableRow 0x7f0a01b9
 int id tag_accessibility_actions 0x7f0a0171
 int id tag_accessibility_clickable_spans 0x7f0a0172
 int id tag_accessibility_heading 0x7f0a0173

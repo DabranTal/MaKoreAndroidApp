@@ -128,6 +128,10 @@
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\btn_custom.xml"
     },
     {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\drawable_mktran.png.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\drawable\\mktran.png"
+    },
+    {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\layout_activity_fake_chat.xml.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\layout\\activity_fake_chat.xml"
     },
@@ -158,10 +162,6 @@
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-xxxhdpi_mk_foreground.png.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-25:\\mipmap-xxxhdpi\\mk_foreground.png"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-merged_res-23:/layout_activity_main.xml.flat",
-        "source": "com.example.makoreandroid.app-main-25:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-23:\\mipmap-hdpi_mk_foreground.png.flat",

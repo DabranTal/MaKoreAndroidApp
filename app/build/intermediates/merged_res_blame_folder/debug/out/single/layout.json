@@ -14,9 +14,5 @@
     {
         "merged": "com.example.makoreandroid.app-mergeDebugResources-22:/layout/activity_register.xml",
         "source": "com.example.makoreandroid.app-main-25:/layout/activity_register.xml"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-22:/layout/activity_main.xml",
-        "source": "com.example.makoreandroid.app-main-25:/layout/activity_main.xml"
     }
 ]

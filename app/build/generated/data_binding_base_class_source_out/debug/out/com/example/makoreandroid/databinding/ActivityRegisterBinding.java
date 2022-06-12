@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +34,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final Button registerBtnRegister;
 
   @NonNull
+  public final TextView registerError;
+
+  @NonNull
   public final Button registerLogin;
 
   @NonNull
@@ -48,22 +52,28 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final EditText registerVPassword;
 
   @NonNull
+  public final TableRow tableRow;
+
+  @NonNull
   public final TextView tvTitle;
 
   private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView4,
       @NonNull LinearLayout linearLayout, @NonNull Button registerBtnRegister,
-      @NonNull Button registerLogin, @NonNull EditText registerNickName,
-      @NonNull EditText registerPassword, @NonNull EditText registerUserName,
-      @NonNull EditText registerVPassword, @NonNull TextView tvTitle) {
+      @NonNull TextView registerError, @NonNull Button registerLogin,
+      @NonNull EditText registerNickName, @NonNull EditText registerPassword,
+      @NonNull EditText registerUserName, @NonNull EditText registerVPassword,
+      @NonNull TableRow tableRow, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.imageView4 = imageView4;
     this.linearLayout = linearLayout;
     this.registerBtnRegister = registerBtnRegister;
+    this.registerError = registerError;
     this.registerLogin = registerLogin;
     this.registerNickName = registerNickName;
     this.registerPassword = registerPassword;
     this.registerUserName = registerUserName;
     this.registerVPassword = registerVPassword;
+    this.tableRow = tableRow;
     this.tvTitle = tvTitle;
   }
 
@@ -112,6 +122,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.register_error;
+      TextView registerError = ViewBindings.findChildViewById(rootView, id);
+      if (registerError == null) {
+        break missingId;
+      }
+
       id = R.id.register_login;
       Button registerLogin = ViewBindings.findChildViewById(rootView, id);
       if (registerLogin == null) {
@@ -142,6 +158,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tableRow;
+      TableRow tableRow = ViewBindings.findChildViewById(rootView, id);
+      if (tableRow == null) {
+        break missingId;
+      }
+
       id = R.id.tv_title;
       TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvTitle == null) {
@@ -149,8 +171,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       return new ActivityRegisterBinding((ConstraintLayout) rootView, imageView4, linearLayout,
-          registerBtnRegister, registerLogin, registerNickName, registerPassword, registerUserName,
-          registerVPassword, tvTitle);
+          registerBtnRegister, registerError, registerLogin, registerNickName, registerPassword,
+          registerUserName, registerVPassword, tableRow, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

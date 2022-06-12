@@ -1723,6 +1723,7 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable mktran
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1960,6 +1961,7 @@ id linearLayout
 id listMode
 id list_item
 id login_btnLogin
+id login_error
 id login_password
 id login_register
 id login_userName
@@ -2053,6 +2055,7 @@ id radio
 id ratio
 id rectangles
 id register_btnRegister
+id register_error
 id register_login
 id register_nickName
 id register_password
@@ -2121,6 +2124,7 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+id tableRow
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading

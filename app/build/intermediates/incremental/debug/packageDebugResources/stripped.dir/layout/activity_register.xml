@@ -15,9 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_register"
-        android:textSize="60sp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/register_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,9 @@
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39"
+        tools:layout_editor_absoluteX="0dp">
 
         <EditText
             android:id="@+id/register_userName"
@@ -100,6 +102,15 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/register_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/register_btnRegister"
@@ -107,7 +118,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
             android:backgroundTint="@color/button_color"
             android:text="@string/register_btnRegister"
             android:textColor="@android:color/white"
@@ -117,6 +127,7 @@
     </LinearLayout>
 
     <TableRow
+        android:id="@+id/tableRow"
         android:layout_width="409dp"
         android:layout_height="184dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,8 +139,11 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:srcCompat="@mipmap/mk" />
+            android:adjustViewBounds="true"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/mktran" />
     </TableRow>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

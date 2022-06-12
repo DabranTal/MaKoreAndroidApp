@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.makoreandroid.databinding.ActivityMainBinding;
 import com.example.makoreandroid.databinding.ActivityRegisterBinding;
+
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -16,7 +20,13 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Objects.requireNonNull(getSupportActionBar()).hide();
+
         setContentView(binding.getRoot());
+
+        binding.registerError.setText("error");
 
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {
@@ -28,13 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        binding.registerLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            if (binding.registerUserName.getText() != null) {
-                intent.putExtra("UserName", binding.registerUserName.getText().toString());
-            }
-            startActivity(intent);
-        });
+        binding.registerLogin.setOnClickListener(v -> { this.finish(); });
 
     }
 }

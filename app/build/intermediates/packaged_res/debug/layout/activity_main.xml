@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="@string/login_login"
         android:textStyle="bold"
-        android:textSize="60sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +76,15 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/login_error"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FF0000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
         <Button
             android:id="@+id/login_btnLogin"
@@ -107,8 +116,7 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:srcCompat="@mipmap/mk" />
+            app:srcCompat="@drawable/mktran" />
     </TableRow>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
