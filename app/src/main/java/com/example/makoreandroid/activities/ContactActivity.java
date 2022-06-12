@@ -1,4 +1,4 @@
-package com.example.makoreandroid;
+package com.example.makoreandroid.activities;
 
 
 import android.app.AlertDialog;
@@ -22,6 +22,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
+import com.example.makoreandroid.CustomListAdapter;
+import com.example.makoreandroid.R;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
