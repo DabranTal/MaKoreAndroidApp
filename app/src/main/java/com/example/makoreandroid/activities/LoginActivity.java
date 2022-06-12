@@ -45,15 +45,13 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.loginBtnLogin.setOnClickListener(v -> {
             if (binding.loginUserName.getText() != null) {
-                String token = usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString());
-                if (token != null) {
-                    Intent intent = new Intent(this, ContactActivity.class);
-                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
-                    startActivity(intent);
-                    return;
-                }
-                binding.loginError.setText(R.string.login_invalid_details);
-                return;
+                usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString(), this);
+//                if (token != null) {
+//                    Intent intent = new Intent(this, ContactActivity.class);
+//                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
+//                    startActivity(intent);
+//                    return;
+//                }
             }
             binding.loginError.setText(R.string.login_required_username);
         });

@@ -1,4 +1,7 @@
 package com.example.makoreandroid.repositories;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.makoreandroid.api.UserAPI;
 import com.example.makoreandroid.entities.User;
 
@@ -10,8 +13,8 @@ public class UsersRepository {
         api = new UserAPI();
     }
 
-    public String getTokenLogin(String username, String password) {
-        return api.loginUser(this, new User(username, password));
+    public void getTokenLogin(String username, String password, AppCompatActivity activity) {
+        api.loginUser(this, new User(username, password), activity);
     }
 
     public String getToken() {
