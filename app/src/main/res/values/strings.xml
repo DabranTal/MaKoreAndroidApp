@@ -18,5 +18,5 @@
     <string name="enter_nickname">Enter NickName</string>
     <string name="enter_username">Enter UserName</string>
     <string name="enter_server_ip">Enter Server IP</string>
-    <string name="BaseUrl">http://10.0.2.2:5018/api/contacts/tal/messages</string>
+    <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
 </resources>

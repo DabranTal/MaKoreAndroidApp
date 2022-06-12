@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface WebServiceAPI {
-    @GET("messages")
+    @GET("contacts/Tal/messages")
     Call<List<Message>> getMessages();
 
     @POST("messages")
