@@ -24,7 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
-        binding.registerError.setText("error");
 
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {

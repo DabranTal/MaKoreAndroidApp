@@ -3,11 +3,13 @@ package com.example.makoreandroid;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -71,18 +73,18 @@ public class ContactActivity extends AppCompatActivity {
         adapter = new CustomListAdapter(getApplicationContext(), remote);
         listView.setAdapter(adapter);
         listView.setClickable(true);
-/*
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.putExtra("friendID", remote.get(i).getUserName());
                 intent.putExtra("friendNickName", remote.get(i).getNickNam());
                 intent.putExtra("friendServer", remote.get(i).getServer());
                 startActivity(intent);
             }
         });
-*/
+
     }
 
     private void buildDialog() {

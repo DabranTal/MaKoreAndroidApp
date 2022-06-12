@@ -92,7 +92,7 @@ public final class AppDB_Impl extends AppDB {
         final TableInfo _infoUser = new TableInfo("User", _columnsUser, _foreignKeysUser, _indicesUser);
         final TableInfo _existingUser = TableInfo.read(_db, "User");
         if (! _infoUser.equals(_existingUser)) {
-          return new RoomOpenHelper.ValidationResult(false, "User(com.example.makoreandroid.User).\n"
+          return new RoomOpenHelper.ValidationResult(false, "User(com.example.makoreandroid.entities.User).\n"
                   + " Expected:\n" + _infoUser + "\n"
                   + " Found:\n" + _existingUser);
         }

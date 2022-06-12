@@ -8,6 +8,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.example.makoreandroid.entities.User;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;

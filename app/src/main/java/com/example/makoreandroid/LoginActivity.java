@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.loginBtnLogin.setOnClickListener(v -> {
-            binding.loginError.setText("error");
             Intent intent = new Intent(this, ContactActivity.class);
             intent.putExtra("UserName" ,binding.loginUserName.getText().toString());
             startActivity(intent);
