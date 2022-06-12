@@ -30,7 +30,7 @@ public class MessageAPI {
     }
 
     public void get() {
-        Call<List<Message>> call = webServiceAPI.getMessages();
+        Call<List<Message>> call = webServiceAPI.getMessages("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsidGFsIiwiMTIvMDYvMjAyMiAxMTo1NDowMCJdLCJqdGkiOiIxZjI5ZWM5My00NmVjLTQ4NTAtYWM1MS1iMTY1NWM2Njg0MzgiLCJOYW1lSWRlbnRpZmllciI6IklkbyIsImV4cCI6MTY1NTAzNjA0MCwiaXNzIjoiQ29yYWwiLCJhdWQiOiJJZG8ifQ.WL92sKOXbybn14-f1Q-xi8Pu1PwyqY_pGqR_Pmi-TX0");
         call.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
