@@ -10,7 +10,7 @@ public class RemoteUser {
     private String Server;
     private String lastMessage;
     private String Time;
-    //public Conversation Conversation;
+    public Conversation Conversation;
 
 
     public RemoteUser(String nickNam, String UserName, String lastMessage, String Time, String Server) {

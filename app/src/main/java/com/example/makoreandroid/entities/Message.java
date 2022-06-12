@@ -5,22 +5,17 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Message {
-    @PrimaryKey()
+    @PrimaryKey(autoGenerate = true)
     private int Id;
     private String Content;
     private String Time;
     private boolean Sent;
 
 
-    public Message(int id, String content, String time, boolean sent) {
-        Id = id;
+    public Message(String content, String time, boolean sent) {
         Content = content;
         Time = time;
         Sent = sent;
-    }
-
-    public void setId(int id) {
-        Id = id;
     }
 
     public void setContent(String content) {
