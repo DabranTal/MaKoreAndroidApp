@@ -1271,6 +1271,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray_700
 color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
@@ -2457,6 +2458,7 @@ drawable abc_vector_test
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable background
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2465,6 +2467,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable conversation_background
+drawable conversation_background_android
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2484,6 +2488,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_send_btn
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2526,7 +2531,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable partner_message_tail
 drawable rounded_img
+drawable sender_message_tail
+drawable tal
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -2635,9 +2643,12 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_send
 id cache_measures
 id callMeasure
 id cancel_button
+id card_partner_message
+id card_sender_message
 id carryVelocity
 id center
 id centerCrop
@@ -2665,10 +2676,14 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
+id contact_bar
 id contact_name
+id contact_prop
 id container
 id content
 id contentPanel
+id content_partner_message
+id content_sender_message
 id contiguous
 id continuousVelocity
 id coordinator
@@ -2883,6 +2898,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id partner_tail
 id password_toggle
 id path
 id pathRelative
@@ -2897,6 +2913,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycler_conversaion
 id register_btnRegister
 id register_error
 id register_login
@@ -2934,6 +2951,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sender_tail
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2998,6 +3016,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_bar
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3008,6 +3027,8 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id time_partner_message
+id time_sender_message
 id title
 id titleDividerNoCustom
 id title_template
@@ -3024,6 +3045,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tv_title
+id typing_board
 id unchecked
 id uniform
 id unlabeled
@@ -3043,6 +3065,10 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
+id wraper_partner_message
+id wraper_recycler_conversation
+id wraper_sender_message
+id wraper_typing_board
 id x_left
 id x_right
 id zero_corner_chip
@@ -3139,6 +3165,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_contacts_list
+layout activity_conversation
 layout activity_login
 layout activity_register
 layout custom_dialog
@@ -3212,10 +3239,12 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout partner_message
 layout pop_up
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout sender_message
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -3369,6 +3398,7 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
+string new_message_here
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
