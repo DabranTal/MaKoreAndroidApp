@@ -6,45 +6,45 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Message {
     @PrimaryKey()
-    private int Id;
-    private String Content;
-    private String Time;
-    private boolean Sent;
+    private int id;
+    private String content;
+    private String created;
+    private boolean sent;
 
 
-    public Message(int id, String content, String time, boolean sent) {
-        Id = id;
-        Content = content;
-        Time = time;
-        Sent = sent;
+    public Message(int id, String content, String created, boolean sent) {
+        this.id = id;
+        this.content = content;
+        this.created = created;
+        this.sent = sent;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
-    public void setTime(String time) {
-        Time = time;
+    public void setCreated(String created) {
+        this.created = created;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
-    public String getTime() {
-        return Time;
+    public String getCreated() {
+        return created;
     }
 
     public boolean isSent() {
-        return Sent;
+        return sent;
     }
 
 }

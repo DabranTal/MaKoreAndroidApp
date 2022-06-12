@@ -27,4 +27,5 @@ public interface RemoteUsersDao {
 
     @Delete
     void delete(RemoteUser... remote);
+
 }

@@ -27,6 +27,7 @@ import com.example.makoreandroid.R;
 import com.example.makoreandroid.RemoteUserDB;
 import com.example.makoreandroid.RemoteUsersDao;
 import com.example.makoreandroid.adapters.CustomListAdapter;
+import com.example.makoreandroid.api.ContactsAPI;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -60,6 +61,8 @@ public class ContactActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ContactsAPI contactsAPI = new ContactsAPI();
+                contactsAPI.get();
                 dialog.show();
             }
         });

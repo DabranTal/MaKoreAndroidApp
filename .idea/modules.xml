@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MaKoreAndroid.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudioProjects.MaKoreAndroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudioProjects.MaKoreAndroid.app.main.iml" />
     </modules>
   </component>
 </project>

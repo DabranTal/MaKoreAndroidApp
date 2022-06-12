@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
+import com.example.makoreandroid.api.MessageAPI;
 import com.example.makoreandroid.entities.Message;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -23,6 +24,9 @@ public class ConversationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MessageAPI messageAPI = new MessageAPI();
+        messageAPI.get();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
