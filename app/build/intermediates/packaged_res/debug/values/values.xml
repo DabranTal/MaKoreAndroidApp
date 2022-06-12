@@ -18,6 +18,7 @@
         <item>@font/anton</item>
     </array>
     <color name="black">#FF000000</color>
+    <color name="gray_700">#808080</color>
     <color name="grey">#B5B5B5</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="mk_background">#FFFFFF</color>
@@ -52,11 +53,11 @@
     <style name="Circular">
         <item name="cornerSize">50%</item>
     </style>
-    <style name="Theme.MaKoreAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MaKoreAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
 
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/purple_100</item>
         <item name="colorOnPrimary">@color/white</item>
         
         <item name="colorSecondary">@color/teal_200</item>

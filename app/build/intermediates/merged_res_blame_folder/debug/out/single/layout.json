@@ -1,22 +1,38 @@
 [
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-32:/layout/activity_register.xml",
-        "source": "com.example.makoreandroid.app-main-35:/layout/activity_register.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\activity_contacts_list.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\activity_contacts_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\pop_up.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\pop_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\partner_message.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\partner_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\activity_conversation.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\activity_conversation.xml"
     },
     {
         "merged": "com.example.makoreandroid.app-mergeDebugResources-32:/layout/activity_login.xml",
         "source": "com.example.makoreandroid.app-main-35:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-32:/layout/activity_contacts_list.xml",
-        "source": "com.example.makoreandroid.app-main-35:/layout/activity_contacts_list.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\sender_message.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\sender_message.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-32:/layout/pop_up.xml",
-        "source": "com.example.makoreandroid.app-main-35:/layout/pop_up.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-32:/layout/custom_list_item.xml",
-        "source": "com.example.makoreandroid.app-main-35:/layout/custom_list_item.xml"
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-32:\\layout\\custom_list_item.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-35:\\layout\\custom_list_item.xml"
     }
 ]
