@@ -32,5 +32,5 @@
     <string name="search">Search</string>
     <string name="login_invalid_details">Invalid details. Not registerd? Sign up now!</string>
     <string name="login_required_username">UserName is required</string>
-    <string name="BaseUrl">http://10.0.2.2:5018/api</string>
+    <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
 </resources>

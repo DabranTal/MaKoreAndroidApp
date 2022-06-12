@@ -40,7 +40,7 @@
     <color name="white">#FFFFFFFF</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <string name="BaseUrl">http://10.0.2.2:5018/api/contacts/tal/messages</string>
+    <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
     <string name="add">add</string>
     <string name="app_name">MaKoreAndroid</string>
     <string name="app_name_clean">MaKore</string>

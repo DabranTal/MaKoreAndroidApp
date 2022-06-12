@@ -6,18 +6,17 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.databinding.ActivityLoginBinding;
-import com.example.makoreandroid.entities.User;
-
-import java.util.Objects;
+import com.example.makoreandroid.repositories.UsersRepository;
 
 
 // Login
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
+    private UsersRepository usersRepository;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        usersRepository = new UsersRepository();
         setContentView(binding.getRoot());
 
         if (getIntent() != null) {
@@ -45,15 +45,15 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.loginBtnLogin.setOnClickListener(v -> {
             if (binding.loginUserName.getText() != null) {
-                User u = server.get(binding.loginUserName.getText().toString());
-                if (u != null) {
-                    if (Objects.equals(u.getPassword(), binding.loginPassword.getText().toString())) {
-                        Intent intent = new Intent(this, ContactActivity.class);
-                        intent.putExtra("UserName", u.getUserName());
-                        startActivity(intent);
-                    }
+                String token = usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString());
+                if (token != null) {
+                    Intent intent = new Intent(this, ContactActivity.class);
+                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
+                    startActivity(intent);
+                    return;
                 }
                 binding.loginError.setText(R.string.login_invalid_details);
+                return;
             }
             binding.loginError.setText(R.string.login_required_username);
         });
