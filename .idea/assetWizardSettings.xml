@@ -24,8 +24,10 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\idota\AppData\Local\Temp\baseline_add_24.xml" />
-                                                <entry key="opacityPercent" value="60" />
+<<<<<<< HEAD
+                                                <entry key="imagePath" value="C:\Users\dabra\AppData\Local\Temp\baseline_arrow_forward_24.xml" />
+                                                <entry key="opacityPercent" value="80" />
+                                                <entry key="paddingPercent" value="5" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -36,7 +38,22 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/add/baseline_add_24.xml" />
+                                                <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_forward/baseline_arrow_forward_24.xml" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+=======
+                                                <entry key="imagePath" value="C:\Users\coral\AppData\Local\Temp\ic_android_black_24dp.xml" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
+                                                <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -48,6 +65,10 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+<<<<<<< HEAD
+                                                <entry key="opacityPercent" value="60" />
+=======
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -59,6 +80,10 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+<<<<<<< HEAD
+                                                <entry key="opacityPercent" value="60" />
+=======
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -66,11 +91,16 @@
                                       </entry>
                                     </map>
                                   </option>
+<<<<<<< HEAD
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_add" />
+                                      <entry key="outputName" value="ic_send_btn" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="bab8b8" />
                                     </map>
                                   </option>
+=======
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                 </PersistentState>
                               </value>
                             </entry>
@@ -84,7 +114,12 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\Users\idota\AppData\Local\Temp\ic_android_black_24dp.xml" />
+<<<<<<< HEAD
+                                                <entry key="imagePath" value="C:\Users\dabra\AppData\Local\Temp\ic_android_black_24dp.xml" />
+=======
+                                                <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="C:\Users\coral\AppData\Local\Temp\ic_android_black_24dp.xml" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -96,6 +131,11 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+<<<<<<< HEAD
+=======
+                                                <entry key="imagePath" value="C:\Program Files\Android\Android Studio\plugins\android\resources\images\asset_studio\MK-logos_transparent.png" />
+                                                <entry key="scalingPercent" value="80" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -125,6 +165,16 @@
                                       </entry>
                                     </map>
                                   </option>
+<<<<<<< HEAD
+=======
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="ffffff" />
+                                      <entry key="outputName" value="mk" />
+                                    </map>
+                                  </option>
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                 </PersistentState>
                               </value>
                             </entry>
@@ -139,7 +189,11 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\idota\AppData\Local\Temp\ic_android_black_24dp.xml" />
+<<<<<<< HEAD
+                                                <entry key="imagePath" value="C:\Users\dabra\AppData\Local\Temp\ic_android_black_24dp.xml" />
+=======
+                                                <entry key="imagePath" value="C:\Users\coral\AppData\Local\Temp\ic_android_black_24dp.xml" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -183,7 +237,11 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\idota\AppData\Local\Temp\ic_android_black_24dp.xml" />
+<<<<<<< HEAD
+                                                <entry key="imagePath" value="C:\Users\dabra\AppData\Local\Temp\ic_android_black_24dp.xml" />
+=======
+                                                <entry key="imagePath" value="C:\Users\coral\AppData\Local\Temp\ic_android_black_24dp.xml" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -247,7 +305,11 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\Users\idota\AppData\Local\Temp\ic_android_black_24dp.xml" />
+<<<<<<< HEAD
+                                                <entry key="imagePath" value="C:\Users\dabra\AppData\Local\Temp\ic_android_black_24dp.xml" />
+=======
+                                                <entry key="imagePath" value="C:\Users\coral\AppData\Local\Temp\ic_android_black_24dp.xml" />
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -293,11 +355,14 @@
                             </entry>
                           </map>
                         </option>
+<<<<<<< HEAD
                         <option name="values">
                           <map>
                             <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
+=======
+>>>>>>> 4e2f99ac14083f801f12735e6f5606d25db8bdc1
                       </PersistentState>
                     </value>
                   </entry>
