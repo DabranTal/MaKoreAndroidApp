@@ -82,6 +82,18 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         time.setText(remote.getTime());
         //notifyDataSetChanged();
         return convertView;
-
     }
+
+    public int getItemCount() {
+        if (rList != null) {
+            return rList.size();
+        } else {
+            return 0;
+        }
+    }
+
+    public ArrayList<RemoteUser> getRemoteUser() {
+        return rList;
+    }
+
 }

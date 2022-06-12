@@ -6,104 +6,104 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
+8-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
+9-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:5-36:19
+11-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:6:5-36:19
 12        android:allowBackup="true"
-12-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:7:9-35
+12-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\dabra\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.7.0] C:\Users\idota\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 14        android:dataExtractionRules="@xml/data_extraction_rules"
-14-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:8:9-65
+14-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:8:9-65
 15        android:debuggable="true"
 16        android:fullBackupContent="@xml/backup_rules"
-16-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:9:9-54
+16-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:9:9-54
 17        android:icon="@mipmap/ic_launcher"
-17-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:10:9-43
+17-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:10:9-43
 18        android:label="MaKoreAndroid"
-18-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:11:9-38
+18-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:11:9-38
 19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:12:9-54
+19-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:12:9-54
 20        android:supportsRtl="true"
-20-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:13:9-35
+20-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:13:9-35
 21        android:testOnly="true"
 22        android:theme="@style/Theme.MaKoreAndroid" >
-22-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:14:9-51
+22-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:14:9-51
 23        <activity
-23-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:16:9-18:40
+23-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:16:9-18:40
 24            android:name="com.example.makoreandroid.activities.RegisterActivity"
-24-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:17:13-56
+24-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:17:13-56
 25            android:exported="false" />
-25-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:18:13-37
+25-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:18:13-37
 26        <activity
-26-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:9-21:40
+26-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:19:9-21:40
 27            android:name="com.example.makoreandroid.activities.ContactActivity"
-27-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:13-55
+27-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:20:13-55
 28            android:exported="false" />
-28-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:13-37
+28-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:21:13-37
 29        <activity
-29-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:9-24:40
+29-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:22:9-24:40
 30            android:name="com.example.makoreandroid.activities.ConversationActivity"
-30-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:13-60
+30-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:23:13-60
 31            android:exported="false" />
-31-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:24:13-37
+31-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:24:13-37
 32        <activity
-32-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:9-32:20
+32-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:25:9-32:20
 33            android:name="com.example.makoreandroid.activities.LoginActivity"
-33-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:26:13-53
+33-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:26:13-53
 34            android:exported="true" >
-34-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:27:13-36
+34-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:27:13-36
 35            <intent-filter>
-35-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:28:13-31:29
+35-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:28:13-31:29
 36                <action android:name="android.intent.action.MAIN" />
-36-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:17-69
-36-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:25-66
+36-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:17-69
+36-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:29:25-66
 37
 38                <category android:name="android.intent.category.LAUNCHER" />
-38-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:17-77
-38-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:27-74
+38-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:17-77
+38-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:30:27-74
 39            </intent-filter>
 40        </activity>
 41
 42        <meta-data
-42-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:33:9-35:57
+42-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:33:9-35:57
 43            android:name="preloaded_fonts"
-43-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:34:13-43
+43-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:34:13-43
 44            android:resource="@array/preloaded_fonts" />
-44-->C:\Users\dabra\AndroidStudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:35:13-54
+44-->C:\Users\idota\StudioProjects\MaKoreAndroid\app\src\main\AndroidManifest.xml:35:13-54
 45
 46        <service
-46-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
+46-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:25:9-28:40
 47            android:name="androidx.room.MultiInstanceInvalidationService"
-47-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
+47-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:26:13-74
 48            android:directBootAware="true"
-48-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
+48-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:27:13-43
 49            android:exported="false" />
-49-->[androidx.room:room-runtime:2.4.2] C:\Users\dabra\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
+49-->[androidx.room:room-runtime:2.4.2] C:\Users\idota\.gradle\caches\transforms-3\4a3b5f33337ded1b81c553095eeef74a\transformed\room-runtime-2.4.2\AndroidManifest.xml:28:13-37
 50
 51        <provider
-51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 52            android:name="androidx.startup.InitializationProvider"
-52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
 53            android:authorities="com.example.makoreandroid.androidx-startup"
-53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
 54            android:exported="false" >
-54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
 55            <meta-data
-55-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+55-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
 56                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-56-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+56-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
 57                android:value="androidx.startup" />
-57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dabra\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\idota\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
 58            <meta-data
-58-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dabra\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+58-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\idota\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
 59                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-59-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dabra\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+59-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\idota\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
 60                android:value="androidx.startup" />
-60-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dabra\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+60-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\idota\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
 61        </provider>
 62    </application>
 63
