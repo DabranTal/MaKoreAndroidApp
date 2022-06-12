@@ -24,10 +24,10 @@
             android:name="com.example.makoreandroid.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.makoreandroid.FakeChatActivity"
+            android:name="com.example.makoreandroid.ContactActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.makoreandroid.MainActivity"
+            android:name="com.example.makoreandroid.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,6 +44,18 @@
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.makoreandroid.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

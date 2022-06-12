@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-
-import com.example.makoreandroid.databinding.ActivityMainBinding;
 import com.example.makoreandroid.databinding.ActivityRegisterBinding;
 
 import java.util.Objects;
