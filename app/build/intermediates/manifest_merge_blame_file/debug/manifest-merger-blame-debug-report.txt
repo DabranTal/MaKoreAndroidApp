@@ -34,20 +34,20 @@
 22-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:14:9-51
 23        <activity
 23-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:16:9-18:40
-24            android:name="com.example.makoreandroid.RegisterActivity"
-24-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-45
+24            android:name="com.example.makoreandroid.activities.RegisterActivity"
+24-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-56
 25            android:exported="false" />
 25-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:13-37
 26        <activity
 26-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:19:9-21:40
-27            android:name="com.example.makoreandroid.ContactActivity"
-27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:13-44
+27            android:name="com.example.makoreandroid.activities.ContactActivity"
+27-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:13-55
 28            android:exported="false" />
 28-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:21:13-37
 29        <activity
 29-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:9-30:20
-30            android:name="com.example.makoreandroid.LoginActivity"
-30-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-42
+30            android:name="com.example.makoreandroid.activities.LoginActivity"
+30-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-53
 31            android:exported="true" >
 31-->C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:24:13-36
 32            <intent-filter>

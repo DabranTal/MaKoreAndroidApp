@@ -107,24 +107,24 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\coral\.gradle\cach
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:14:9-51
 	android:dataExtractionRules
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:8:9-65
-activity#com.example.makoreandroid.RegisterActivity
+activity#com.example.makoreandroid.activities.RegisterActivity
 ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:16:9-18:40
 	android:exported
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-45
-activity#com.example.makoreandroid.ContactActivity
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:17:13-56
+activity#com.example.makoreandroid.activities.ContactActivity
 ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:19:9-21:40
 	android:exported
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:21:13-37
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:13-44
-activity#com.example.makoreandroid.LoginActivity
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:13-55
+activity#com.example.makoreandroid.activities.LoginActivity
 ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:9-30:20
 	android:exported
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-42
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN

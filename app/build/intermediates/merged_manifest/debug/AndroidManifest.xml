@@ -21,13 +21,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.MaKoreAndroid" >
         <activity
-            android:name="com.example.makoreandroid.RegisterActivity"
+            android:name="com.example.makoreandroid.activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.makoreandroid.ContactActivity"
+            android:name="com.example.makoreandroid.activities.ContactActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.makoreandroid.LoginActivity"
+            android:name="com.example.makoreandroid.activities.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
