@@ -38,12 +38,6 @@ public class MessageAPI {
 
                 List<Message> messages = response.body();
                 adapter.setMessages(messages);
-//                new Thread(() -> {
-//                    dao.clear();
-//                    dao.insertList(response.body());
-//                    postListData.postValue(dao.get());
-//                }).start();
-//            }
             }
 
             @Override
