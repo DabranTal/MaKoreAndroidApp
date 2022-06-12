@@ -1,4 +1,6 @@
-package com.example.makoreandroid;
+package com.example.makoreandroid.entities;
+
+import com.example.makoreandroid.R;
 
 public class RemoteUser {
     //private int Id;
