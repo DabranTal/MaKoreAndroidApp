@@ -1,9 +1,13 @@
 package com.example.makoreandroid.api;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.entities.RemoteUser;
-import com.example.makoreandroid.entities.User;
 
 import java.util.List;
 
@@ -30,10 +34,10 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get() {
-        User u = new User("Ido", "12341234a");
-        Call <String> call2 = webServiceAPI.getJWT(u);
-        Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + call2);
+    public void get(AppCompatActivity activity) {
+        SharedPreferences prefs = activity.getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("token","");
+        Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
             public void onResponse(Call<List<RemoteUser>> call, Response<List<RemoteUser>> response) {

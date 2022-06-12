@@ -25,6 +25,10 @@
         android:theme="@style/Theme.MaKoreAndroid"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.makoreandroid.activities.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name="com.example.makoreandroid.activities.RegisterActivity"
             android:exported="false" />
         <activity
@@ -47,6 +51,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <service
+            android:name="com.example.makoreandroid.activities.BackgroundService"
+            android:enabled="true" />
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"

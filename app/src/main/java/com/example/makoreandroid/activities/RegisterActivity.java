@@ -1,5 +1,6 @@
 package com.example.makoreandroid.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,7 +25,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
-
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {
                 if (getIntent().getExtras().getString("UserName") != null) {
@@ -36,6 +36,12 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         binding.registerLogin.setOnClickListener(v -> { this.finish(); });
+
+        binding.registerBtnRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ContactActivity.class);
+            intent.putExtra("UserName" ,binding.registerUserName.getText().toString());
+            startActivity(intent);
+        });
 
     }
 }
