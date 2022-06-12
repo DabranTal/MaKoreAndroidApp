@@ -1,10 +1,8 @@
-#Sun Jun 12 19:46:42 IDT 2022
+#Sun Jun 12 22:56:49 IDT 2022
 path.4=15/classes.dex
 path.3=14/classes.dex
 path.2=13/classes.dex
 path.1=0/classes.dex
-renamed.8=classes9.dex
-path.8=7/classes.dex
 path.7=11/classes.dex
 path.6=5/classes.dex
 path.5=2/classes.dex
@@ -19,7 +17,6 @@ renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 renamed.7=classes8.dex
-base.8=C\:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 renamed.6=classes7.dex
 base.7=C\:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
 renamed.5=classes6.dex

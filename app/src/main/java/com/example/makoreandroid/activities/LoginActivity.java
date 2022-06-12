@@ -1,21 +1,34 @@
 package com.example.makoreandroid.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
+import com.example.makoreandroid.api.UserAPI;
+import com.example.makoreandroid.api.WebServiceAPI;
 import com.example.makoreandroid.databinding.ActivityLoginBinding;
-import com.example.makoreandroid.repositories.UsersRepository;
+import com.example.makoreandroid.entities.User;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 // Login
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
-    private UsersRepository usersRepository;
+    //private UsersRepository usersRepository;
+    UserAPI userAPI;
+    SharedPreferences prefs;
+    SharedPreferences.Editor edit;
+    WebServiceAPI wsAPI;
 
 
     @Override
@@ -25,8 +38,9 @@ public class LoginActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        usersRepository = new UsersRepository();
+        //usersRepository = new UsersRepository();
         setContentView(binding.getRoot());
+        userAPI = new UserAPI();
 
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {
@@ -45,17 +59,32 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.loginBtnLogin.setOnClickListener(v -> {
             if (binding.loginUserName.getText() != null) {
-                String token = usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString());
-                if (token != null) {
-                    Intent intent = new Intent(this, ContactActivity.class);
-                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
-                    startActivity(intent);
-                    return;
-                }
-                binding.loginError.setText(R.string.login_invalid_details);
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                wsAPI = retrofit.create(WebServiceAPI.class);
+                UserAPI userAPI = new UserAPI();
+                Call<String> call = wsAPI.loginGetToken(new User(binding.loginUserName.getText().toString(),
+                        binding.loginPassword.getText().toString()));
+
+                Intent i = new Intent(LoginActivity.this, BackgroundService.class);
+                i.putExtra("username", binding.loginUserName.getText().toString());
+                i.putExtra("password", binding.loginPassword.getText().toString());
+                startService(i);
+
+
+
+                Intent in = new Intent(this, ContactActivity.class);
+                in.putExtra("UserName", binding.loginUserName.getText().toString());
+                startActivity(in);
+                Log.d("coral", "start");
                 return;
             }
-            binding.loginError.setText(R.string.login_required_username);
+
+            binding.loginError.setText(R.string.login_invalid_details);
+
+
         });
 
 
