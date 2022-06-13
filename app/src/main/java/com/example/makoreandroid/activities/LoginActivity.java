@@ -14,7 +14,7 @@ import com.example.makoreandroid.repositories.UsersRepository;
 
 // Login
 public class LoginActivity extends AppCompatActivity {
-    private ActivityLoginBinding binding;
+    public ActivityLoginBinding binding;
     private UsersRepository usersRepository;
 
 
@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         usersRepository = new UsersRepository();
+
         setContentView(binding.getRoot());
 
         if (getIntent() != null) {
@@ -45,14 +46,11 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.loginBtnLogin.setOnClickListener(v -> {
             if (binding.loginUserName.getText() != null) {
-                usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString(), this);
-//                if (token != null) {
-//                    Intent intent = new Intent(this, ContactActivity.class);
-//                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
-//                    startActivity(intent);
-//                    return;
-//                }
+                usersRepository.getTokenLogin(binding.loginUserName.getText().toString(),
+                        binding.loginPassword.getText().toString(), this);
+                return;
             }
+
             binding.loginError.setText(R.string.login_required_username);
         });
 

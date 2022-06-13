@@ -33,4 +33,13 @@
     <string name="login_invalid_details">Invalid details. Not registerd? Sign up now!</string>
     <string name="login_required_username">UserName is required</string>
     <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
+    <string name="register_have_username">UserName is required!</string>
+    <string name="register_have_pass">Password is required!</string>
+    <string name="register_pass_not_equal">Passwords are not the same</string>
+    <string name="register_8digits_pass">Password must contain at least eight characters, including digits and letters</string>
+    <string name="register_username_have_chars">Username must contain at least one character</string>
+    <string name="register_username_taken">Username already taken</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_server">Server</string>
+    <string name="settings_nickname">Nickname</string>
 </resources>

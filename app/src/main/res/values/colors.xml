@@ -8,8 +8,20 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="very_light_purple">#E4D8E6</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="grey">#B5B5B5</color>
     <color name="red">#FF0000</color>
+    <color name="background_1">#C68BE6</color>
+    <color name="background_2">#A17BE6</color>
+    <color name="background_3">#AE79E1</color>
+    <color name="btn_1">#A47D3AB7</color>
+    <color name="btn_2">#D07D3AB7</color>
+    <color name="btn_3">#7D3AB7</color>
+    <color name="whiteish">#f5f5f5</color>
+    <color name="whiteish2">#e0e0e0</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="chat_settings_bar">#9E73A8</color>
+    <color name="icon_color">#ff333333</color>
 </resources>
