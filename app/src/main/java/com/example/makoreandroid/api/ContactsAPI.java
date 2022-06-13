@@ -40,12 +40,28 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
+    public void setContactsApi(String server) {
+        String[] newServer = server.split(":");
+        String url;
+        if(newServer.length == 1)
+            url = "http://10.0.2.2:"+ server +"/api/";
+        else
+            url = "http://10.0.2.2:"+ newServer[1] +"/api/";
+        this.retrofit = new Retrofit.Builder().baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        webServiceAPI = retrofit.create(WebServiceAPI.class);
+    }
+
     public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter) {
         Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
             public void onResponse(Call<List<RemoteUser>> call, Response<List<RemoteUser>> response) {
                 List<RemoteUser> remotes = response.body();
+                for(RemoteUser r : remotes) {
+                    if(r.getLastdate()!= null)
+                        r.setLastdate(r.getLastdate().substring(11, 16));
+                }
                 remote.addAll(remotes);
                 adapter.setAdapter(remote);
             }
@@ -74,12 +90,15 @@ public class ContactsAPI {
                         String name = nickName.getText().toString();
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
-                        addNewContact(token ,RemoteName, nickName, server, remote, adapter, activity, dialog, name);
+                        addNewContact(token ,RemoteName, nickName, server, remote,
+                                adapter, activity, dialog, name);
                     } else {
+                        error.setText(display[8]);
                         String name = nickName.getText().toString();
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
-                        sendInvitation(RemoteName, nickName ,server, remote, adapter, activity, dialog, name, userName);
+                        sendInvitation(token ,RemoteName, nickName ,server, remote, adapter,
+                                activity, dialog, name, userName, error, display);
                     }
                 }
             }
@@ -101,8 +120,8 @@ public class ContactsAPI {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
                 adapter.setAdapter(remote);
-                Toast.makeText(activity, "New Contact has been added",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity.getBaseContext(), "New Contact has been added",
+                                Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 RemoteName.setText("");
                 server.setText("");
@@ -116,27 +135,25 @@ public class ContactsAPI {
         });
     }
 
-    public void sendInvitation(EditText RemoteName, EditText nickName ,EditText server,
+    public void sendInvitation(String token, EditText RemoteName, EditText nickName ,EditText server,
                                ArrayList<RemoteUser>remote, CustomListAdapter adapter,
-                               AppCompatActivity activity, AlertDialog dialog, String name, String userName) {
+                               AppCompatActivity activity, AlertDialog dialog, String name, String userName,
+                               TextView error, String []display) {
         InvitationJson invitation = new InvitationJson(userName, RemoteName.getText().toString(), "localhost:5018");
+        setContactsApi(server.getText().toString());
         Call<Void>call = webServiceAPI.invitation(invitation);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
-                adapter.setAdapter(remote);
-                Toast.makeText(activity, "New Contact has been added",
-                        Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-                RemoteName.setText("");
-                server.setText("");
-                nickName.setText("");
+                setContactsApi("localhost:5018");
+                addNewContact(token ,RemoteName, nickName, server, remote,
+                        adapter, activity, dialog, name);
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-
+                error.setText(display[7]);
+                setContactsApi("localhost:5018");
             }
         });
     }

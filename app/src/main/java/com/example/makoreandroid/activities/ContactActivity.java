@@ -37,7 +37,8 @@ public class ContactActivity extends AppCompatActivity {
             "There is no such user!",
             "This server could not be reached",
             "This may take awhile. Please don't Add again",
-            "UserName is required!", "Server is required!"};
+            "UserName is required!", "Server is required!",
+            "This server could not be reach!", "It might take awhile!"};
     private FloatingActionButton addBtn;
     private ListView listView;
     private CustomListAdapter adapter;
