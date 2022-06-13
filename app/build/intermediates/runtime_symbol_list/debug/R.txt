@@ -2625,6 +2625,7 @@ int id SHOW_PROGRESS 0x7f0a000d
 int id SYM 0x7f0a000e
 int id TOP_END 0x7f0a000f
 int id TOP_START 0x7f0a0010
+int id User_name_title 0x7f0a021f
 int id accelerate 0x7f0a0011
 int id accessibility_action_clickable_span 0x7f0a0012
 int id accessibility_custom_action_0 0x7f0a0013
@@ -3242,6 +3243,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
+int layout action_bar_layout 0x7f0d0092
 int layout activity_contacts_list 0x7f0d001c
 int layout activity_conversation 0x7f0d001d
 int layout activity_login 0x7f0d001e

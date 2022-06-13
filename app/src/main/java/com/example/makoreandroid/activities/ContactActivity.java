@@ -51,12 +51,15 @@ public class ContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_contacts_list);
+
+        //take the jwt
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
+
+        //add button and onclick listener
         addBtn = findViewById(R.id.hey);
         buildDialog();
         Intent i = getIntent();
-        UserName = i.getStringExtra("UserName");
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,16 +68,29 @@ public class ContactActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        //actionbar customization
+        UserName = i.getStringExtra("UserName");
         ActionBar actionBar;
         actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#edc3f7"));
         actionBar.setBackgroundDrawable(colorDrawable);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
+        TextView title = findViewById(R.id.User_name_title);
+        String newTitle = "Welcome " + UserName + "!";
+        title.setText(newTitle);
+
+        //contacts display and get request from the webAPI
         listView = findViewById(R.id.list_view);
         remote = new ArrayList<RemoteUser>();
         adapter = new CustomListAdapter(getApplicationContext(), remote);
         contactsAPI.get(token, remote, adapter);
         listView.setAdapter(adapter);
+
+        //set every contact clickable and define the onItemClick
         listView.setClickable(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -142,7 +158,6 @@ public class ContactActivity extends AppCompatActivity {
                     error.setText(displayingError[6]);
                     return;
                 }
-
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
                         NickName, adapter, ContactActivity.this, dialog, UserName);
             }
