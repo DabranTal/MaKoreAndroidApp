@@ -13,6 +13,7 @@ color grey
 color light_grey
 color mk_background
 color purple_100
+color purple_150
 color purple_200
 color purple_500
 color purple_700

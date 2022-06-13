@@ -1,31 +1,23 @@
 [
     {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\pop_up.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\pop_up.xml"
-    },
-    {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_settings.xml",
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\custom_list_item.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\custom_list_item.xml"
+        "merged": "com.example.makoreandroid.app-mergeDebugResources-33:/layout/sender_message.xml",
+        "source": "com.example.makoreandroid.app-main-36:/layout/sender_message.xml"
     },
     {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\sender_message.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\sender_message.xml"
-    },
-    {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_register.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_register.xml"
+        "merged": "com.example.makoreandroid.app-mergeDebugResources-33:/layout/partner_message.xml",
+        "source": "com.example.makoreandroid.app-main-36:/layout/partner_message.xml"
     },
     {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\partner_message.xml",
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\partner_message.xml"
     },
     {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\custom_settings_item.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\custom_settings_item.xml"
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_register.xml"
     },
     {
         "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_login.xml",
@@ -36,11 +28,23 @@
         "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_contacts_list.xml",
-        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_contacts_list.xml"
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\pop_up.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\pop_up.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-33:/layout/activity_conversation.xml",
-        "source": "com.example.makoreandroid.app-main-36:/layout/activity_conversation.xml"
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\custom_list_item.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\custom_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\sender_message.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\sender_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\custom_settings_item.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\custom_settings_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-33:\\layout\\activity_contacts_list.xml",
+        "source": "C:\\Users\\dabra\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-36:\\layout\\activity_contacts_list.xml"
     }
 ]

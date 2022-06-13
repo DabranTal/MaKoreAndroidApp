@@ -26,11 +26,12 @@
         <item>reply_all</item>
     </string-array>
     <color name="black">#FF000000</color>
-    <color name="gray_700">#808080</color>
+    <color name="gray_700">#918E8E</color>
     <color name="grey">#B5B5B5</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="mk_background">#FFFFFF</color>
     <color name="purple_100">#edc3f7</color>
+    <color name="purple_150">#BB97E8</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
