@@ -54,6 +54,11 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
         notifyDataSetChanged();
     }
 
+    public void copyMessagesTo(List<Message> m) {
+        m = messages;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         if (messages != null) {

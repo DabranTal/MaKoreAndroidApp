@@ -19,10 +19,6 @@ public interface WebServiceAPI {
     @GET("contacts/{id}/messages")
     Call<List<Message>> getMessages(@Path("id") String id, @Header("Authorization") String jwt);
 
-
-    @POST("contacts/{id}/messages")
-    Call<Void> createMessage(@Path("id") String id, @Header("Authorization") String jwt, @Body String content);
-
     @POST("transfer")
     Call<Void> transferMessage(@Body SendingMessageJson message);
 
