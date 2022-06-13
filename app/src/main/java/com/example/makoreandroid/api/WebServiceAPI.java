@@ -18,16 +18,23 @@ public interface WebServiceAPI {
     @GET("contacts/Tal/messages")
     Call<List<Message>> getMessages(@Header("Authorization") String jwt);
 
-    @GET("contacts")
-    Call<List<RemoteUser>> getContacts(@Header("Authorization") String jwt);
-
-    @POST("connection/login")
-    Call<String> getJWT(@Body User user);
 
     @POST("messages")
     Call<Void> createMessage(@Body Message message);
 
     @DELETE("messages/{id}")
     Call<Void> deleteMessage(@Path("id") int id);
+
+    @GET("contacts")
+    Call<List<RemoteUser>> getContacts(@Header("Authorization") String jwt);
+
+    @POST("connection/login")
+    Call<String> loginGetToken(@Body User user);
+
+    @POST("contacts")
+    Call<Void> createUser(@Body User user);
+
+    @DELETE("contacts/{id}")
+    Call<Void> deleteUser(@Path(value = "username", encoded = true) String username);
 
 }

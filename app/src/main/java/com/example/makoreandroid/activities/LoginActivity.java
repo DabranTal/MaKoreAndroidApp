@@ -7,12 +7,16 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.makoreandroid.R;
 import com.example.makoreandroid.databinding.ActivityLoginBinding;
+import com.example.makoreandroid.repositories.UsersRepository;
 
 
 // Login
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
+    private UsersRepository usersRepository;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +25,12 @@ public class LoginActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-
-
+        usersRepository = new UsersRepository();
         setContentView(binding.getRoot());
 
         if (getIntent() != null) {
             if (getIntent().getExtras() != null) {
                 String userName = getIntent().getExtras().getString("UserName");
-                //User user = userDao.get(userName);
                 binding.loginUserName.setText(userName);
             }
         }
@@ -42,9 +44,16 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.loginBtnLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ContactActivity.class);
-            intent.putExtra("UserName" ,binding.loginUserName.getText().toString());
-            startActivity(intent);
+            if (binding.loginUserName.getText() != null) {
+                usersRepository.getTokenLogin(binding.loginUserName.getText().toString(), binding.loginPassword.getText().toString(), this);
+//                if (token != null) {
+//                    Intent intent = new Intent(this, ContactActivity.class);
+//                    intent.putExtra("UserName", binding.loginUserName.getText().toString());
+//                    startActivity(intent);
+//                    return;
+//                }
+            }
+            binding.loginError.setText(R.string.login_required_username);
         });
 
 

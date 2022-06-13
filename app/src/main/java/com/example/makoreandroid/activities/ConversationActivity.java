@@ -24,9 +24,6 @@ public class ConversationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        MessageAPI messageAPI = new MessageAPI();
-        messageAPI.get();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -38,15 +35,10 @@ public class ConversationActivity extends AppCompatActivity {
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
         List<Message> messages = new ArrayList<>();
-        messages.add(new Message(0, "hi", "20:40", true));
-        messages.add(new Message(1, "friend", "20:42", true));
-        messages.add(new Message(0, "hi", "20:43", true));
-        messages.add(new Message(1, "friend", "20:44", true));
-        messages.add(new Message(0, "hi", "20:45", true));
-        messages.add(new Message(1, "friend", "20:46", true));
-        messages.add(new Message(0, "hi", "20:40", true));
-        messages.add(new Message(1, "friend", "20:42", true));
-        adapter.setMessages(messages);
+        MessageAPI messageAPI = new MessageAPI();
+        // get messages for current conversation.
+        messageAPI.get(adapter);
+        //adapter.setMessages(messages);
         if (messages.size() > 1)
             lstMessages.scrollToPosition(messages.size() - 1);
 

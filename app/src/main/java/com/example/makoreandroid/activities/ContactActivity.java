@@ -2,8 +2,10 @@ package com.example.makoreandroid.activities;
 
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -61,8 +63,8 @@ public class ContactActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContactsAPI contactsAPI = new ContactsAPI();
-                contactsAPI.get();
+                SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+                String token = prefs.getString("token","");
                 dialog.show();
             }
         });
@@ -74,6 +76,8 @@ public class ContactActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_view);
         remote = new ArrayList<RemoteUser>(Rdao.index());
         adapter = new CustomListAdapter(getApplicationContext(), remote);
+        ContactsAPI contactsAPI = new ContactsAPI();
+        contactsAPI.get(this);
         listView.setAdapter(adapter);
         listView.setClickable(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
