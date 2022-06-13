@@ -1,29 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/light_grey"
     android:layout_height="match_parent"
-    tools:context=".activities.ContactActivity"
-    android:background="@color/light_grey">
+    android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/list_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem=""/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/hey"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/purple_100"
-        android:contentDescription="@string/add"
-        android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:weightSum="4"
+        android:background="@drawable/border"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/settings_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="15sp"
+            android:src="@drawable/ic_paint" />
+
+        <TextView
+            android:id="@+id/setting_option_theme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_weight="4"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/settings_theme" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/last_message"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/gray_700"-->
+<!--            android:textSize="10sp"-->
+<!--            tools:text="Light" />-->
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/settings_next_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/add"
+            android:padding="5dp"
+            android:text="Light"
+            android:textOff="Light"
+            android:textOn="Dark"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/settings_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="15sp"
+            android:src="@drawable/ic_server" />
+
+        <TextView
+            android:id="@+id/setting_option_server"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_weight="4"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/settings_server" />
+
+
+        <ImageButton
+            android:id="@+id/settings_next_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:padding="15sp"
+            android:src="@drawable/ic_go_option_settings_purple" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/settings_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:padding="15sp"
+            android:src="@drawable/ic_nick" />
+
+        <TextView
+            android:id="@+id/setting_option_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_weight="4"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/settings_nickname" />
+
+
+        <ImageButton
+            android:id="@+id/settings_next_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:padding="15sp"
+            android:src="@drawable/ic_go_option_settings_purple" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

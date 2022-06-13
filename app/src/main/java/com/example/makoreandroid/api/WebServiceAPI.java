@@ -31,8 +31,8 @@ public interface WebServiceAPI {
     @POST("connection/login")
     Call<String> loginGetToken(@Body User user);
 
-    @POST("contacts")
-    Call<Void> createUser(@Body User user);
+    @POST("connection/register")
+    Call<String> registerGetTokenNewUser(@Body User user);
 
     @DELETE("contacts/{id}")
     Call<Void> deleteUser(@Path(value = "username", encoded = true) String username);

@@ -4,10 +4,6 @@
         "source": "com.example.makoreandroid.app-main-36:/layout/activity_register.xml"
     },
     {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-33:/layout/custom_settings_item.xml",
-        "source": "com.example.makoreandroid.app-main-36:/layout/custom_settings_item.xml"
-    },
-    {
         "merged": "com.example.makoreandroid.app-mergeDebugResources-33:/layout/pop_up.xml",
         "source": "com.example.makoreandroid.app-main-36:/layout/pop_up.xml"
     },
