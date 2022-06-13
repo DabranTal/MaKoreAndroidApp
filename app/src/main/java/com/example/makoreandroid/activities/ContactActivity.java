@@ -84,9 +84,12 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
+                intent.putExtra("UserName", intent.getStringExtra("UserName"));
                 intent.putExtra("friendID", remote.get(i).getUserName());
                 intent.putExtra("friendNickName", remote.get(i).getNickName());
                 intent.putExtra("friendServer", remote.get(i).getServer());
+                intent.putExtra("friendAvatar", remote.get(i).getAvatar());
+
                 startActivity(intent);
             }
         });

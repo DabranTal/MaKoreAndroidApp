@@ -1,14 +1,10 @@
 package com.example.makoreandroid.api;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.entities.Message;
+import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 
 import java.util.List;
 
@@ -35,10 +31,9 @@ public class MessageAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(MessageListAdapter adapter, AppCompatActivity activity) {
-        SharedPreferences prefs = activity.getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        String token = prefs.getString("token","");
-        Call<List<Message>> call = webServiceAPI.getMessages("Bearer " + token);
+    public void get(MessageListAdapter adapter, String token, String partnerName) {
+
+        Call<List<Message>> call = webServiceAPI.getMessages(partnerName, "Bearer " + token);
         call.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
@@ -52,5 +47,12 @@ public class MessageAPI {
 
             }
         });
+    }
+
+    public void post(String partnerName, String token, String content) {
+        Call<Void> call = webServiceAPI.createMessage(partnerName, "Bearer " + token, content);
+    }
+    public void transfer(SendingMessageJson newMessage) {
+        Call<Void> call = webServiceAPI.transferMessage(newMessage);
     }
 }

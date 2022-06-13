@@ -2542,6 +2542,7 @@ drawable et_custom
 drawable gradient_drawable
 drawable ic_add
 drawable ic_arrow_down_24dp
+drawable ic_back_light
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2712,6 +2713,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_back
 id button_send
 id cache_measures
 id callMeasure
@@ -2968,6 +2970,8 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id partner_name
+id partner_profile_image
 id partner_tail
 id password_toggle
 id path
