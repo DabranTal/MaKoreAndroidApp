@@ -4,6 +4,7 @@ import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.entities.Message;
+import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 
 import java.util.List;
 
@@ -30,8 +31,9 @@ public class MessageAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(MessageListAdapter adapter) {
-        Call<List<Message>> call = webServiceAPI.getMessages("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlsidGFsIiwiMTIvMDYvMjAyMiAxMjowMToyOSJdLCJqdGkiOiI5MjExNjM0Ni1hZmNmLTQ4YzgtYTI4OS01ZmVhZDdlY2I2MDYiLCJOYW1lSWRlbnRpZmllciI6IklkbyIsImV4cCI6MTY1NTAzNjQ4OSwiaXNzIjoiQ29yYWwiLCJhdWQiOiJJZG8ifQ.il0-p7wOsOm5-cS0og6LIkFThDuH3qA5eB-lZhujgno");
+    public void get(MessageListAdapter adapter, String token, String partnerName) {
+
+        Call<List<Message>> call = webServiceAPI.getMessages(partnerName, "Bearer " + token);
         call.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
@@ -45,5 +47,12 @@ public class MessageAPI {
 
             }
         });
+    }
+
+    public void post(String partnerName, String token, String content) {
+        Call<Void> call = webServiceAPI.createMessage(partnerName, "Bearer " + token, content);
+    }
+    public void transfer(SendingMessageJson newMessage) {
+        Call<Void> call = webServiceAPI.transferMessage(newMessage);
     }
 }

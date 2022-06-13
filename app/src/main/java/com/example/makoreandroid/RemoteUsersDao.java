@@ -16,7 +16,7 @@ public interface RemoteUsersDao {
     @Query("SELECT * FROM remoteuser")
     List<RemoteUser>index();
 
-    @Query("SELECT * FROM remoteuser WHERE userName = :userName")
+    @Query("SELECT * FROM remoteuser WHERE id = :userName")
     RemoteUser get(String userName);
 
     @Insert

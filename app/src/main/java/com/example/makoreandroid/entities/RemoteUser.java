@@ -9,32 +9,22 @@ import com.example.makoreandroid.R;
 @Entity
 public class RemoteUser {
     private int avatar = R.drawable.avatar;
-    private String nickName;
+    private String name;
     @PrimaryKey
     @NonNull
-    private String userName;
+    private String id;
     private String server;
-    private String lastMessage;
-    private String time;
-
-    public String getLocalUser() {
-        return localUser;
-    }
-
-    public void setLocalUser(String localUser) {
-        this.localUser = localUser;
-    }
-
-    private String localUser;
-    //public Conversation Conversation;
+    private String last;
+    private String lastdate;
 
 
-    public RemoteUser(String nickName, @NonNull String UserName, String lastMessage, String Time, String Server) {
-        this.nickName = nickName;
-        this.userName = UserName;
+
+    public RemoteUser(String name, @NonNull String UserName, String last, String lastdate, String Server) {
+        this.name = name;
+        this.id = UserName;
         this.server = Server;
-        this.lastMessage = lastMessage;
-        this.time = Time;
+        this.last = last;
+        this.lastdate = lastdate;
     }
 
     public RemoteUser() {}
@@ -43,21 +33,21 @@ public class RemoteUser {
         return this.avatar;
     }
 
-    public String getTime() {
-        return this.time;
+    public String getLastdate() {
+        return this.lastdate;
     }
 
     @NonNull
-    public String getUserName() {
-        return this.userName;
+    public String getId() {
+        return this.id;
     }
 
-    public String getNickName() {
-        return this.nickName;
+    public String getName() {
+        return this.name;
     }
 
-    public String getLastMessage() {
-        return this.lastMessage;
+    public String getLast() {
+        return this.last;
     }
 
     public String getServer() {
@@ -68,24 +58,24 @@ public class RemoteUser {
         this.avatar = i;
     }
 
-    public void setNickName(String nick) {
-        this.nickName = nick;
+    public void setName(String nick) {
+        this.name = nick;
     }
 
-    public void setUserName(@NonNull String user) {
-        this.userName = user;
+    public void setId(@NonNull String user) {
+        this.id = user;
     }
 
     public void setServer(String server) {
         this.server = server;
     }
 
-    public void setLastMessage(String lastMessage) {
-        this.lastMessage = lastMessage;
+    public void setLast(String last) {
+        this.last = last;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setLastdate(String lastdate) {
+        this.lastdate = lastdate;
     }
 
 

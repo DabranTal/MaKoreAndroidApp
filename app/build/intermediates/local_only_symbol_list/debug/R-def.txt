@@ -29,6 +29,7 @@ drawable conversation_background_android
 drawable et_custom
 drawable gradient_drawable
 drawable ic_add
+drawable ic_back_light
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_more_vert_dark
@@ -44,7 +45,7 @@ id AddNickName
 id AddServer
 id AddUserName
 id action_search
-id action_settings
+id button_back
 id button_send
 id card_partner_message
 id card_sender_message
@@ -64,6 +65,8 @@ id login_error
 id login_password
 id login_register
 id login_userName
+id partner_name
+id partner_profile_image
 id partner_tail
 id profile_image
 id recycler_conversaion

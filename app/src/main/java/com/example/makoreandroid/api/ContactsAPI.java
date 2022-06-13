@@ -1,14 +1,20 @@
 package com.example.makoreandroid.api;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.app.AlertDialog;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
+import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.entities.RemoteUser;
+import com.example.makoreandroid.jsonfiles.InvitationJson;
+import com.example.makoreandroid.jsonfiles.NewContactJson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,25 +40,102 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(AppCompatActivity activity) {
-        SharedPreferences prefs = activity.getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        String token = prefs.getString("token","");
+    public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter) {
         Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
             public void onResponse(Call<List<RemoteUser>> call, Response<List<RemoteUser>> response) {
-
                 List<RemoteUser> remotes = response.body();
-//                new Thread(() -> {
-//                    dao.clear();
-//                    dao.insertList(response.body());
-//                    postListData.postValue(dao.get());
-//                }).start();
-//            }
+                remote.addAll(remotes);
+                adapter.setAdapter(remote);
             }
 
             @Override
             public void onFailure(Call<List<RemoteUser>> call, Throwable t) {
+            }
+        });
+    }
+
+    public void validation(String token, EditText RemoteName, EditText server, TextView error, String []display,
+                           ArrayList<RemoteUser>remote, EditText nickName, CustomListAdapter adapter,
+                           AppCompatActivity activity, AlertDialog dialog, String userName) {
+        Call<String>call = webServiceAPI.doValidation(RemoteName.getText().toString(), server.getText().toString(), "Bearer " + token);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.raw().code() == 200) {
+                    if(response.body().equals("2"))
+                        error.setText(display[1]);
+                    else if(response.body().equals("3"))
+                        error.setText(display[0]);
+                    else if(response.body().equals("4"))
+                        error.setText(display[2]);
+                    else if(response.body().equals("1")) {
+                        String name = nickName.getText().toString();
+                        if(name.equals(""))
+                            name = RemoteName.getText().toString();
+                        addNewContact(token ,RemoteName, nickName, server, remote, adapter, activity, dialog, name);
+                    } else {
+                        String name = nickName.getText().toString();
+                        if(name.equals(""))
+                            name = RemoteName.getText().toString();
+                        sendInvitation(RemoteName, nickName ,server, remote, adapter, activity, dialog, name, userName);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
+
+    }
+    public void addNewContact(String  token, EditText RemoteName,EditText nickName ,EditText server
+                              ,ArrayList<RemoteUser>remote, CustomListAdapter adapter,
+                              AppCompatActivity activity, AlertDialog dialog, String name) {
+        NewContactJson contactJson = new NewContactJson(RemoteName.getText().toString(),
+                nickName.getText().toString(), server.getText().toString());
+        Call<Void> call = webServiceAPI.addNewContact("Bearer " + token, contactJson);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
+                adapter.setAdapter(remote);
+                Toast.makeText(activity, "New Contact has been added",
+                        Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                RemoteName.setText("");
+                server.setText("");
+                nickName.setText("");
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void sendInvitation(EditText RemoteName, EditText nickName ,EditText server,
+                               ArrayList<RemoteUser>remote, CustomListAdapter adapter,
+                               AppCompatActivity activity, AlertDialog dialog, String name, String userName) {
+        InvitationJson invitation = new InvitationJson(userName, RemoteName.getText().toString(), "localhost:5018");
+        Call<Void>call = webServiceAPI.invitation(invitation);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
+                adapter.setAdapter(remote);
+                Toast.makeText(activity, "New Contact has been added",
+                        Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                RemoteName.setText("");
+                server.setText("");
+                nickName.setText("");
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
 
             }
         });
