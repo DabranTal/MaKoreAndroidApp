@@ -62,6 +62,7 @@ public class ContactsAPI {
                     if(r.getLastdate()!= null)
                         r.setLastdate(r.getLastdate().substring(11, 16));
                 }
+                remote.clear();
                 remote.addAll(remotes);
                 adapter.setAdapter(remote);
             }

@@ -167,6 +167,15 @@ public class ContactActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("token","");
+        contactsAPI.get(token, remote, adapter);
+        listView.setAdapter(adapter);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
