@@ -41,14 +41,7 @@ public class ContactsAPI {
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
             public void onResponse(Call<List<RemoteUser>> call, Response<List<RemoteUser>> response) {
-
                 List<RemoteUser> remotes = response.body();
-//                new Thread(() -> {
-//                    dao.clear();
-//                    dao.insertList(response.body());
-//                    postListData.postValue(dao.get());
-//                }).start();
-//            }
             }
 
             @Override

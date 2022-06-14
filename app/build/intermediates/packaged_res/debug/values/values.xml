@@ -61,11 +61,17 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="default_web_client_id" translatable="false">483769908891-3gth8jsb4807smnctc64rpl94fb0ufn9.apps.googleusercontent.com</string>
     <string name="enter_nickname">Enter NickName</string>
     <string name="enter_server_ip">Enter Server IP</string>
     <string name="enter_user_name">Enter User Name</string>
     <string name="enter_username">Enter UserName</string>
     <string name="fake_chat_string">hey</string>
+    <string name="gcm_defaultSenderId" translatable="false">483769908891</string>
+    <string name="google_api_key" translatable="false">AIzaSyCpAecKTddO6zo37Ri1ckzNawcjRi4bEb0</string>
+    <string name="google_app_id" translatable="false">1:483769908891:android:ca566c976e14df5923503e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCpAecKTddO6zo37Ri1ckzNawcjRi4bEb0</string>
+    <string name="google_storage_bucket" translatable="false">makoreandroid.appspot.com</string>
     <string name="login_btnLogin">Login</string>
     <string name="login_invalid_details">Invalid details. Not registerd? Sign up now!</string>
     <string name="login_login">Login</string>
@@ -74,6 +80,7 @@
     <string name="login_userName">UserName</string>
     <string name="messages_header">Messages</string>
     <string name="new_message_here">New message here...</string>
+    <string name="project_id" translatable="false">makoreandroid</string>
     <string name="register_8digits_pass">Password must contain at least eight characters, including digits and letters</string>
     <string name="register_VPassword">Password Again</string>
     <string name="register_btnRegister">Register</string>

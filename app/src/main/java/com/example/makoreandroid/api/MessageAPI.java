@@ -19,14 +19,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MessageAPI {
-    //private MutableLiveData<List<Message>> postListData;
     //private PostDao dao;
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
 
-    //    public MessageAPI(MutableLiveData<List<Message>> postListData, PostDao dao) {
-//        this.postListData = postListData;
-//        this.dao = dao;
+
     public MessageAPI() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))

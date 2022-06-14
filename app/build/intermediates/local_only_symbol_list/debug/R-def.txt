@@ -141,11 +141,17 @@ string app_name_clean
 string attachment_summary_off
 string attachment_summary_on
 string attachment_title
+string default_web_client_id
 string enter_nickname
 string enter_server_ip
 string enter_user_name
 string enter_username
 string fake_chat_string
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string login_btnLogin
 string login_invalid_details
 string login_login
@@ -154,6 +160,7 @@ string login_required_username
 string login_userName
 string messages_header
 string new_message_here
+string project_id
 string register_8digits_pass
 string register_VPassword
 string register_btnRegister

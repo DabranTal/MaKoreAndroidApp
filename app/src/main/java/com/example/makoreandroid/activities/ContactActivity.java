@@ -30,8 +30,12 @@ import com.example.makoreandroid.RemoteUserDB;
 import com.example.makoreandroid.RemoteUsersDao;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
+import com.example.makoreandroid.api.FireBaseAPI;
 import com.example.makoreandroid.entities.RemoteUser;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
 
@@ -92,6 +96,17 @@ public class ContactActivity extends AppCompatActivity {
                 intent.putExtra("friendServer", remote.get(i).getServer());
                 intent.putExtra("friendAvatar", remote.get(i).getAvatar());
                 startActivity(intent);
+            }
+        });
+        // send Server Firebase Token
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ContactActivity.this, new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                Intent myIntent = getIntent();
+                String fireBaseToken = instanceIdResult.getToken();
+                // Call FireBaseMap on SERVER
+                FireBaseAPI fireBaseAPI = new FireBaseAPI();
+                fireBaseAPI.setFireBaseToken(myIntent.getStringExtra("UserName"), fireBaseToken);
             }
         });
 
@@ -223,4 +238,5 @@ public class ContactActivity extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
+
 }

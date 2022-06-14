@@ -3,6 +3,7 @@ package com.example.makoreandroid.api;
 import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.example.makoreandroid.entities.User;
+import com.example.makoreandroid.jsonfiles.FireBaseJson;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 
 import java.util.List;
@@ -21,6 +22,10 @@ public interface WebServiceAPI {
 
     @POST("transfer")
     Call<Void> transferMessage(@Body SendingMessageJson message);
+
+    @POST("firebase")
+    Call<Void> addFirebaseToken(@Body FireBaseJson token);
+
 
     @DELETE("messages/{id}")
     Call<Void> deleteMessage(@Path("id") int id);

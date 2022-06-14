@@ -1,7 +1,9 @@
 package com.example.makoreandroid.activities;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +29,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConversationActivity extends AppCompatActivity {
+    String token;
+    String partnerName;
+    RecyclerView lstMessages;
+    MessageListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +42,12 @@ public class ConversationActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_conversation);
         Intent intent = getIntent();
-        String partnerName = intent.getStringExtra("friendID");
+        partnerName = intent.getStringExtra("friendID");
 
 
         // get JWT
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        String token = prefs.getString("token","");
+        token = prefs.getString("token","");
 
         // init partner props bar
         TextView partnerNameTV = findViewById(R.id.partner_name);
@@ -49,8 +56,8 @@ public class ConversationActivity extends AppCompatActivity {
         imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
 
         // init messages RecyclerView
-        RecyclerView lstMessages = findViewById(R.id.recycler_conversaion);
-        final MessageListAdapter adapter = new MessageListAdapter(this);
+        lstMessages = findViewById(R.id.recycler_conversaion);
+        adapter = new MessageListAdapter(this);
         lstMessages.setAdapter(adapter);
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
@@ -84,4 +91,30 @@ public class ConversationActivity extends AppCompatActivity {
         btnBack.setOnClickListener(view-> finish());
 
     }
+
+    /* try */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(activityReceiver);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // registering BroadcastReceiver
+        if (activityReceiver != null) {
+            IntentFilter intentFilter = new IntentFilter("ACTION_ACTIVITY");
+            registerReceiver(activityReceiver, intentFilter);
+        }
+    }
+
+    BroadcastReceiver activityReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //get messages for conversation
+            MessageAPI messageAPI = new MessageAPI();
+            messageAPI.get(adapter, token, partnerName, lstMessages);
+        }
+    };
 }

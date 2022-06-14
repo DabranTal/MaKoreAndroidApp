@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "483769908891",
+    "project_id": "makoreandroid",
+    "storage_bucket": "makoreandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483769908891:android:ca566c976e14df5923503e",
+        "android_client_info": {
+          "package_name": "com.example.makoreandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483769908891-3gth8jsb4807smnctc64rpl94fb0ufn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpAecKTddO6zo37Ri1ckzNawcjRi4bEb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483769908891-3gth8jsb4807smnctc64rpl94fb0ufn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
