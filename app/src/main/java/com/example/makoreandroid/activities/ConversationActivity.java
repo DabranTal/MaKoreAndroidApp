@@ -27,7 +27,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 public class ConversationActivity extends AppCompatActivity {
 
@@ -78,9 +77,7 @@ public class ConversationActivity extends AppCompatActivity {
         FloatingActionButton btnSend = findViewById(R.id.button_send);
         btnSend.setOnClickListener(view->{
             EditText et = findViewById(R.id.typing_board);
-            Random rand = new Random();
-            int rand_id = rand.nextInt(2147483647);
-            Message newMessage = new Message(rand_id,et.getText().toString(),"21:40",true);
+            Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
             messages.add(newMessage);
             // post request to save new message
             SendingMessageJson sendingMessageJson = new SendingMessageJson(

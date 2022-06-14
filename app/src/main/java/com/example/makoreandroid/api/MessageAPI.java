@@ -46,7 +46,7 @@ public class MessageAPI {
                     try {
                         dao.insert(m);
                     } catch (Exception e) {
-                        break;
+
                     }
                 }
                 adapter.setMessages(messages);
@@ -69,12 +69,6 @@ public class MessageAPI {
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                /*
-                message.setReciver(partnerName);
-                message.setSender(userName);
-                dao.insert(message);
-
-                 */
                 get(adapter, token, partnerName, view, dao, userName);
             }
 
