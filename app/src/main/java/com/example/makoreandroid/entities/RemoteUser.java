@@ -1,5 +1,6 @@
 package com.example.makoreandroid.entities;
 
+
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 

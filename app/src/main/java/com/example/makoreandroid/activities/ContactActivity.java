@@ -22,10 +22,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
+import com.example.makoreandroid.dao.RemoteUserDao;
+import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -44,10 +47,12 @@ public class ContactActivity extends AppCompatActivity {
     private CustomListAdapter adapter;
     private AlertDialog dialog;
     private ArrayList<RemoteUser> remote;
-    ContactsAPI contactsAPI = new ContactsAPI();
-    TextView error;
-    String UserName;
-    ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
+    private ContactsAPI contactsAPI = new ContactsAPI();
+    private TextView error;
+    private String UserName;
+    private ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
+    private RemoteUserDB db;
+    private RemoteUserDao dao;
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -56,6 +61,10 @@ public class ContactActivity extends AppCompatActivity {
         //take the jwt
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
+
+        //room
+        db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class, "RemoteUserDB").
+                allowMainThreadQueries().build();
 
         //add button and onclick listener
         addBtn = findViewById(R.id.hey);
