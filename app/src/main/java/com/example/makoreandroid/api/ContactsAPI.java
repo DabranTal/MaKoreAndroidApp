@@ -15,6 +15,7 @@ import com.example.makoreandroid.jsonfiles.InvitationJson;
 import com.example.makoreandroid.jsonfiles.NewContactJson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -61,9 +62,12 @@ public class ContactsAPI {
                 for(RemoteUser r : remotes) {
                     if(r.getLastdate()!= null)
                         r.setLastdate(r.getLastdate().substring(11, 16));
+                    else
+                        r.setLastdate("");
                 }
                 remote.clear();
                 remote.addAll(remotes);
+                Collections.sort(remote,(o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
                 r.clear();
                 r.addAll(remote);
                 adapter.setAdapter(remote);

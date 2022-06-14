@@ -2,20 +2,24 @@ package com.example.makoreandroid.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 import com.example.makoreandroid.R;
 
-@Entity
+@Entity(primaryKeys = {"id", "localuser"})
 public class RemoteUser {
     private int avatar = R.drawable.avatar;
     private String name;
-    @PrimaryKey
     @NonNull
     private String id;
     private String server;
     private String last;
     private String lastdate;
+
+    public String getLocaluser() {
+        return localuser;
+    }
+    @NonNull
+    private String localuser;
 
 
 
@@ -28,6 +32,11 @@ public class RemoteUser {
     }
 
     public RemoteUser() {}
+
+
+    public void setLocaluser(String s) {
+        this.localuser = s;
+    }
 
     public int getAvatar() {
         return this.avatar;
