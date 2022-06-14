@@ -74,7 +74,8 @@ public class ContactActivity extends AppCompatActivity {
         ActionBar actionBar;
         actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#edc3f7"));
+                = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
+
         actionBar.setBackgroundDrawable(colorDrawable);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -95,8 +96,9 @@ public class ContactActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent myIntent = getIntent();
                 Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
-                intent.putExtra("UserName", intent.getStringExtra("UserName"));
+                intent.putExtra("UserName", myIntent.getStringExtra("UserName"));
                 intent.putExtra("friendID", remote.get(i).getId());
                 intent.putExtra("friendNickName", remote.get(i).getName());
                 intent.putExtra("friendServer", remote.get(i).getServer());
@@ -169,8 +171,8 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-        MenuItem mi = menu.findItem(R.id.action_search);
-        SearchView sv = (SearchView)mi.getActionView();
+        MenuItem search = menu.findItem(R.id.action_search);
+        SearchView sv = (SearchView)search.getActionView();
         sv.setQueryHint("Search");
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -181,6 +183,16 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        MenuItem settings = menu.findItem(R.id.action_settings);
+        settings.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(ContactActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 return false;
             }
         });

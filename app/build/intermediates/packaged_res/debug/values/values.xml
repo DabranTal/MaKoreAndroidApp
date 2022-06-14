@@ -25,19 +25,32 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+    <color name="background_1">#C68BE6</color>
+    <color name="background_2">#A17BE6</color>
+    <color name="background_3">#AE79E1</color>
     <color name="black">#FF000000</color>
-    <color name="gray_700">#808080</color>
+    <color name="btn_1">#A47D3AB7</color>
+    <color name="btn_2">#D07D3AB7</color>
+    <color name="btn_3">#7D3AB7</color>
+    <color name="chat_settings_bar">#9E73A8</color>
+    <color name="gray_700">#918E8E</color>
     <color name="grey">#B5B5B5</color>
+    <color name="icon_color">#ff333333</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="mk_background">#FFFFFF</color>
     <color name="purple_100">#edc3f7</color>
+    <color name="purple_150">#BB97E8</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="red">#FF0000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="very_light_purple">#E4D8E6</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whiteish">#f5f5f5</color>
+    <color name="whiteish2">#e0e0e0</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
@@ -61,15 +74,24 @@
     <string name="login_userName">UserName</string>
     <string name="messages_header">Messages</string>
     <string name="new_message_here">New message here...</string>
+    <string name="register_8digits_pass">Password must contain at least eight characters, including digits and letters</string>
     <string name="register_VPassword">Password Again</string>
     <string name="register_btnRegister">Register</string>
+    <string name="register_have_pass">Password is required!</string>
+    <string name="register_have_username">UserName is required!</string>
     <string name="register_nickname">NickName</string>
+    <string name="register_pass_not_equal">Passwords are not the same</string>
     <string name="register_password">Password</string>
     <string name="register_register">Register</string>
     <string name="register_userName">UserName</string>
+    <string name="register_username_have_chars">Username must contain at least one character</string>
+    <string name="register_username_taken">Username already taken</string>
     <string name="reply_title">Default reply action</string>
     <string name="search">Search</string>
     <string name="settings">Settings</string>
+    <string name="settings_nickname">Nickname</string>
+    <string name="settings_server">Server</string>
+    <string name="settings_theme">Theme</string>
     <string name="signature_title">Your signature</string>
     <string name="sync_header">Sync</string>
     <string name="sync_title">Sync email periodically</string>
@@ -77,7 +99,7 @@
     <style name="Circular">
         <item name="cornerSize">50%</item>
     </style>
-    <style name="Theme.MaKoreAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MaKoreAndroid" parent="Theme.AppCompat.DayNight">
         
 
         <item name="colorPrimary">@color/purple_500</item>

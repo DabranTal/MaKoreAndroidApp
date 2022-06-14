@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.makoreandroid.R;
@@ -13,44 +14,84 @@ import com.example.makoreandroid.entities.Message;
 
 import java.util.List;
 
-public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.MessagesViewHolder> {
-
-    class MessagesViewHolder extends RecyclerView.ViewHolder {
-        private final TextView content;
-        private final TextView time;
-
-        private MessagesViewHolder(View itemView) {
-            super(itemView);
-            content = itemView.findViewById(R.id.content_sender_message);
-            time = itemView.findViewById(R.id.time_sender_message);
-
-        }
-    }
+public class MessageListAdapter extends RecyclerView.Adapter {
 
     private final LayoutInflater mInflater;
     private List<Message> messages;
+
+    private class senderMessageHolder extends RecyclerView.ViewHolder {
+        TextView messageText, timeText;
+
+        public senderMessageHolder(View view) {
+            super(view);
+            messageText = (TextView) itemView.findViewById(R.id.content_sender_message);
+            timeText = (TextView) itemView.findViewById(R.id.time_sender_message);
+        }
+
+        void bind(Message message) {
+            messageText.setText(message.getContent());
+            timeText.setText(message.getCreated().substring(11,16));
+        }
+    }
+
+    private class partnerMessageHolder extends RecyclerView.ViewHolder {
+        TextView messageText, timeText;
+
+        public partnerMessageHolder(View view) {
+            super(view);
+            messageText = (TextView) itemView.findViewById(R.id.content_partner_message);
+            timeText = (TextView) itemView.findViewById(R.id.time_partner_message);
+        }
+        void bind(Message message) {
+            messageText.setText(message.getContent());
+            timeText.setText(message.getCreated().substring(11,16));
+        }
+    }
+
 
     public MessageListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 
     @Override
-    public MessagesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.sender_message, parent, false);
-        return new MessagesViewHolder(itemView);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view;
+        if (viewType == 1) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.sender_message, parent, false);
+            return new senderMessageHolder(view);
+        } else {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.partner_message, parent, false);
+            return new partnerMessageHolder(view);
+        }
     }
 
     @Override
-    public void onBindViewHolder(MessagesViewHolder holder, int position) {
-        if (messages != null) {
-            final Message current = messages.get(position);
-            holder.content.setText(current.getContent());
-            holder.time.setText(current.getCreated());
-        }
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        Message message = (Message) messages.get(position);
+
+        // case the message is from the local user
+        if (holder.getItemViewType() == 1)
+            ((senderMessageHolder) holder).bind(message);
+        // case the message is from the partner
+        else
+            ((partnerMessageHolder) holder).bind(message);
+
+    }
+
+    public String extractTime(String pattern) {
+        return pattern.substring(11,16);
     }
 
     public void setMessages(List<Message> m) {
         messages = m;
+        notifyDataSetChanged();
+    }
+
+    public void copyMessagesTo(List<Message> m) {
+        m = messages;
         notifyDataSetChanged();
     }
 
@@ -61,6 +102,16 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
         } else {
             return 0;
         }
+    }
+
+    // Who sent the message
+    @Override
+    public int getItemViewType(int position) {
+        Message message = (Message) messages.get(position);
+        if (message.isSent())
+            return 1;
+        else
+            return 2;
     }
 
     public List<Message> getMessages() {

@@ -1,5 +1,9 @@
 package com.example.makoreandroid.api;
 
+import android.util.Log;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
@@ -31,7 +35,8 @@ public class MessageAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(MessageListAdapter adapter, String token, String partnerName) {
+    // get all messages for this partner conversation
+    public void get(MessageListAdapter adapter, String token, String partnerName, RecyclerView view) {
 
         Call<List<Message>> call = webServiceAPI.getMessages(partnerName, "Bearer " + token);
         call.enqueue(new Callback<List<Message>>() {
@@ -40,19 +45,31 @@ public class MessageAPI {
 
                 List<Message> messages = response.body();
                 adapter.setMessages(messages);
+                if (adapter.getItemCount() > 1)
+                    view.scrollToPosition(adapter.getItemCount() - 1);
+
             }
 
             @Override
             public void onFailure(Call<List<Message>> call, Throwable t) {
-
+                Log.w("failure", "failure", t);
             }
         });
     }
 
-    public void post(String partnerName, String token, String content) {
-        Call<Void> call = webServiceAPI.createMessage(partnerName, "Bearer " + token, content);
-    }
-    public void transfer(SendingMessageJson newMessage) {
+    // send message in conversation and get update right after
+    public void transferAndGet(SendingMessageJson newMessage, MessageListAdapter adapter, String token, String partnerName, RecyclerView view) {
         Call<Void> call = webServiceAPI.transferMessage(newMessage);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                get(adapter, token, partnerName, view);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.w("failure", "failure", t);
+            }
+        });
     }
 }

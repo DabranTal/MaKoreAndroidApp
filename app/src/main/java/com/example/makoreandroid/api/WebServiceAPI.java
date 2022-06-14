@@ -21,10 +21,6 @@ public interface WebServiceAPI {
     @GET("contacts/{id}/messages")
     Call<List<Message>> getMessages(@Path("id") String id, @Header("Authorization") String jwt);
 
-
-    @POST("contacts/{id}/messages")
-    Call<Void> createMessage(@Path("id") String id, @Header("Authorization") String jwt, @Body String content);
-
     @POST("transfer")
     Call<Void> transferMessage(@Body SendingMessageJson message);
 
@@ -37,8 +33,8 @@ public interface WebServiceAPI {
     @POST("connection/login")
     Call<String> loginGetToken(@Body User user);
 
-    @POST("contacts")
-    Call<Void> createUser(@Body User user);
+    @POST("connection/register")
+    Call<String> registerGetTokenNewUser(@Body User user);
 
     @DELETE("contacts/{id}")
     Call<Void> deleteUser(@Path(value = "username", encoded = true) String username);

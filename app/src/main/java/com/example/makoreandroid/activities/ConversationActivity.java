@@ -35,30 +35,34 @@ public class ConversationActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_conversation);
         Intent intent = getIntent();
+        String partnerName = intent.getStringExtra("friendID");
+
 
         // get JWT
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
 
+        // init partner props bar
+        TextView partnerNameTV = findViewById(R.id.partner_name);
+        partnerNameTV.setText(partnerName);
+        ImageView imageView = findViewById(R.id.partner_profile_image);
+        imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
 
+        // init messages RecyclerView
         RecyclerView lstMessages = findViewById(R.id.recycler_conversaion);
         final MessageListAdapter adapter = new MessageListAdapter(this);
         lstMessages.setAdapter(adapter);
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
-        //init partner props bar
-        TextView partnerName = findViewById(R.id.partner_name);
-        partnerName.setText(intent.getStringExtra("friendID"));
-        ImageView imageView = findViewById(R.id.partner_profile_image);
-        imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
+
 
         //get messages for conversation
-        List<Message> messages = new ArrayList<>();
         MessageAPI messageAPI = new MessageAPI();
-        messageAPI.get(adapter, token, intent.getStringExtra("friendID"));
-        adapter.setMessages(messages);
-        if (messages.size() > 1)
-            lstMessages.scrollToPosition(messages.size() - 1);
+        messageAPI.get(adapter, token, partnerName, lstMessages);
+
+        //update local backup messages view
+        List<Message> messages = new ArrayList<>();
+        adapter.copyMessagesTo(messages);
 
 
         // on Click on send button
@@ -68,25 +72,16 @@ public class ConversationActivity extends AppCompatActivity {
             Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
             messages.add(newMessage);
             // post request to save new message
-            String to = intent.getStringExtra("friendID");
             SendingMessageJson sendingMessageJson = new SendingMessageJson(
-                    intent.getStringExtra("UserName"),to, et.getText().toString());
-            messageAPI.transfer(sendingMessageJson);
-            messageAPI.post(to, token,  et.getText().toString());
-
-            // new get request for conversation
-            messageAPI.get(adapter, token, intent.getStringExtra("friendID"));
-            lstMessages.scrollToPosition(messages.size() - 1);
-
+                    intent.getStringExtra("UserName"),partnerName, et.getText().toString());
+            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages);
             // clean typing board
             et.setText("");
         });
 
         // on Click on back button
         FloatingActionButton btnBack = findViewById(R.id.button_back);
-        btnBack.setOnClickListener(view->{
-            finish();
-        });
+        btnBack.setOnClickListener(view-> finish());
 
     }
 }
