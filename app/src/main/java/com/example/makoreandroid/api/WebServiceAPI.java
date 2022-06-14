@@ -4,6 +4,8 @@ import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.example.makoreandroid.entities.User;
 import com.example.makoreandroid.jsonfiles.FireBaseJson;
+import com.example.makoreandroid.jsonfiles.InvitationJson;
+import com.example.makoreandroid.jsonfiles.NewContactJson;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 
 import java.util.List;
@@ -41,5 +43,15 @@ public interface WebServiceAPI {
 
     @DELETE("contacts/{id}")
     Call<Void> deleteUser(@Path(value = "username", encoded = true) String username);
+
+    @GET("validation/{otherName}/{server}")
+    Call<String> doValidation(@Path("otherName") String otherName, @Path("server") String server,
+                            @Header("Authorization") String jtw);
+
+    @POST("contacts")
+    Call<Void> addNewContact(@Header("Authorization") String jwt, @Body NewContactJson contact);
+
+    @POST("invitations")
+    Call<Void> invitation(@Body InvitationJson invitation);
 
 }

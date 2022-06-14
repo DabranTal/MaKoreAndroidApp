@@ -280,6 +280,10 @@
         "source": "com.example.makoreandroid.app-main-40:/drawable-mdpi/ic_go_option_settings_dark.png"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/layout_action_bar_layout.xml.flat",
+        "source": "com.example.makoreandroid.app-main-40:/layout/action_bar_layout.xml"
+    },
+    {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.makoreandroid.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },

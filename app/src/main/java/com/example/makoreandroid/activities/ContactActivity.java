@@ -18,16 +18,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.room.Room;
 
 import com.example.makoreandroid.R;
-import com.example.makoreandroid.RemoteUserDB;
-import com.example.makoreandroid.RemoteUsersDao;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
 import com.example.makoreandroid.api.FireBaseAPI;
@@ -40,30 +36,35 @@ import com.google.firebase.iid.InstanceIdResult;
 import java.util.ArrayList;
 
 public class ContactActivity extends AppCompatActivity {
-    private final String[] allUsers = {"Ido", "Coral", "Tal", "Matan", "Itamar", "Roni", "Eden",
-            "Guy"};
     private final String[] displayingError = {"You can't add your self as a user!",
             "This user already exists!",
             "There is no such user!",
             "This server could not be reached",
             "This may take awhile. Please don't Add again",
-            "UserName is required!", "Server is required!"};
+            "UserName is required!", "Server is required!",
+            "This server could not be reach!", "It might take awhile!"};
     private FloatingActionButton addBtn;
     private ListView listView;
     private CustomListAdapter adapter;
     private AlertDialog dialog;
     private ArrayList<RemoteUser> remote;
-    private final String Name = "Roni";
-    private RemoteUserDB db;
-    private RemoteUsersDao Rdao;
+    ContactsAPI contactsAPI = new ContactsAPI();
+    TextView error;
+    String UserName;
+    ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_contacts_list);
-        db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class, "RemoteUserDB").allowMainThreadQueries().build();
-        Rdao = db.RemoteUsersDao();
+
+        //take the jwt
+        SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("token","");
+
+        //add button and onclick listener
         addBtn = findViewById(R.id.hey);
         buildDialog();
+        Intent i = getIntent();
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,27 +73,41 @@ public class ContactActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        //actionbar customization
+        UserName = i.getStringExtra("UserName");
         ActionBar actionBar;
         actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
-
         actionBar.setBackgroundDrawable(colorDrawable);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
+        TextView title = findViewById(R.id.User_name_title);
+        String newTitle = "Welcome " + UserName + "!";
+        title.setText(newTitle);
+
+        //contacts display and get request from the webAPI
         listView = findViewById(R.id.list_view);
-        remote = new ArrayList<RemoteUser>(Rdao.index());
+        remote = new ArrayList<RemoteUser>();
         adapter = new CustomListAdapter(getApplicationContext(), remote);
-        ContactsAPI contactsAPI = new ContactsAPI();
-        contactsAPI.get(this);
+        contactsAPI.get(token, remote, adapter, r);
         listView.setAdapter(adapter);
+
+        //set every contact clickable and define the onItemClick
         listView.setClickable(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ColorDrawable colorDrawable
+                        = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
+                adapterView.getChildAt(i).setBackgroundDrawable(colorDrawable);
                 Intent myIntent = getIntent();
                 Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
                 intent.putExtra("UserName", myIntent.getStringExtra("UserName"));
-                intent.putExtra("friendID", remote.get(i).getUserName());
-                intent.putExtra("friendNickName", remote.get(i).getNickName());
+                intent.putExtra("friendID", remote.get(i).getId());
+                intent.putExtra("friendNickName", remote.get(i).getName());
                 intent.putExtra("friendServer", remote.get(i).getServer());
                 intent.putExtra("friendAvatar", remote.get(i).getAvatar());
                 startActivity(intent);
@@ -117,7 +132,7 @@ public class ContactActivity extends AppCompatActivity {
         EditText userName = view.findViewById(R.id.AddUserName);
         EditText NickName = view.findViewById(R.id.AddNickName);
         EditText Server = view.findViewById(R.id.AddServer);
-        TextView error = (TextView) view.findViewById(R.id.error);
+        error = (TextView) view.findViewById(R.id.error);
         dialog = new AlertDialog.Builder(this).setTitle("Add new contact")
                 .setPositiveButton("Add", null).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -153,6 +168,8 @@ public class ContactActivity extends AppCompatActivity {
         positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+                String token = prefs.getString("token","");
                 if(TextUtils.isEmpty(userName.getText().toString())) {
                     error.setText(displayingError[5]);
                     return;
@@ -161,52 +178,22 @@ public class ContactActivity extends AppCompatActivity {
                     error.setText(displayingError[6]);
                     return;
                 }
-                boolean isUser = userName.getText().toString().equals(Name),
-                        isExists = false, isAlreadyExists = false;
-                for (RemoteUser r : remote) {
-                    if(r.getUserName().equals(userName.getText().toString())) {
-                        isAlreadyExists = true;
-                        break;
-                    }
-                }
-                for (String r : allUsers) {
-                    if(r.equals(userName.getText().toString())) {
-                        isExists = true;
-                        break;
-                    }
-                }
-                if (!isUser && isExists && !isAlreadyExists) {
-                    String nick = NickName.getText().toString();
-                    if(nick.equals(""))
-                        nick = userName.getText().toString();
-                    addRemoteUser(userName.getText().toString(),nick,
-                            Server.getText().toString());
-                    userName.setText("");
-                    NickName.setText("");
-                    Server.setText("");
-                    Toast.makeText(ContactActivity.this, "New Contact has been added",
-                            Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-                if(isUser)
-                    error.setText(displayingError[0]);
-                else if(!isExists)
-                    error.setText(displayingError[2]);
-                else if(isAlreadyExists)
-                    error.setText(displayingError[1]);
+                contactsAPI.validation(token, userName, Server, error, displayingError, remote,
+                        NickName, adapter, ContactActivity.this, dialog, UserName, r);
             }
         });
 
     }
 
-    private void addRemoteUser(String userName, String NickName, String Server) {
-        RemoteUser r = new RemoteUser(NickName, userName, "", "", Server);
-        remote.add(r);
-        Rdao.insert(r);
-        adapter = new CustomListAdapter(getApplicationContext(), remote);
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("token","");
+        contactsAPI.get(token, remote, adapter, r);
         listView.setAdapter(adapter);
-        listView.setClickable(true);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -222,6 +209,7 @@ public class ContactActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                adapter.setAdapter(r);
                 adapter.getFilter().filter(newText);
                 return false;
             }

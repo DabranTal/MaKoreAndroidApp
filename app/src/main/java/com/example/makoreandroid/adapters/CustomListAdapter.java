@@ -43,7 +43,7 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
             else {
                 String filterPattern = charSequence.toString();
                 for(RemoteUser r: rList) {
-                    if(r.getUserName().contains(filterPattern))
+                    if(r.getId().contains(filterPattern))
                         suggestions.add(r);
                 }
             }
@@ -60,7 +60,7 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         }
         @Override
         public CharSequence convertResultToString(Object resultValue) {
-            return ((RemoteUser)resultValue).getUserName();
+            return ((RemoteUser)resultValue).getId();
         }
 
     };
@@ -77,9 +77,9 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         TextView time = convertView.findViewById(R.id.time);
 
         imageView.setImageResource(remote.getAvatar());
-        remoteName.setText(remote.getUserName());
-        lastMessage.setText(remote.getLastMessage());
-        time.setText(remote.getTime());
+        remoteName.setText(remote.getId());
+        lastMessage.setText(remote.getLast());
+        time.setText(remote.getLastdate());
         //notifyDataSetChanged();
         return convertView;
     }
@@ -96,4 +96,8 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         return rList;
     }
 
+    public void setAdapter(ArrayList<RemoteUser>r) {
+        this.rList = r;
+        notifyDataSetChanged();
+    }
 }
