@@ -75,7 +75,6 @@ public class ContactActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
-
         actionBar.setBackgroundDrawable(colorDrawable);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -97,6 +96,9 @@ public class ContactActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ColorDrawable colorDrawable
+                        = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
+                adapterView.getChildAt(i).setBackgroundDrawable(colorDrawable);
                 Intent myIntent = getIntent();
                 Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
                 intent.putExtra("UserName", myIntent.getStringExtra("UserName"));
