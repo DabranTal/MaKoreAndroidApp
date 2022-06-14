@@ -87,8 +87,9 @@ public class ContactActivity extends AppCompatActivity {
         //contacts display and get request from the webAPI
         listView = findViewById(R.id.list_view);
         remote = new ArrayList<RemoteUser>();
-        adapter = new CustomListAdapter(getApplicationContext(), remote);
-        contactsAPI.get(token, remote, adapter);
+        ArrayList<RemoteUser>r = new ArrayList<RemoteUser>(remote);
+        adapter = new CustomListAdapter(getApplicationContext(), r);
+        contactsAPI.get(token, r, adapter);
         listView.setAdapter(adapter);
 
         //set every contact clickable and define the onItemClick
