@@ -15,8 +15,8 @@ public interface RemoteUserDao {
     @Query("SELECT * FROM remoteuser")
     List<RemoteUser> index();
 
-    @Query("SELECT * FROM REMOTEUSER WHERE id = :id AND localuser = :localuser")
-    List<RemoteUser> get(String id, String localuser);
+    @Query("SELECT * FROM REMOTEUSER WHERE localuser = :localuser")
+    List<RemoteUser> get(String localuser);
 
     @Insert
     void insert(RemoteUser... remoteUsers);

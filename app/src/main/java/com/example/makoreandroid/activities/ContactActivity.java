@@ -62,9 +62,6 @@ public class ContactActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
 
-        //room
-        db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class, "RemoteUserDB").
-                allowMainThreadQueries().build();
 
         //add button and onclick listener
         addBtn = findViewById(R.id.hey);
@@ -83,9 +80,6 @@ public class ContactActivity extends AppCompatActivity {
         UserName = i.getStringExtra("UserName");
         ActionBar actionBar;
         actionBar = getSupportActionBar();
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
-        actionBar.setBackgroundDrawable(colorDrawable);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
@@ -93,13 +87,23 @@ public class ContactActivity extends AppCompatActivity {
         String newTitle = "Welcome " + UserName + "!";
         title.setText(newTitle);
 
-        //contacts display and get request from the webAPI
+        //Room
+        db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class,
+                "RemoteUserDB").allowMainThreadQueries().build();
+        dao = db.remoteUserDao();
         listView = findViewById(R.id.list_view);
-        remote = new ArrayList<RemoteUser>();
+        remote = new ArrayList<RemoteUser>(dao.get(UserName));
         adapter = new CustomListAdapter(getApplicationContext(), remote);
-        contactsAPI.get(token, remote, adapter, r);
+        adapter.setAdapter(remote);
+        listView.setAdapter(adapter);
+        //contacts display and get request from the webAPI
+
+/*
+        contactsAPI.get(token, remote, adapter, r, dao, UserName);
         listView.setAdapter(adapter);
 
+
+ */
         //set every contact clickable and define the onItemClick
         listView.setClickable(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -173,7 +177,7 @@ public class ContactActivity extends AppCompatActivity {
                     return;
                 }
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
-                        NickName, adapter, ContactActivity.this, dialog, UserName, r);
+                        NickName, adapter, ContactActivity.this, dialog, UserName, r, dao);
             }
         });
 
@@ -184,8 +188,9 @@ public class ContactActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
-        contactsAPI.get(token, remote, adapter, r);
+        contactsAPI.get(token, remote, adapter, r, dao, UserName);
         listView.setAdapter(adapter);
+
     }
 
 
