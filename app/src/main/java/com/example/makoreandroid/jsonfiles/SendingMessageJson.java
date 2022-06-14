@@ -10,4 +10,5 @@ public class SendingMessageJson {
         this.to = to;
         this.content = content;
     }
+
 }

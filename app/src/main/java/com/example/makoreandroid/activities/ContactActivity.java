@@ -78,8 +78,6 @@ public class ContactActivity extends AppCompatActivity {
 
         //actionbar customization
         UserName = i.getStringExtra("UserName");
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
@@ -96,14 +94,7 @@ public class ContactActivity extends AppCompatActivity {
         adapter = new CustomListAdapter(getApplicationContext(), remote);
         adapter.setAdapter(remote);
         listView.setAdapter(adapter);
-        //contacts display and get request from the webAPI
 
-/*
-        contactsAPI.get(token, remote, adapter, r, dao, UserName);
-        listView.setAdapter(adapter);
-
-
- */
         //set every contact clickable and define the onItemClick
         listView.setClickable(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -190,7 +181,6 @@ public class ContactActivity extends AppCompatActivity {
         String token = prefs.getString("token","");
         contactsAPI.get(token, remote, adapter, r, dao, UserName);
         listView.setAdapter(adapter);
-
     }
 
 
