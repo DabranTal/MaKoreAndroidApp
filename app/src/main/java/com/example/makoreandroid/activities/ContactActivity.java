@@ -47,6 +47,7 @@ public class ContactActivity extends AppCompatActivity {
     ContactsAPI contactsAPI = new ContactsAPI();
     TextView error;
     String UserName;
+    ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -86,9 +87,8 @@ public class ContactActivity extends AppCompatActivity {
         //contacts display and get request from the webAPI
         listView = findViewById(R.id.list_view);
         remote = new ArrayList<RemoteUser>();
-        ArrayList<RemoteUser>r = new ArrayList<RemoteUser>(remote);
-        adapter = new CustomListAdapter(getApplicationContext(), r);
-        contactsAPI.get(token, r, adapter);
+        adapter = new CustomListAdapter(getApplicationContext(), remote);
+        contactsAPI.get(token, remote, adapter, r);
         listView.setAdapter(adapter);
 
         //set every contact clickable and define the onItemClick
@@ -164,7 +164,7 @@ public class ContactActivity extends AppCompatActivity {
                     return;
                 }
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
-                        NickName, adapter, ContactActivity.this, dialog, UserName);
+                        NickName, adapter, ContactActivity.this, dialog, UserName, r);
             }
         });
 
@@ -175,7 +175,7 @@ public class ContactActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
-        contactsAPI.get(token, remote, adapter);
+        contactsAPI.get(token, remote, adapter, r);
         listView.setAdapter(adapter);
     }
 
@@ -194,6 +194,7 @@ public class ContactActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                adapter.setAdapter(r);
                 adapter.getFilter().filter(newText);
                 return false;
             }

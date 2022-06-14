@@ -52,7 +52,7 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter) {
+    public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter, ArrayList<RemoteUser>r) {
         Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
@@ -64,6 +64,8 @@ public class ContactsAPI {
                 }
                 remote.clear();
                 remote.addAll(remotes);
+                r.clear();
+                r.addAll(remote);
                 adapter.setAdapter(remote);
             }
 
@@ -75,7 +77,7 @@ public class ContactsAPI {
 
     public void validation(String token, EditText RemoteName, EditText server, TextView error, String []display,
                            ArrayList<RemoteUser>remote, EditText nickName, CustomListAdapter adapter,
-                           AppCompatActivity activity, AlertDialog dialog, String userName) {
+                           AppCompatActivity activity, AlertDialog dialog, String userName, ArrayList<RemoteUser>r) {
         Call<String>call = webServiceAPI.doValidation(RemoteName.getText().toString(), server.getText().toString(), "Bearer " + token);
         call.enqueue(new Callback<String>() {
             @Override
@@ -92,14 +94,14 @@ public class ContactsAPI {
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
                         addNewContact(token ,RemoteName, nickName, server, remote,
-                                adapter, activity, dialog, name);
+                                adapter, activity, dialog, name, r);
                     } else {
                         error.setText(display[8]);
                         String name = nickName.getText().toString();
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
                         sendInvitation(token ,RemoteName, nickName ,server, remote, adapter,
-                                activity, dialog, name, userName, error, display);
+                                activity, dialog, name, userName, error, display, r);
                     }
                 }
             }
@@ -112,7 +114,7 @@ public class ContactsAPI {
     }
     public void addNewContact(String  token, EditText RemoteName,EditText nickName ,EditText server
                               ,ArrayList<RemoteUser>remote, CustomListAdapter adapter,
-                              AppCompatActivity activity, AlertDialog dialog, String name) {
+                              AppCompatActivity activity, AlertDialog dialog, String name, ArrayList<RemoteUser>r) {
         NewContactJson contactJson = new NewContactJson(RemoteName.getText().toString(),
                 nickName.getText().toString(), server.getText().toString());
         Call<Void> call = webServiceAPI.addNewContact("Bearer " + token, contactJson);
@@ -120,6 +122,8 @@ public class ContactsAPI {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
+                r.clear();
+                r.addAll(remote);
                 adapter.setAdapter(remote);
                 Toast.makeText(activity.getBaseContext(), "New Contact has been added",
                                 Toast.LENGTH_SHORT).show();
@@ -139,7 +143,7 @@ public class ContactsAPI {
     public void sendInvitation(String token, EditText RemoteName, EditText nickName ,EditText server,
                                ArrayList<RemoteUser>remote, CustomListAdapter adapter,
                                AppCompatActivity activity, AlertDialog dialog, String name, String userName,
-                               TextView error, String []display) {
+                               TextView error, String []display, ArrayList<RemoteUser>r) {
         InvitationJson invitation = new InvitationJson(userName, RemoteName.getText().toString(), "localhost:5018");
         setContactsApi(server.getText().toString());
         Call<Void>call = webServiceAPI.invitation(invitation);
@@ -148,7 +152,7 @@ public class ContactsAPI {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 setContactsApi("localhost:5018");
                 addNewContact(token ,RemoteName, nickName, server, remote,
-                        adapter, activity, dialog, name);
+                        adapter, activity, dialog, name, r);
             }
 
             @Override

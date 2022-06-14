@@ -98,5 +98,6 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
 
     public void setAdapter(ArrayList<RemoteUser>r) {
         this.rList = r;
+        notifyDataSetChanged();
     }
 }
