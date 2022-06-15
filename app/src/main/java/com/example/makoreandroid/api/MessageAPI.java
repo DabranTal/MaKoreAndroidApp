@@ -4,8 +4,6 @@ import android.util.Log;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.makoreandroid.MyApplication;
-import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.dao.MessageDao;
 import com.example.makoreandroid.entities.Message;
@@ -26,9 +24,17 @@ public class MessageAPI {
     WebServiceAPI webServiceAPI;
 
 
-    public MessageAPI() {
+    public MessageAPI(String server) {
+        String[] newServer = server.split(":");
+        String url;
+        if(!(newServer.length == 1)) {
+            if (newServer[0].equalsIgnoreCase("localhost"))
+                server = "10.0.2.2:" + newServer[1];
+        } else {
+            server = "10.0.2.2:" + server;
+        }
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl("http://" + server + "/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);

@@ -2,6 +2,8 @@ package com.example.makoreandroid.activities;
 
 
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,6 +12,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -24,15 +27,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.room.Room;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
+import com.example.makoreandroid.api.FireBaseAPI;
 import com.example.makoreandroid.dao.RemoteUserDao;
 import com.example.makoreandroid.db.RemoteUserDB;
-import com.example.makoreandroid.api.FireBaseAPI;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -58,6 +63,7 @@ public class ContactActivity extends AppCompatActivity {
     TextView error;
     String UserName;
     ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
+    NotificationManagerCompat notificationManager;
     private RemoteUserDB db;
     private RemoteUserDao dao;
     @Override
@@ -68,6 +74,7 @@ public class ContactActivity extends AppCompatActivity {
         //take the jwt
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
+        notificationManager = NotificationManagerCompat.from(this);
 
 
         //add button and onclick listener
@@ -216,10 +223,37 @@ public class ContactActivity extends AppCompatActivity {
     BroadcastReceiver activityReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            //create notification
+            Bundle bundle = intent.getExtras();
+            String msg = bundle.getString("msg");
+            if (msg.length() > 2) {
+                msg = msg.substring(1,msg.length() - 1);
+                String[] titleAndBody = msg.split("=");
+                createNotificationChannel();
+                String Msg = "Add";
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, Msg)
+                        .setSmallIcon(R.drawable.avatar)
+                        .setContentTitle(titleAndBody[0])
+                        .setContentText(titleAndBody[1])
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                int notificationID = titleAndBody[0].hashCode();
+                notificationManager.notify(notificationID, builder.build());
+            }
             //get contacts for conversation
             SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
             String token = prefs.getString("token","");
             contactsAPI.get(token, remote, adapter, r, dao, UserName);
+        }
+
+        private void createNotificationChannel() {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CharSequence name = "Add";
+                int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                NotificationChannel channel = new NotificationChannel("Add", name, importance);
+
+                NotificationManager notificationManager1 = getSystemService((NotificationManager.class));
+                notificationManager1.createNotificationChannel(channel);
+            }
         }
     };
 
