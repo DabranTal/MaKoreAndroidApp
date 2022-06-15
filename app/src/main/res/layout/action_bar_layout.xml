@@ -16,7 +16,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/profile_image"
+                android:id="@+id/profile_image1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="5dp"

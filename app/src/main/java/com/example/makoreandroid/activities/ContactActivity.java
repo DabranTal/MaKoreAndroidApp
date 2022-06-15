@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,8 +37,11 @@ import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
 import com.example.makoreandroid.api.FireBaseAPI;
+import com.example.makoreandroid.dao.ImageUserDao;
 import com.example.makoreandroid.dao.RemoteUserDao;
+import com.example.makoreandroid.db.ImageUserDB;
 import com.example.makoreandroid.db.RemoteUserDB;
+import com.example.makoreandroid.entities.ImageUser;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -67,6 +71,8 @@ public class ContactActivity extends AppCompatActivity {
     NotificationManagerCompat notificationManager;
     private RemoteUserDB db;
     private RemoteUserDao dao;
+    private ImageUserDB IuDB;
+    private ImageUserDao IuDao;
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -93,10 +99,16 @@ public class ContactActivity extends AppCompatActivity {
 
         //actionbar customization
         UserName = i.getStringExtra("UserName");
+        IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
+                .allowMainThreadQueries().build();
+        IuDao = IuDB.imageUserDao();
+        ImageUser image = IuDao.get(UserName);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
         TextView title = findViewById(R.id.User_name_title);
+        ImageView img = findViewById(R.id.profile_image1);
+        img.setImageBitmap(image.getProfilePic());
         String newTitle = "Welcome " + UserName + "!";
         title.setText(newTitle);
 

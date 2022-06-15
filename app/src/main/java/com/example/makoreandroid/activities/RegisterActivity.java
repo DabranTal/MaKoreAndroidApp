@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -103,6 +104,8 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         binding.registerBtnRegister.setOnClickListener(v -> {
+            if(image == null)
+                image = BitmapFactory.decodeResource(getResources(), R.drawable.avatar);
             // Empty username
             if (binding.registerUserName.getText().toString().equals("")) {
                 binding.registerError.setText(R.string.register_username_have_chars);
