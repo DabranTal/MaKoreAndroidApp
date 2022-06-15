@@ -11,7 +11,6 @@ import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.dao.RemoteUserDao;
-import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.example.makoreandroid.jsonfiles.InvitationJson;
 import com.example.makoreandroid.jsonfiles.NewContactJson;
@@ -29,8 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ContactsAPI {
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
-    RemoteUserDB db;
-    RemoteUserDao dao;
     public ContactsAPI() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
@@ -67,7 +64,6 @@ public class ContactsAPI {
                 remote.clear();
                 remote.addAll(remotes);
                 Collections.sort(remote,(o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
-
                 for(RemoteUser r: remote) {
                     try {
                         dao.insert(r);
