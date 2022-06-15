@@ -69,7 +69,7 @@ public class ContactsAPI {
                     try {
                         dao.insert(r);
                     }catch (Exception e) {
-                        break;
+                        dao.update(r);
                     }
                 }
                 r.clear();
