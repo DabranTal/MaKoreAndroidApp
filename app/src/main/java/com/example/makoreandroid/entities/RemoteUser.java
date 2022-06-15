@@ -15,10 +15,6 @@ public class RemoteUser {
     private String server;
     private String last;
     private String lastdate;
-
-    public String getLocaluser() {
-        return localuser;
-    }
     @NonNull
     private String localuser;
 
@@ -34,6 +30,10 @@ public class RemoteUser {
 
     public RemoteUser() {}
 
+    @NonNull
+    public String getLocaluser() {
+        return localuser;
+    }
 
     public void setLocaluser(String s) {
         this.localuser = s;

@@ -1,9 +1,7 @@
 package com.example.makoreandroid.activities;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
@@ -13,13 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.api.MessageAPI;
+import com.example.makoreandroid.dao.MessageDao;
+import com.example.makoreandroid.db.MessageDB;
 import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,10 +29,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConversationActivity extends AppCompatActivity {
-    String token;
-    String partnerName;
-    RecyclerView lstMessages;
-    MessageListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +38,13 @@ public class ConversationActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_conversation);
         Intent intent = getIntent();
-        partnerName = intent.getStringExtra("friendID");
+        String partnerName = intent.getStringExtra("friendID");
+        String UserName = intent.getStringExtra("UserName");
 
 
         // get JWT
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        token = prefs.getString("token","");
+        String token = prefs.getString("token","");
 
         // init partner props bar
         TextView partnerNameTV = findViewById(R.id.partner_name);
@@ -56,16 +53,20 @@ public class ConversationActivity extends AppCompatActivity {
         imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
 
         // init messages RecyclerView
-        lstMessages = findViewById(R.id.recycler_conversaion);
-        adapter = new MessageListAdapter(this);
+        RecyclerView lstMessages = findViewById(R.id.recycler_conversaion);
+        final MessageListAdapter adapter = new MessageListAdapter(this);
         lstMessages.setAdapter(adapter);
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
-
+        // init Room
+        MessageDB db = Room.databaseBuilder(getApplicationContext(), MessageDB.class,
+                "MessageDB").allowMainThreadQueries().build();
+        MessageDao dao = db.messageDao();
+        adapter.setMessages(dao.get(partnerName, UserName));
 
         //get messages for conversation
         MessageAPI messageAPI = new MessageAPI();
-        messageAPI.get(adapter, token, partnerName, lstMessages);
+        messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
 
         //update local backup messages view
         List<Message> messages = new ArrayList<>();
@@ -81,7 +82,8 @@ public class ConversationActivity extends AppCompatActivity {
             // post request to save new message
             SendingMessageJson sendingMessageJson = new SendingMessageJson(
                     intent.getStringExtra("UserName"),partnerName, et.getText().toString());
-            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages);
+            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages,
+                    dao, UserName, newMessage);
             // clean typing board
             et.setText("");
         });
@@ -91,30 +93,4 @@ public class ConversationActivity extends AppCompatActivity {
         btnBack.setOnClickListener(view-> finish());
 
     }
-
-    /* try */
-    @Override
-    protected void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(activityReceiver);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // registering BroadcastReceiver
-        if (activityReceiver != null) {
-            IntentFilter intentFilter = new IntentFilter("ACTION_ACTIVITY");
-            registerReceiver(activityReceiver, intentFilter);
-        }
-    }
-
-    BroadcastReceiver activityReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //get messages for conversation
-            MessageAPI messageAPI = new MessageAPI();
-            messageAPI.get(adapter, token, partnerName, lstMessages);
-        }
-    };
 }

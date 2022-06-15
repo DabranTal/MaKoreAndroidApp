@@ -22,16 +22,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
-import com.example.makoreandroid.api.FireBaseAPI;
+import com.example.makoreandroid.dao.RemoteUserDao;
+import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.RemoteUser;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
 
@@ -48,10 +47,12 @@ public class ContactActivity extends AppCompatActivity {
     private CustomListAdapter adapter;
     private AlertDialog dialog;
     private ArrayList<RemoteUser> remote;
-    ContactsAPI contactsAPI = new ContactsAPI();
-    TextView error;
-    String UserName;
-    ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
+    private ContactsAPI contactsAPI = new ContactsAPI();
+    private TextView error;
+    private String UserName;
+    private ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
+    private RemoteUserDB db;
+    private RemoteUserDao dao;
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -60,6 +61,7 @@ public class ContactActivity extends AppCompatActivity {
         //take the jwt
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
+
 
         //add button and onclick listener
         addBtn = findViewById(R.id.hey);
@@ -76,11 +78,6 @@ public class ContactActivity extends AppCompatActivity {
 
         //actionbar customization
         UserName = i.getStringExtra("UserName");
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
-        actionBar.setBackgroundDrawable(colorDrawable);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
@@ -88,11 +85,14 @@ public class ContactActivity extends AppCompatActivity {
         String newTitle = "Welcome " + UserName + "!";
         title.setText(newTitle);
 
-        //contacts display and get request from the webAPI
+        //Room
+        db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class,
+                "RemoteUserDB").allowMainThreadQueries().build();
+        dao = db.remoteUserDao();
         listView = findViewById(R.id.list_view);
-        remote = new ArrayList<RemoteUser>();
+        remote = new ArrayList<RemoteUser>(dao.get(UserName));
         adapter = new CustomListAdapter(getApplicationContext(), remote);
-        contactsAPI.get(token, remote, adapter, r);
+        adapter.setAdapter(remote);
         listView.setAdapter(adapter);
 
         //set every contact clickable and define the onItemClick
@@ -111,17 +111,6 @@ public class ContactActivity extends AppCompatActivity {
                 intent.putExtra("friendServer", remote.get(i).getServer());
                 intent.putExtra("friendAvatar", remote.get(i).getAvatar());
                 startActivity(intent);
-            }
-        });
-        // send Server Firebase Token
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ContactActivity.this, new OnSuccessListener<InstanceIdResult>() {
-            @Override
-            public void onSuccess(InstanceIdResult instanceIdResult) {
-                Intent myIntent = getIntent();
-                String fireBaseToken = instanceIdResult.getToken();
-                // Call FireBaseMap on SERVER
-                FireBaseAPI fireBaseAPI = new FireBaseAPI();
-                fireBaseAPI.setFireBaseToken(myIntent.getStringExtra("UserName"), fireBaseToken);
             }
         });
 
@@ -179,7 +168,7 @@ public class ContactActivity extends AppCompatActivity {
                     return;
                 }
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
-                        NickName, adapter, ContactActivity.this, dialog, UserName, r);
+                        NickName, adapter, ContactActivity.this, dialog, UserName, r, dao);
             }
         });
 
@@ -190,7 +179,7 @@ public class ContactActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
-        contactsAPI.get(token, remote, adapter, r);
+        contactsAPI.get(token, remote, adapter, r, dao, UserName);
         listView.setAdapter(adapter);
     }
 
@@ -226,5 +215,4 @@ public class ContactActivity extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
-
 }
