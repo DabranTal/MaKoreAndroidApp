@@ -39,11 +39,12 @@ public class ContactsAPI {
     public void setContactsApi(String server) {
         String[] newServer = server.split(":");
         String url;
-        if(newServer.length == 1)
-            url = "http://10.0.2.2:"+ server +"/api/";
-        else
-            url = "http://10.0.2.2:"+ newServer[1] +"/api/";
-        this.retrofit = new Retrofit.Builder().baseUrl(url)
+        if(!(newServer.length == 1)) {
+            if(newServer[0].equalsIgnoreCase("localhost"))
+                server = "10.0.2.2:" + newServer[1];
+        } else
+            server = "10.0.2.2:" + server;
+        this.retrofit = new Retrofit.Builder().baseUrl("http://" + server + "/api/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }

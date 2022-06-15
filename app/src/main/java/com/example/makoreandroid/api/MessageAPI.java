@@ -20,9 +20,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MessageAPI {
+    //private PostDao dao;
 
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
+
+
     public MessageAPI() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
