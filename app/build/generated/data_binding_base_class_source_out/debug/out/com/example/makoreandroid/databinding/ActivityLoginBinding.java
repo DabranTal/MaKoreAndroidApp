@@ -39,7 +39,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText loginPassword;
 
   @NonNull
-  public final Button loginRegister;
+  public final TextView loginRegister;
 
   @NonNull
   public final EditText loginUserName;
@@ -49,8 +49,8 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView4,
       @NonNull LinearLayout linearLayout, @NonNull Button loginBtnLogin,
-      @NonNull TextView loginError, @NonNull EditText loginPassword, @NonNull Button loginRegister,
-      @NonNull EditText loginUserName, @NonNull TextView tvTitle) {
+      @NonNull TextView loginError, @NonNull EditText loginPassword,
+      @NonNull TextView loginRegister, @NonNull EditText loginUserName, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.imageView4 = imageView4;
     this.linearLayout = linearLayout;
@@ -120,7 +120,7 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       id = R.id.login_register;
-      Button loginRegister = ViewBindings.findChildViewById(rootView, id);
+      TextView loginRegister = ViewBindings.findChildViewById(rootView, id);
       if (loginRegister == null) {
         break missingId;
       }

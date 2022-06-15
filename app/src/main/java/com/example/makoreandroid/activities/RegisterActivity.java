@@ -1,10 +1,24 @@
 package com.example.makoreandroid.activities;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.databinding.ActivityRegisterBinding;
@@ -17,7 +31,10 @@ import java.util.regex.Pattern;
 public class RegisterActivity extends AppCompatActivity {
     public ActivityRegisterBinding binding;
     private UsersRepository usersRepository;
+    private int REQUEST_IMAGE_GALLERY = 133;
+    private int REQUEST_IMAGE_CAMERA = 123;
 
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +56,37 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        binding.registerLogin.setOnClickListener(v -> { this.finish(); });
+        binding.registerLogin.setOnClickListener(v -> {
+            this.finish();
+        });
+
+        ImageView addImg = binding.addImg;
+        addImg.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Select Profile Image");
+            builder.setMessage("Please choose an option: ");
+            builder.setPositiveButton("Gallery", (DialogInterface dialog, int which) -> {
+                dialog.dismiss();
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_IMAGE_GALLERY);
+            });
+            builder.setNegativeButton("Camera", (DialogInterface dialog, int which) -> {
+                dialog.dismiss();
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+                    if (permission != PackageManager.PERMISSION_GRANTED) {
+                        String[] s = {Manifest.permission.CAMERA};
+                        ActivityCompat.requestPermissions(this, s, 1);
+                    }
+                } else {
+                    startActivityForResult(intent, REQUEST_IMAGE_CAMERA);
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        });
 
         binding.registerBtnRegister.setOnClickListener(v -> {
             // Empty username
@@ -73,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                 usersRepository.getTokenRegister(binding.registerUserName.getText().toString(),
                         binding.registerNickName.getText().toString(),
                         binding.registerPassword.getText().toString(), this);
-            // no nickname - username again
+                // no nickname - username again
             } else {
                 usersRepository.getTokenRegister(binding.registerUserName.getText().toString(),
                         binding.registerUserName.getText().toString(),
@@ -81,5 +128,17 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_IMAGE_GALLERY && resultCode == Activity.RESULT_OK && data != null)
+            binding.addImg.setImageURI(data.getData());
+        else if (requestCode == REQUEST_IMAGE_CAMERA && resultCode == Activity.RESULT_OK && data != null)
+            binding.addImg.setImageBitmap(Bitmap.createBitmap((Bitmap) data.getExtras().get("data")));
+        else
+            Toast.makeText(this, "Something went wrong.. Try again later", Toast.LENGTH_SHORT).show();
     }
 }

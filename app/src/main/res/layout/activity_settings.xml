@@ -32,14 +32,6 @@
             android:textSize="18sp"
             android:text="@string/settings_theme" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/last_message"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textColor="@color/gray_700"-->
-<!--            android:textSize="10sp"-->
-<!--            tools:text="Light" />-->
-
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/settings_next_theme"
             android:layout_width="wrap_content"
@@ -48,9 +40,6 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/add"
             android:padding="5dp"
-            android:text="Light"
-            android:textOff="Light"
-            android:textOn="Dark"
             android:layout_weight="4" />
     </LinearLayout>
 

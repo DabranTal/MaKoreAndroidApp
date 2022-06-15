@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/conversation_background_android"
+    style="@style/conv_back"
     android:orientation="vertical">
     <!--contact bar-->
     <com.google.android.material.appbar.AppBarLayout
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_toStartOf="@+id/button_send"
-            app:cardBackgroundColor="#e0e0e0"
+            app:cardBackgroundColor="@color/conv_text_area_and_sent_btn"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="false"
@@ -139,7 +139,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_send_btn"
-            app:backgroundTint="@color/gray_700"
+            app:backgroundTint="@color/conv_text_area_and_sent_btn"
             app:fabCustomSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

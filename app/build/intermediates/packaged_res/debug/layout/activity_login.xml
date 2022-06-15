@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_login"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -21,21 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/login_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/button_color"
-        android:text="click to register"
-        android:layout_marginRight="80dp"
-        android:layout_marginLeft="80dp"
-        android:textColor="@color/white"
-        android:textColorHighlight="#00BF2222"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -59,6 +45,7 @@
             android:hint="@string/login_userName"
             android:inputType="textEmailAddress"
             android:padding="15dp"
+            android:textColorHint="@color/gray_700"
             android:textSize="15sp" />
 
         <EditText
@@ -68,6 +55,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
+            android:textColorHint="@color/gray_700"
             android:background="@drawable/et_custom"
             android:hint="@string/login_password"
             android:inputType="textPassword"
@@ -99,6 +87,19 @@
             android:textColor="@color/white"
             android:topLeftRadius="5dp"
             android:topRightRadius="5dp" />
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="@string/already_registered_click_here_to_login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:focusable="true" />
+
 
     </LinearLayout>
 

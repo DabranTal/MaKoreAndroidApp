@@ -1307,6 +1307,8 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color contact_name
+color conv_text_area_and_sent_btn
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1358,6 +1360,7 @@ color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color icon_color
+color last_msg
 color light_grey
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
@@ -1782,6 +1785,9 @@ color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
 color mk_background
+color msg_color
+color msg_partner
+color msg_sender
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -2549,6 +2555,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_img
+drawable add_pic
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
@@ -2581,7 +2589,6 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
-drawable conversation_background
 drawable conversation_background_android
 drawable conversation_background_android_dark
 drawable design_fab_background
@@ -2744,6 +2751,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_img
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3053,9 +3061,9 @@ id ratio
 id rectangles
 id recycler_conversaion
 id recycler_view
+id registerLogin
 id register_btnRegister
 id register_error
-id register_login
 id register_nickName
 id register_password
 id register_userName
@@ -3474,6 +3482,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string add
+string already_registered_click_here_to_login
 string androidx_startup
 string app_name
 string app_name_clean
@@ -3607,6 +3616,7 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
 string new_message_here
+string not_registered_click_to_register
 string not_set
 string password_toggle_content_description
 string path_password_eye
@@ -4728,6 +4738,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style conv_back
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

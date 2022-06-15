@@ -25,19 +25,25 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
-    <color name="background_1">#C68BE6</color>
-    <color name="background_2">#A17BE6</color>
-    <color name="background_3">#AE79E1</color>
+    <color name="background_1">#E1BEF3</color>
+    <color name="background_2">#AE79E1</color>
+    <color name="background_3">#9A59D8</color>
     <color name="black">#FF000000</color>
     <color name="btn_1">#A47D3AB7</color>
     <color name="btn_2">#D07D3AB7</color>
     <color name="btn_3">#7D3AB7</color>
     <color name="chat_settings_bar">#9E73A8</color>
-    <color name="gray_700">#918E8E</color>
+    <color name="contact_name">#000000</color>
+    <color name="conv_text_area_and_sent_btn">#e0e0e0</color>
+    <color name="gray_700">#9C9C9C</color>
     <color name="grey">#B5B5B5</color>
     <color name="icon_color">#ff333333</color>
+    <color name="last_msg">#878787</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="mk_background">#FFFFFF</color>
+    <color name="msg_color">#000000</color>
+    <color name="msg_partner">#ACACAC</color>
+    <color name="msg_sender">#BB97E8</color>
     <color name="purple_100">#c1a1e6</color>
     <color name="purple_150">#BB97E8</color>
     <color name="purple_200">#FFBB86FC</color>
@@ -55,6 +61,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="BaseUrl">http://10.0.2.2:5018/api/</string>
     <string name="add">add</string>
+    <string name="already_registered_click_here_to_login">Already registered ? Click here to login !</string>
     <string name="app_name">MaKoreAndroid</string>
     <string name="app_name_clean">MaKore</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
@@ -80,6 +87,7 @@
     <string name="login_userName">UserName</string>
     <string name="messages_header">Messages</string>
     <string name="new_message_here">New message here...</string>
+    <string name="not_registered_click_to_register">Not Registered ? Click To Register !</string>
     <string name="project_id" translatable="false">makoreandroid</string>
     <string name="register_8digits_pass">Password must contain at least eight characters, including digits and letters</string>
     <string name="register_VPassword">Password Again</string>
@@ -108,16 +116,18 @@
     </style>
     <style name="Theme.MaKoreAndroid" parent="Theme.AppCompat.DayNight">
         
-
         <item name="colorPrimary">@color/purple_100</item>
         <item name="colorPrimaryVariant">@color/purple_100</item>
         <item name="colorOnPrimary">@color/white</item>
         
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/conv_text_area_and_sent_btn</item>
+        <item name="colorSecondaryVariant">@color/conv_text_area_and_sent_btn</item>
         <item name="colorOnSecondary">@color/black</item>
         
         <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
         
+         </style>
+    <style name="conv_back">
+        <item name="android:background">@drawable/conversation_background_android</item>
     </style>
 </resources>

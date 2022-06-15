@@ -8,6 +8,20 @@
     tools:context=".activities.RegisterActivity"
     android:background="@drawable/gradient_drawable"
     >
+<!--        <Button-->
+<!--        android:id="@+id/register_login"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/button_color"-->
+<!--        android:text="click to login"-->
+<!--        android:layout_marginRight="80dp"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_title"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
 
 
     <TextView
@@ -15,28 +29,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_register"
+        android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/register_login"
+        app:layout_constraintBottom_toTopOf="@+id/add_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809" />
 
-    <Button
-        android:id="@+id/register_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/button_color"
-        android:text="click to login"
-        android:layout_marginRight="80dp"
-        android:layout_marginLeft="80dp"
-        android:textColor="@color/white"
-        android:textColorHighlight="#00BF2222"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/add_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/Circular"
+        android:src="@drawable/add_img" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -46,8 +59,7 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="1dp">
 
         <EditText
             android:id="@+id/register_userName"
@@ -60,6 +72,7 @@
             android:hint="@string/register_userName"
             android:inputType="textEmailAddress"
             android:padding="15dp"
+            android:textColorHint="@color/gray_700"
             android:textSize="15sp" />
 
 
@@ -74,6 +87,7 @@
             android:hint="@string/register_nickname"
             android:inputType="textEmailAddress"
             android:padding="15dp"
+            android:textColorHint="@color/gray_700"
             android:textSize="15sp" />
 
         <EditText
@@ -87,6 +101,7 @@
             android:hint="@string/register_password"
             android:inputType="textPassword"
             android:padding="15dp"
+            android:textColorHint="@color/gray_700"
             android:textSize="15sp" />
 
         <EditText
@@ -100,6 +115,7 @@
             android:hint="@string/register_VPassword"
             android:inputType="textPassword"
             android:padding="15dp"
+            android:textColorHint="@color/gray_700"
             android:textSize="15sp" />
 
         <TextView
@@ -124,6 +140,19 @@
             android:textColorHighlight="#00BF2222"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/registerLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="@string/not_registered_click_to_register"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:focusable="true" />
+
+
     </LinearLayout>
 
     <TableRow
@@ -140,9 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:maxWidth="42dp"
-            android:maxHeight="42dp"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/mktran" />
     </TableRow>
 
