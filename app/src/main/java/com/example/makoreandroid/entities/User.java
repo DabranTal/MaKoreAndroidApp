@@ -8,21 +8,16 @@ import androidx.room.PrimaryKey;
 public class User {
     @PrimaryKey() @NonNull
     private String UserName;
-    private String Password;
     private String NickName;
+    private String Password;
     //private List<Conversation> ConversationList
 
-    public User(@NonNull String userName, String password, String nickName) {
+    public User(@NonNull String userName, String nickName, String password) {
         UserName = userName;
         Password = password;
         NickName = nickName;
     }
 
-    public User() {
-        UserName = "coral";
-        Password = "1234";
-        NickName = "corali";
-    }
 
     public User(@NonNull String userName, String password) {
         UserName = userName;

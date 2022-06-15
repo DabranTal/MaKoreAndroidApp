@@ -20,10 +20,6 @@
         "source": "com.example.makoreandroid.app-main-40:/mipmap-xxhdpi/mk_round.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-v24_conversation_background_android_dark.jpg.flat",
-        "source": "com.example.makoreandroid.app-main-40:/drawable-v24/conversation_background_android_dark.jpg"
-    },
-    {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-mdpi_mk.png.flat",
         "source": "com.example.makoreandroid.app-main-40:/mipmap-mdpi/mk.png"
     },
@@ -96,6 +92,14 @@
         "source": "com.example.makoreandroid.app-main-40:/mipmap-xxhdpi/mk.png"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-xxhdpi_add_img.png.flat",
+        "source": "com.example.makoreandroid.app-main-40:/drawable-xxhdpi/add_img.png"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-xxhdpi_conversation_background_android.jpg.flat",
+        "source": "com.example.makoreandroid.app-main-40:/drawable-xxhdpi/conversation_background_android.jpg"
+    },
+    {
         "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-anydpi_ic_more_vert.xml.flat",
         "source": "com.example.makoreandroid.app-main-40:/drawable-anydpi/ic_more_vert.xml"
     },
@@ -124,10 +128,6 @@
         "source": "com.example.makoreandroid.app-main-40:/drawable-xhdpi/ic_server.png"
     },
     {
-        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-v24_conversation_background.jpg.flat",
-        "source": "com.example.makoreandroid.app-main-40:/drawable-v24/conversation_background.jpg"
-    },
-    {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "com.example.makoreandroid.app-main-40:/mipmap-mdpi/ic_launcher_round.webp"
     },
@@ -138,6 +138,10 @@
     {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "com.example.makoreandroid.app-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-xxhdpi_add_pic.png.flat",
+        "source": "com.example.makoreandroid.app-main-40:/drawable-xxhdpi/add_pic.png"
     },
     {
         "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-mdpi_ic_server.png.flat",
@@ -272,6 +276,10 @@
         "source": "com.example.makoreandroid.app-main-40:/drawable/mktran.png"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-xxhdpi_conversation_background_android_dark.jpg.flat",
+        "source": "com.example.makoreandroid.app-main-40:/drawable-xxhdpi/conversation_background_android_dark.jpg"
+    },
+    {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "com.example.makoreandroid.app-main-40:/mipmap-xxhdpi/ic_launcher.webp"
     },
@@ -370,10 +378,6 @@
     {
         "merged": "com.example.makoreandroid.app-merged_res-38:/drawable_gradient_drawable.xml.flat",
         "source": "com.example.makoreandroid.app-main-40:/drawable/gradient_drawable.xml"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-merged_res-38:/drawable-v24_conversation_background_android.jpg.flat",
-        "source": "com.example.makoreandroid.app-main-40:/drawable-v24/conversation_background_android.jpg"
     },
     {
         "merged": "com.example.makoreandroid.app-merged_res-38:/mipmap-hdpi_ic_launcher.webp.flat",

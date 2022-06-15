@@ -25,6 +25,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView addImg;
+
+  @NonNull
   public final ImageView imageView4;
 
   @NonNull
@@ -37,7 +40,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextView registerError;
 
   @NonNull
-  public final Button registerLogin;
+  public final TextView registerLogin;
 
   @NonNull
   public final EditText registerNickName;
@@ -57,13 +60,14 @@ public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView4,
-      @NonNull LinearLayout linearLayout, @NonNull Button registerBtnRegister,
-      @NonNull TextView registerError, @NonNull Button registerLogin,
-      @NonNull EditText registerNickName, @NonNull EditText registerPassword,
-      @NonNull EditText registerUserName, @NonNull EditText registerVPassword,
-      @NonNull TableRow tableRow, @NonNull TextView tvTitle) {
+  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView addImg,
+      @NonNull ImageView imageView4, @NonNull LinearLayout linearLayout,
+      @NonNull Button registerBtnRegister, @NonNull TextView registerError,
+      @NonNull TextView registerLogin, @NonNull EditText registerNickName,
+      @NonNull EditText registerPassword, @NonNull EditText registerUserName,
+      @NonNull EditText registerVPassword, @NonNull TableRow tableRow, @NonNull TextView tvTitle) {
     this.rootView = rootView;
+    this.addImg = addImg;
     this.imageView4 = imageView4;
     this.linearLayout = linearLayout;
     this.registerBtnRegister = registerBtnRegister;
@@ -104,6 +108,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.add_img;
+      ImageView addImg = ViewBindings.findChildViewById(rootView, id);
+      if (addImg == null) {
+        break missingId;
+      }
+
       id = R.id.imageView4;
       ImageView imageView4 = ViewBindings.findChildViewById(rootView, id);
       if (imageView4 == null) {
@@ -128,8 +138,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.register_login;
-      Button registerLogin = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.registerLogin;
+      TextView registerLogin = ViewBindings.findChildViewById(rootView, id);
       if (registerLogin == null) {
         break missingId;
       }
@@ -170,9 +180,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ConstraintLayout) rootView, imageView4, linearLayout,
-          registerBtnRegister, registerError, registerLogin, registerNickName, registerPassword,
-          registerUserName, registerVPassword, tableRow, tvTitle);
+      return new ActivityRegisterBinding((ConstraintLayout) rootView, addImg, imageView4,
+          linearLayout, registerBtnRegister, registerError, registerLogin, registerNickName,
+          registerPassword, registerUserName, registerVPassword, tableRow, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

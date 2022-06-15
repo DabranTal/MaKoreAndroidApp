@@ -35,7 +35,7 @@ public class RemoteUser {
         return localuser;
     }
 
-    public void setLocaluser(String s) {
+    public void setLocaluser(@NonNull String s) {
         this.localuser = s;
     }
 

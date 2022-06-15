@@ -40,7 +40,7 @@ public class UserAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void loginUser(User u,  AppCompatActivity activity) {
+    public void loginUser(User u, AppCompatActivity activity) {
         Call<String> call = webServiceAPI.loginGetToken(u);
         call.enqueue(new Callback<String>() {
             @Override

@@ -15,11 +15,17 @@ color btn_2
 color btn_3
 color button_color
 color chat_settings_bar
+color contact_name
+color conv_text_area_and_sent_btn
 color gray_700
 color grey
 color icon_color
+color last_msg
 color light_grey
 color mk_background
+color msg_color
+color msg_partner
+color msg_sender
 color purple_100
 color purple_150
 color purple_200
@@ -35,10 +41,11 @@ color whiteish
 color whiteish2
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+drawable add_img
+drawable add_pic
 drawable avatar
 drawable background
 drawable border
-drawable conversation_background
 drawable conversation_background_android
 drawable conversation_background_android_dark
 drawable et_custom
@@ -67,6 +74,7 @@ id AddUserName
 id User_name_title
 id action_search
 id action_settings
+id add_img
 id button_back
 id button_send
 id card_partner_message
@@ -92,9 +100,9 @@ id partner_profile_image
 id partner_tail
 id profile_image
 id recycler_conversaion
+id registerLogin
 id register_btnRegister
 id register_error
-id register_login
 id register_nickName
 id register_password
 id register_userName
@@ -138,6 +146,7 @@ mipmap mk_foreground
 mipmap mk_round
 string BaseUrl
 string add
+string already_registered_click_here_to_login
 string app_name
 string app_name_clean
 string attachment_summary_off
@@ -162,6 +171,7 @@ string login_required_username
 string login_userName
 string messages_header
 string new_message_here
+string not_registered_click_to_register
 string project_id
 string register_8digits_pass
 string register_VPassword
@@ -187,6 +197,7 @@ string sync_title
 string title_activity_settings
 style Circular
 style Theme.MaKoreAndroid
+style conv_back
 xml backup_rules
 xml data_extraction_rules
 xml root_preferences
