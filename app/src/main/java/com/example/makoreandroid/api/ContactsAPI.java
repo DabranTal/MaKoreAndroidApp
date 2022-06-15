@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
+import com.example.makoreandroid.dao.RemoteUserDao;
+import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.example.makoreandroid.jsonfiles.InvitationJson;
 import com.example.makoreandroid.jsonfiles.NewContactJson;
@@ -25,14 +27,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ContactsAPI {
-    //private MutableLiveData<List<Message>> postListData;
-    //private PostDao dao;
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
-
-    //    public MessageAPI(MutableLiveData<List<Message>> postListData, PostDao dao) {
-//        this.postListData = postListData;
-//        this.dao = dao;
+    RemoteUserDB db;
+    RemoteUserDao dao;
     public ContactsAPI() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
@@ -53,13 +51,14 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter, ArrayList<RemoteUser>r) {
+    public void get(String token, ArrayList<RemoteUser>remote, CustomListAdapter adapter, ArrayList<RemoteUser>r, RemoteUserDao dao, String local) {
         Call<List<RemoteUser>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<RemoteUser>>() {
             @Override
             public void onResponse(Call<List<RemoteUser>> call, Response<List<RemoteUser>> response) {
                 List<RemoteUser> remotes = response.body();
                 for(RemoteUser r : remotes) {
+                    r.setLocaluser(local);
                     if(r.getLastdate()!= null)
                         r.setLastdate(r.getLastdate().substring(11, 16));
                     else
@@ -68,6 +67,14 @@ public class ContactsAPI {
                 remote.clear();
                 remote.addAll(remotes);
                 Collections.sort(remote,(o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
+
+                for(RemoteUser r: remote) {
+                    try {
+                        dao.insert(r);
+                    }catch (Exception e) {
+                        break;
+                    }
+                }
                 r.clear();
                 r.addAll(remote);
                 adapter.setAdapter(remote);
@@ -81,7 +88,7 @@ public class ContactsAPI {
 
     public void validation(String token, EditText RemoteName, EditText server, TextView error, String []display,
                            ArrayList<RemoteUser>remote, EditText nickName, CustomListAdapter adapter,
-                           AppCompatActivity activity, AlertDialog dialog, String userName, ArrayList<RemoteUser>r) {
+                           AppCompatActivity activity, AlertDialog dialog, String userName, ArrayList<RemoteUser>r, RemoteUserDao dao) {
         Call<String>call = webServiceAPI.doValidation(RemoteName.getText().toString(), server.getText().toString(), "Bearer " + token);
         call.enqueue(new Callback<String>() {
             @Override
@@ -98,14 +105,14 @@ public class ContactsAPI {
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
                         addNewContact(token ,RemoteName, nickName, server, remote,
-                                adapter, activity, dialog, name, r);
+                                adapter, activity, dialog, name, r, dao, userName);
                     } else {
                         error.setText(display[8]);
                         String name = nickName.getText().toString();
                         if(name.equals(""))
                             name = RemoteName.getText().toString();
                         sendInvitation(token ,RemoteName, nickName ,server, remote, adapter,
-                                activity, dialog, name, userName, error, display, r);
+                                activity, dialog, name, userName, error, display, r, dao);
                     }
                 }
             }
@@ -118,14 +125,17 @@ public class ContactsAPI {
     }
     public void addNewContact(String  token, EditText RemoteName,EditText nickName ,EditText server
                               ,ArrayList<RemoteUser>remote, CustomListAdapter adapter,
-                              AppCompatActivity activity, AlertDialog dialog, String name, ArrayList<RemoteUser>r) {
+                              AppCompatActivity activity, AlertDialog dialog, String name, ArrayList<RemoteUser>r, RemoteUserDao dao, String userName) {
         NewContactJson contactJson = new NewContactJson(RemoteName.getText().toString(),
                 nickName.getText().toString(), server.getText().toString());
         Call<Void> call = webServiceAPI.addNewContact("Bearer " + token, contactJson);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                remote.add(new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString()));
+                RemoteUser newR = new RemoteUser(name, RemoteName.getText().toString(), "", "", server.getText().toString());
+                newR.setLocaluser(userName);
+                dao.insert(newR);
+                remote.add(newR);
                 r.clear();
                 r.addAll(remote);
                 adapter.setAdapter(remote);
@@ -147,7 +157,7 @@ public class ContactsAPI {
     public void sendInvitation(String token, EditText RemoteName, EditText nickName ,EditText server,
                                ArrayList<RemoteUser>remote, CustomListAdapter adapter,
                                AppCompatActivity activity, AlertDialog dialog, String name, String userName,
-                               TextView error, String []display, ArrayList<RemoteUser>r) {
+                               TextView error, String []display, ArrayList<RemoteUser>r, RemoteUserDao dao) {
         InvitationJson invitation = new InvitationJson(userName, RemoteName.getText().toString(), "localhost:5018");
         setContactsApi(server.getText().toString());
         Call<Void>call = webServiceAPI.invitation(invitation);
@@ -156,7 +166,7 @@ public class ContactsAPI {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 setContactsApi("localhost:5018");
                 addNewContact(token ,RemoteName, nickName, server, remote,
-                        adapter, activity, dialog, name, r);
+                        adapter, activity, dialog, name, r, dao, userName);
             }
 
             @Override

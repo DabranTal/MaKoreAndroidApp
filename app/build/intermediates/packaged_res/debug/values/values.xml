@@ -38,7 +38,7 @@
     <color name="icon_color">#ff333333</color>
     <color name="light_grey">#F2F3F4</color>
     <color name="mk_background">#FFFFFF</color>
-    <color name="purple_100">#edc3f7</color>
+    <color name="purple_100">#c1a1e6</color>
     <color name="purple_150">#BB97E8</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -109,7 +109,7 @@
     <style name="Theme.MaKoreAndroid" parent="Theme.AppCompat.DayNight">
         
 
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/purple_100</item>
         <item name="colorPrimaryVariant">@color/purple_100</item>
         <item name="colorOnPrimary">@color/white</item>
         

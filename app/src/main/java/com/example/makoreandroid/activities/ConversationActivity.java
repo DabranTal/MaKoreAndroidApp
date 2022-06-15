@@ -16,10 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.api.MessageAPI;
+import com.example.makoreandroid.dao.MessageDao;
+import com.example.makoreandroid.db.MessageDB;
 import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,6 +36,8 @@ public class ConversationActivity extends AppCompatActivity {
     String partnerName;
     RecyclerView lstMessages;
     MessageListAdapter adapter;
+    MessageDao dao;
+    String UserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class ConversationActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_conversation);
         Intent intent = getIntent();
+        partnerName = intent.getStringExtra("friendID");
+        UserName = intent.getStringExtra("UserName");
         partnerName = intent.getStringExtra("friendID");
 
 
@@ -61,11 +68,15 @@ public class ConversationActivity extends AppCompatActivity {
         lstMessages.setAdapter(adapter);
         lstMessages.setLayoutManager(new LinearLayoutManager(this));
 
-
+        // init Room
+        MessageDB db = Room.databaseBuilder(getApplicationContext(), MessageDB.class,
+                "MessageDB").allowMainThreadQueries().build();
+        dao = db.messageDao();
+        adapter.setMessages(dao.get(partnerName, UserName));
 
         //get messages for conversation
         MessageAPI messageAPI = new MessageAPI();
-        messageAPI.get(adapter, token, partnerName, lstMessages);
+        messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
 
         //update local backup messages view
         List<Message> messages = new ArrayList<>();
@@ -81,7 +92,8 @@ public class ConversationActivity extends AppCompatActivity {
             // post request to save new message
             SendingMessageJson sendingMessageJson = new SendingMessageJson(
                     intent.getStringExtra("UserName"),partnerName, et.getText().toString());
-            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages);
+            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages,
+                    dao, UserName, newMessage);
             // clean typing board
             et.setText("");
         });
@@ -113,7 +125,7 @@ public class ConversationActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             //get messages for conversation
             MessageAPI messageAPI = new MessageAPI();
-            messageAPI.get(adapter, token, partnerName, lstMessages);
+            messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
         }
     };
 }
