@@ -1,10 +1,13 @@
 package com.example.makoreandroid.activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +43,9 @@ public class ConversationActivity extends AppCompatActivity {
     MessageListAdapter adapter;
     MessageDao dao;
     String UserName;
+    String PartnerServer;
+    NotificationManagerCompat notificationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +57,8 @@ public class ConversationActivity extends AppCompatActivity {
         Intent intent = getIntent();
         partnerName = intent.getStringExtra("friendID");
         UserName = intent.getStringExtra("UserName");
-        partnerName = intent.getStringExtra("friendID");
-
+        PartnerServer =intent.getStringExtra("friendServer");
+        notificationManager = NotificationManagerCompat.from(this);
 
         // get JWT
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
@@ -75,7 +83,7 @@ public class ConversationActivity extends AppCompatActivity {
         adapter.setMessages(dao.get(partnerName, UserName));
 
         //get messages for conversation
-        MessageAPI messageAPI = new MessageAPI();
+        MessageAPI messageAPI = new MessageAPI(PartnerServer);
         messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
 
         //update local backup messages view
@@ -123,9 +131,36 @@ public class ConversationActivity extends AppCompatActivity {
     BroadcastReceiver activityReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            //create notification
+            Bundle bundle = intent.getExtras();
+            String msg = bundle.getString("msg");
+            if (msg.length() > 2) {
+                msg = msg.substring(1,msg.length() - 1);
+                String[] titleAndBody = msg.split("=");
+                createNotificationChannel();
+                String Msg = "Message";
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, Msg)
+                        .setSmallIcon(R.drawable.avatar)
+                        .setContentTitle(titleAndBody[0])
+                        .setContentText(titleAndBody[1])
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                int notificationID = titleAndBody[0].hashCode();
+                notificationManager.notify(notificationID, builder.build());
+            }
             //get messages for conversation
-            MessageAPI messageAPI = new MessageAPI();
+            MessageAPI messageAPI = new MessageAPI(PartnerServer);
             messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
+        }
+
+        private void createNotificationChannel() {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CharSequence name = "Message";
+                int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                NotificationChannel channel = new NotificationChannel("Message", name, importance);
+
+                NotificationManager notificationManager1 = getSystemService((NotificationManager.class));
+                notificationManager1.createNotificationChannel(channel);
+            }
         }
     };
 }

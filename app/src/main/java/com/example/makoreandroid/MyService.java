@@ -2,7 +2,6 @@ package com.example.makoreandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -17,14 +16,13 @@ public class MyService extends FirebaseMessagingService {
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        Log.e("NOTIFICATION_DATA", remoteMessage.getData() + "");
-
         Intent new_intent = new Intent();
 
-        Bundle bundle = new Bundle();// use bundle if you want to pass data
-        bundle.putString("msgBody", remoteMessage.getData().toString());
-        new_intent.putExtra("msg", bundle);
-
+        // use bundle to pass data
+        Bundle bundle = new Bundle();
+        //bundle.putString("msgBody", remoteMessage.getData().toString());
+        //bundle.putString("content","PP");
+        new_intent.putExtra("msg", remoteMessage.getData().toString());
         new_intent.setAction("ACTION_ACTIVITY");
         sendBroadcast(new_intent);
     }
