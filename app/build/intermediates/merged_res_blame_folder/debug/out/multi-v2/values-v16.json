@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-32:/values-v16/values-v16.xml",
+            "outputFile": "com.example.makoreandroid.app-mergeDebugResources-36:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\f053ca72a4906620f9d7f529c412475e\\transformed\\appcompat-1.4.2\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\dabra\\.gradle\\caches\\transforms-3\\d1278b834c44ef63e0cd766340cc5b6a\\transformed\\appcompat-1.4.2\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\0c734a8f9451ded3159b05d46fc9a23a\\transformed\\core-1.7.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\dabra\\.gradle\\caches\\transforms-3\\2408ae0c6b64e074ad570504f0fa7cb6\\transformed\\core-1.7.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
