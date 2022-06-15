@@ -55,7 +55,6 @@ public class MessageAPI {
                     try {
                         dao.insert(m);
                     } catch (Exception e) {
-
                     }
                 }
                 adapter.setMessages(messages);

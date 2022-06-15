@@ -11,7 +11,6 @@ import com.example.makoreandroid.MyApplication;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.dao.RemoteUserDao;
-import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.RemoteUser;
 import com.example.makoreandroid.jsonfiles.InvitationJson;
 import com.example.makoreandroid.jsonfiles.NewContactJson;
@@ -29,8 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ContactsAPI {
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
-    RemoteUserDB db;
-    RemoteUserDao dao;
     public ContactsAPI() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
@@ -42,11 +39,12 @@ public class ContactsAPI {
     public void setContactsApi(String server) {
         String[] newServer = server.split(":");
         String url;
-        if(newServer.length == 1)
-            url = "http://10.0.2.2:"+ server +"/api/";
-        else
-            url = "http://10.0.2.2:"+ newServer[1] +"/api/";
-        this.retrofit = new Retrofit.Builder().baseUrl(url)
+        if(!(newServer.length == 1)) {
+            if(newServer[0].equalsIgnoreCase("localhost"))
+                server = "10.0.2.2:" + newServer[1];
+        } else
+            server = "10.0.2.2:" + server;
+        this.retrofit = new Retrofit.Builder().baseUrl("http://" + server + "/api/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
@@ -67,12 +65,11 @@ public class ContactsAPI {
                 remote.clear();
                 remote.addAll(remotes);
                 Collections.sort(remote,(o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
-
                 for(RemoteUser r: remote) {
                     try {
                         dao.insert(r);
                     }catch (Exception e) {
-                        break;
+                        dao.update(r);
                     }
                 }
                 r.clear();

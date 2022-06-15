@@ -45,6 +45,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ContactActivity extends AppCompatActivity {
     private final String[] displayingError = {"You can't add your self as a user!",
@@ -104,7 +105,10 @@ public class ContactActivity extends AppCompatActivity {
                 "RemoteUserDB").allowMainThreadQueries().build();
         dao = db.remoteUserDao();
         listView = findViewById(R.id.list_view);
-        remote = new ArrayList<RemoteUser>(dao.get(UserName));
+        ArrayList<RemoteUser> newRemoteArray = new ArrayList<RemoteUser>(dao.get(UserName));
+        Collections.sort(newRemoteArray, (o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
+        //remote = new ArrayList<RemoteUser>(dao.get(UserName));
+        remote = new ArrayList<RemoteUser>(newRemoteArray);
         adapter = new CustomListAdapter(getApplicationContext(), remote);
         adapter.setAdapter(remote);
         listView.setAdapter(adapter);
