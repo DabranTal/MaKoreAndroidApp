@@ -2,9 +2,11 @@ package com.example.makoreandroid.activities;
 
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -22,6 +24,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
@@ -192,8 +195,29 @@ public class ContactActivity extends AppCompatActivity {
         String token = prefs.getString("token","");
         contactsAPI.get(token, remote, adapter, r);
         listView.setAdapter(adapter);
+        // registering BroadcastReceiver
+        if (activityReceiver != null) {
+            IntentFilter intentFilter = new IntentFilter("ACTION_ACTIVITY");
+            registerReceiver(activityReceiver, intentFilter);
+        }
     }
 
+    /* try */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(activityReceiver);
+    }
+
+    BroadcastReceiver activityReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //get contacts for conversation
+            SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+            String token = prefs.getString("token","");
+            contactsAPI.get(token, remote, adapter, r);
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

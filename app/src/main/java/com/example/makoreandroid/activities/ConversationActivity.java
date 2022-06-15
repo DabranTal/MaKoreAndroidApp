@@ -92,7 +92,6 @@ public class ConversationActivity extends AppCompatActivity {
 
     }
 
-    /* try */
     @Override
     protected void onPause() {
         super.onPause();
