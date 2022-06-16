@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.makoreandroid.R;
+import com.example.makoreandroid.dao.ImageUserDao;
 import com.example.makoreandroid.entities.RemoteUser;
 
 import java.util.ArrayList;
@@ -20,11 +21,13 @@ import java.util.ArrayList;
 public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
     LayoutInflater inflater;
     private ArrayList<RemoteUser> rList;
+    ImageUserDao dao;
 
-    public CustomListAdapter(Context ctx, ArrayList<RemoteUser>remoteUserArrayList) {
+    public CustomListAdapter(Context ctx, ArrayList<RemoteUser>remoteUserArrayList, ImageUserDao dao) {
         super(ctx, R.layout.custom_list_item, remoteUserArrayList);
         this.inflater = LayoutInflater.from(ctx);
-        rList = new ArrayList<>(remoteUserArrayList);
+        this.rList = new ArrayList<>(remoteUserArrayList);
+        this.dao = dao;
     }
 
     @NonNull
@@ -76,7 +79,7 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         TextView lastMessage = convertView.findViewById(R.id.last_message);
         TextView time = convertView.findViewById(R.id.time);
 
-        imageView.setImageResource(remote.getAvatar());
+        imageView.setImageBitmap(dao.get(remote.getId()).getProfilePic());
         remoteName.setText(remote.getId());
         lastMessage.setText(remote.getLast());
         time.setText(remote.getLastdate());

@@ -26,7 +26,9 @@ import androidx.room.Room;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.api.MessageAPI;
+import com.example.makoreandroid.dao.ImageUserDao;
 import com.example.makoreandroid.dao.MessageDao;
+import com.example.makoreandroid.db.ImageUserDB;
 import com.example.makoreandroid.db.MessageDB;
 import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
@@ -45,6 +47,7 @@ public class ConversationActivity extends AppCompatActivity {
     String UserName;
     String PartnerServer;
     NotificationManagerCompat notificationManager;
+    private ImageUserDao IuDao;
 
 
     @Override
@@ -65,10 +68,13 @@ public class ConversationActivity extends AppCompatActivity {
         token = prefs.getString("token","");
 
         // init partner props bar
+        ImageUserDB IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
+                .allowMainThreadQueries().build();
+        IuDao = IuDB.imageUserDao();
         TextView partnerNameTV = findViewById(R.id.partner_name);
         partnerNameTV.setText(partnerName);
         ImageView imageView = findViewById(R.id.partner_profile_image);
-        imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
+        imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
 
         // init messages RecyclerView
         lstMessages = findViewById(R.id.recycler_conversaion);
