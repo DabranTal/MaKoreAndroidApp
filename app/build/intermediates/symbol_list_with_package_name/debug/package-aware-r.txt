@@ -2750,8 +2750,11 @@ id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_contacts_list
+id activity_conversation
 id add
 id add_img
+id add_new_server
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2817,6 +2820,7 @@ id compress
 id confirm_button
 id constraint
 id contact_bar
+id contact_conversation
 id contact_name
 id contact_prop
 id container
@@ -2826,6 +2830,7 @@ id content_partner_message
 id content_sender_message
 id contiguous
 id continuousVelocity
+id conv_land
 id coordinator
 id cos
 id counterclockwise
@@ -3105,6 +3110,7 @@ id sender_tail
 id setting_option_nickname
 id setting_option_server
 id setting_option_theme
+id settings_error_popup_server
 id settings_next_nickname
 id settings_next_server
 id settings_next_theme
@@ -3328,11 +3334,14 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout action_bar_layout
+layout action_bar_layout_land
 layout activity_contacts_list
 layout activity_conversation
 layout activity_login
 layout activity_register
 layout activity_settings
+layout contact_conversation
+layout conv_land
 layout custom_dialog
 layout custom_list_item
 layout design_bottom_navigation_item
@@ -3407,7 +3416,8 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout partner_message
-layout pop_up
+layout pop_up_add_contact
+layout pop_up_change_server
 layout preference
 layout preference_category
 layout preference_category_material
@@ -3493,6 +3503,7 @@ string attachment_summary_on
 string attachment_title
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string change_the_address_of_your_default_server
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3518,6 +3529,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy
 string default_web_client_id
+string enter_new_server
 string enter_nickname
 string enter_server_ip
 string enter_user_name

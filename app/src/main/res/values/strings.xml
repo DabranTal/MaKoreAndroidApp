@@ -44,4 +44,6 @@
     <string name="settings_nickname">Nickname</string>
     <string name="already_registered_click_here_to_login">Not Registered ? Click To Register !</string>
     <string name="not_registered_click_to_register">Already registered ? Click here to login !</string>
+    <string name="change_the_address_of_your_default_server">Change the address of your default server</string>
+    <string name="enter_new_server">Enter new server</string>
 </resources>

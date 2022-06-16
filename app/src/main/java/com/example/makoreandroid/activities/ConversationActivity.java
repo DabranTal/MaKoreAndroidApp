@@ -7,8 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -26,7 +28,9 @@ import androidx.room.Room;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.api.MessageAPI;
+import com.example.makoreandroid.dao.ImageUserDao;
 import com.example.makoreandroid.dao.MessageDao;
+import com.example.makoreandroid.db.ImageUserDB;
 import com.example.makoreandroid.db.MessageDB;
 import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.jsonfiles.SendingMessageJson;
@@ -45,7 +49,7 @@ public class ConversationActivity extends AppCompatActivity {
     String UserName;
     String PartnerServer;
     NotificationManagerCompat notificationManager;
-
+    private ImageUserDao IuDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class ConversationActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
+
         setContentView(R.layout.activity_conversation);
         Intent intent = getIntent();
         partnerName = intent.getStringExtra("friendID");
@@ -65,10 +70,13 @@ public class ConversationActivity extends AppCompatActivity {
         token = prefs.getString("token","");
 
         // init partner props bar
+        ImageUserDB IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
+                .allowMainThreadQueries().build();
+        IuDao = IuDB.imageUserDao();
         TextView partnerNameTV = findViewById(R.id.partner_name);
         partnerNameTV.setText(partnerName);
         ImageView imageView = findViewById(R.id.partner_profile_image);
-        imageView.setImageResource(intent.getIntExtra("friendAvatar", 0));
+        imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
 
         // init messages RecyclerView
         lstMessages = findViewById(R.id.recycler_conversaion);
@@ -108,8 +116,23 @@ public class ConversationActivity extends AppCompatActivity {
 
         // on Click on back button
         FloatingActionButton btnBack = findViewById(R.id.button_back);
-        btnBack.setOnClickListener(view-> finish());
+        if (btnBack != null) {
+            btnBack.setOnClickListener(view-> finish());
+        }
+    }
 
+    @Override
+    public void onConfigurationChanged(Configuration _newConfig) {
+        super.onConfigurationChanged(_newConfig);
+        if (_newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Log.d("coral", "land");
+            // support landscape mode
+
+
+
+        } else {
+            Log.d("coral", "port");
+        }
     }
 
     @Override

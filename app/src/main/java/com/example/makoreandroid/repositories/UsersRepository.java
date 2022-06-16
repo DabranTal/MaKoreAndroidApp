@@ -19,5 +19,4 @@ public class UsersRepository {
     public void getTokenRegister(String username, String nickname, String password, AppCompatActivity activity) {
         api.registerGetTokenNewUser(new User(username, nickname, password), activity);
     }
-
 }

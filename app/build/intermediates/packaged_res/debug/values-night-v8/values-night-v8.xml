@@ -18,7 +18,7 @@
     <color name="msg_color">#DFDFDF</color>
     <color name="msg_partner">#7A7A7A</color>
     <color name="msg_sender">#000000</color>
-    <color name="purple_100">#DBA400</color>
+    <color name="purple_100">#FFC107</color>
     <color name="purple_200">#FF5722</color>
     <color name="purple_500">#2E0070</color>
     <color name="purple_700">#200067</color>

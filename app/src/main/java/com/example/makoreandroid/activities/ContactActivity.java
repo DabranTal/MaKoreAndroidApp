@@ -120,7 +120,7 @@ public class ContactActivity extends AppCompatActivity {
         ArrayList<RemoteUser> newRemoteArray = new ArrayList<RemoteUser>(dao.get(UserName));
         Collections.sort(newRemoteArray, (o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
         remote = new ArrayList<RemoteUser>(newRemoteArray);
-        adapter = new CustomListAdapter(getApplicationContext(), remote);
+        adapter = new CustomListAdapter(getApplicationContext(), remote, IuDao);
         adapter.setAdapter(remote);
         listView.setAdapter(adapter);
 
@@ -138,7 +138,6 @@ public class ContactActivity extends AppCompatActivity {
                 intent.putExtra("friendID", remote.get(i).getId());
                 intent.putExtra("friendNickName", remote.get(i).getName());
                 intent.putExtra("friendServer", remote.get(i).getServer());
-                intent.putExtra("friendAvatar", remote.get(i).getAvatar());
                 startActivity(intent);
             }
         });
@@ -157,7 +156,7 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     private void buildDialog() {
-        View view = getLayoutInflater().inflate(R.layout.pop_up, null);
+        View view = getLayoutInflater().inflate(R.layout.pop_up_add_contact, null);
         EditText userName = view.findViewById(R.id.AddUserName);
         EditText NickName = view.findViewById(R.id.AddNickName);
         EditText Server = view.findViewById(R.id.AddServer);

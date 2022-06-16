@@ -54,4 +54,8 @@ public interface WebServiceAPI {
     @POST("invitations")
     Call<Void> invitation(@Body InvitationJson invitation);
 
+    @POST("invitations")
+    Call<Void> notifyNewClient(@Body InvitationJson invitation);
+
+
 }

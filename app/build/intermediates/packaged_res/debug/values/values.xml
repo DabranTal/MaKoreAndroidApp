@@ -68,7 +68,9 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="change_the_address_of_your_default_server">Change the address of your default server</string>
     <string name="default_web_client_id" translatable="false">483769908891-3gth8jsb4807smnctc64rpl94fb0ufn9.apps.googleusercontent.com</string>
+    <string name="enter_new_server">Enter new server</string>
     <string name="enter_nickname">Enter NickName</string>
     <string name="enter_server_ip">Enter Server IP</string>
     <string name="enter_user_name">Enter User Name</string>
