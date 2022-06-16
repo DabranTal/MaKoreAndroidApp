@@ -42,6 +42,6 @@
     <string name="settings_theme">Theme</string>
     <string name="settings_server">Server</string>
     <string name="settings_nickname">Nickname</string>
-    <string name="not_registered_click_to_register">Not Registered ? Click To Register !</string>
-    <string name="already_registered_click_here_to_login">Already registered ? Click here to login !</string>
+    <string name="already_registered_click_here_to_login">Not Registered ? Click To Register !</string>
+    <string name="not_registered_click_to_register">Already registered ? Click here to login !</string>
 </resources>

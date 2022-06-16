@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                 binding.registerError.setText(R.string.register_8digits_pass);
                 return;
             }
-            if (binding.registerNickName.getText() != null) {
+            if (!binding.registerNickName.getText().toString().equals("")) {
                 ImageUser imageUser = new ImageUser(binding.registerUserName.getText().toString(),
                         image);
                 dao.insert(imageUser);

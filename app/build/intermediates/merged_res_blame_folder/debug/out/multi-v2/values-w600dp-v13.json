@@ -4,7 +4,7 @@
             "outputFile": "com.example.makoreandroid.app-mergeDebugResources-36:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\idota\\StudioProjects\\MaKoreAndroid\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\Users\\coral\\AndroidStudioProjects\\MaKoreAndroid-ex3\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "1",

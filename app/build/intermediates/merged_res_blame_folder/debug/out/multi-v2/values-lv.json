@@ -4,75 +4,7 @@
             "outputFile": "com.example.makoreandroid.app-mergeDebugResources-36:/values-lv/values-lv.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\e0ff2d1e0e16047855ea3f327618538e\\transformed\\appcompat-1.4.2\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,335,444,530,634,756,838,918,1028,1136,1242,1351,1462,1565,1677,1784,1889,1989,2074,2183,2294,2393,2504,2611,2716,2890,2989",
-                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
-                        "endOffsets": "220,330,439,525,629,751,833,913,1023,1131,1237,1346,1457,1560,1672,1779,1884,1984,2069,2178,2289,2388,2499,2606,2711,2885,2984,3067"
-                    },
-                    "to": {
-                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,111",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "329,449,559,668,754,858,980,1062,1142,1252,1360,1466,1575,1686,1789,1901,2008,2113,2213,2298,2407,2518,2617,2728,2835,2940,3114,10934",
-                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
-                        "endOffsets": "444,554,663,749,853,975,1057,1137,1247,1355,1461,1570,1681,1784,1896,2003,2108,2208,2293,2402,2513,2612,2723,2830,2935,3109,3208,11012"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\502ac8718955e746c3464631523c776d\\transformed\\preference-1.1.1\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,174,272,351,497,666,751",
-                        "endColumns": "68,97,78,145,168,84,81",
-                        "endOffsets": "169,267,346,492,661,746,828"
-                    },
-                    "to": {
-                        "startLines": "56,58,108,110,113,114,115",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "6405,6539,10632,10788,11118,11287,11372",
-                        "endColumns": "68,97,78,145,168,84,81",
-                        "endOffsets": "6469,6632,10706,10929,11282,11367,11449"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\a67b7939c96549e90a965f7da2645aab\\transformed\\firebase-messaging-20.1.0\\res\\values-lv\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "100",
-                        "endOffsets": "307"
-                    },
-                    "to": {
-                        "startLines": "60",
-                        "startColumns": "4",
-                        "startOffsets": "6731",
-                        "endColumns": "104",
-                        "endOffsets": "6831"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\e84792a16814e572b147be1ee4f0accc\\transformed\\core-1.7.0\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "112",
-                        "startColumns": "4",
-                        "startOffsets": "11017",
-                        "endColumns": "100",
-                        "endOffsets": "11113"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\9299ea32c3838a1ab610c6cfa0aa113c\\transformed\\material-1.6.1\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\9299ea32c3838a1ab610c6cfa0aa113c\\transformed\\material-1.6.1\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +23,75 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\45f9b480a143174433c0ead66e5edf7f\\transformed\\play-services-basement-17.0.0\\res\\values-lv\\values.xml",
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\e84792a16814e572b147be1ee4f0accc\\transformed\\core-1.7.0\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "112",
+                        "startColumns": "4",
+                        "startOffsets": "11017",
+                        "endColumns": "100",
+                        "endOffsets": "11113"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\a67b7939c96549e90a965f7da2645aab\\transformed\\firebase-messaging-20.1.0\\res\\values-lv\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "207",
+                        "endColumns": "100",
+                        "endOffsets": "307"
+                    },
+                    "to": {
+                        "startLines": "60",
+                        "startColumns": "4",
+                        "startOffsets": "6731",
+                        "endColumns": "104",
+                        "endOffsets": "6831"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\e0ff2d1e0e16047855ea3f327618538e\\transformed\\appcompat-1.4.2\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,335,444,530,634,756,838,918,1028,1136,1242,1351,1462,1565,1677,1784,1889,1989,2074,2183,2294,2393,2504,2611,2716,2890,2989",
+                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
+                        "endOffsets": "220,330,439,525,629,751,833,913,1023,1131,1237,1346,1457,1560,1672,1779,1884,1984,2069,2178,2289,2388,2499,2606,2711,2885,2984,3067"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,111",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "329,449,559,668,754,858,980,1062,1142,1252,1360,1466,1575,1686,1789,1901,2008,2113,2213,2298,2407,2518,2617,2728,2835,2940,3114,10934",
+                        "endColumns": "119,109,108,85,103,121,81,79,109,107,105,108,110,102,111,106,104,99,84,108,110,98,110,106,104,173,98,82",
+                        "endOffsets": "444,554,663,749,853,975,1057,1137,1247,1355,1461,1570,1681,1784,1896,2003,2108,2208,2293,2402,2513,2612,2723,2830,2935,3109,3208,11012"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\502ac8718955e746c3464631523c776d\\transformed\\preference-1.1.1\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,174,272,351,497,666,751",
+                        "endColumns": "68,97,78,145,168,84,81",
+                        "endOffsets": "169,267,346,492,661,746,828"
+                    },
+                    "to": {
+                        "startLines": "56,58,108,110,113,114,115",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "6405,6539,10632,10788,11118,11287,11372",
+                        "endColumns": "68,97,78,145,168,84,81",
+                        "endOffsets": "6469,6632,10706,10929,11282,11367,11449"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\45f9b480a143174433c0ead66e5edf7f\\transformed\\play-services-basement-17.0.0\\res\\values-lv\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -108,7 +108,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\idota\\.gradle\\caches\\transforms-3\\7820add9159cf368acac90a59ae2b97d\\transformed\\play-services-base-17.0.0\\res\\values-lv\\values.xml",
+                    "source": "C:\\Users\\coral\\.gradle\\caches\\transforms-3\\7820add9159cf368acac90a59ae2b97d\\transformed\\play-services-base-17.0.0\\res\\values-lv\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
