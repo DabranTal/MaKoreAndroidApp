@@ -79,7 +79,11 @@ public class CustomListAdapter extends ArrayAdapter<RemoteUser> {
         TextView lastMessage = convertView.findViewById(R.id.last_message);
         TextView time = convertView.findViewById(R.id.time);
 
-        imageView.setImageBitmap(dao.get(remote.getId()).getProfilePic());
+        try {
+            imageView.setImageBitmap(dao.get(remote.getId()).getProfilePic());
+        }catch (Exception e) {
+            imageView.setImageResource(R.drawable.avatar);
+        }
         remoteName.setText(remote.getId());
         lastMessage.setText(remote.getLast());
         time.setText(remote.getLastdate());

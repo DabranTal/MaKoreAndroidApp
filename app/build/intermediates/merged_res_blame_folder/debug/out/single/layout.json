@@ -16,16 +16,16 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\action_bar_layout.xml"
     },
     {
+        "merged": "com.example.makoreandroid.app-mergeDebugResources-37:/layout/custom_list_item.xml",
+        "source": "com.example.makoreandroid.app-main-40:/layout/custom_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-37:\\layout\\custom_list_item.xml",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\custom_list_item.xml"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-37:\\layout\\activity_register.xml",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\activity_register.xml"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-mergeDebugResources-37:/layout/action_bar_layout.xml",
-        "source": "com.example.makoreandroid.app-main-40:/layout/action_bar_layout.xml"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-37:\\layout\\sender_message.xml",

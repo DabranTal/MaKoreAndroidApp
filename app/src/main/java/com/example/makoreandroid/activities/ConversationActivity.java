@@ -74,8 +74,11 @@ public class ConversationActivity extends AppCompatActivity {
         TextView partnerNameTV = findViewById(R.id.partner_name);
         partnerNameTV.setText(partnerName);
         ImageView imageView = findViewById(R.id.partner_profile_image);
-        imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
-
+        try {
+            imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
+        }catch (Exception e) {
+            imageView.setImageResource(R.drawable.avatar);
+        }
         // init messages RecyclerView
         lstMessages = findViewById(R.id.recycler_conversaion);
         adapter = new MessageListAdapter(this);

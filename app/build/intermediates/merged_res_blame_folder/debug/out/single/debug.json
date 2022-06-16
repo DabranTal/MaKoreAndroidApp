@@ -36,6 +36,10 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable\\partner_message_tail.xml"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/layout_custom_list_item.xml.flat",
+        "source": "com.example.makoreandroid.app-main-40:/layout/custom_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\drawable-hdpi_ic_send_btn.png.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable-hdpi\\ic_send_btn.png"
     },
@@ -136,12 +140,12 @@
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\activity_contacts_list.xml"
     },
     {
-        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-xxxhdpi_mk.png.flat",
-        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-xxxhdpi\\mk.png"
-    },
-    {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-xxxhdpi_mk.png.flat",
+        "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-xxxhdpi\\mk.png"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-mdpi_mk_foreground.png.flat",
@@ -266,10 +270,6 @@
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\drawable-mdpi_ic_go_option_settings_dark.png.flat",
         "source": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable-mdpi\\ic_go_option_settings_dark.png"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-merged_res-38:/layout_action_bar_layout.xml.flat",
-        "source": "com.example.makoreandroid.app-main-40:/layout/action_bar_layout.xml"
     },
     {
         "merged": "C:\\Users\\idota\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\drawable-anydpi_ic_nick.xml.flat",
