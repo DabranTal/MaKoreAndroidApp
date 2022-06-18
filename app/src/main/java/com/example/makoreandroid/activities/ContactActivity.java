@@ -122,8 +122,13 @@ public class ContactActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
         title = findViewById(R.id.User_name_title);
         ImageView img = findViewById(R.id.profile_image1);
-        img.setImageBitmap(image.getProfilePic());
-
+        try {
+            img.setImageBitmap(image.getProfilePic());
+        }catch (Exception e) {
+            img.setImageResource(R.drawable.avatar);
+        }
+        String newTitle = "Welcome " + UserName + "!";
+        title.setText(newTitle);
 
         //Room
         db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class,
