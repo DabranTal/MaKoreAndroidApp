@@ -80,6 +80,7 @@ id add_img
 id add_new_server
 id button_back
 id button_send
+id button_send_land
 id card_partner_message
 id card_sender_message
 id contact_bar
@@ -90,6 +91,7 @@ id content_partner_message
 id content_sender_message
 id conv_land
 id error
+id friend_name_title_on_land
 id hey
 id imageView4
 id last_message
@@ -105,7 +107,9 @@ id partner_profile_image
 id partner_tail
 id profile_image
 id profile_image1
+id profile_image_on_land
 id recycler_conversaion
+id recycler_conversaion_land
 id registerLogin
 id register_btnRegister
 id register_error
@@ -126,17 +130,20 @@ id settings_server
 id settings_theme
 id tableRow
 id text_bar
+id text_bar_land
 id time
 id time_partner_message
 id time_sender_message
 id tv_title
 id typing_board
+id typing_board_land
 id wraper_partner_message
 id wraper_recycler_conversation
+id wraper_recycler_conversation_land
 id wraper_sender_message
 id wraper_typing_board
+id wraper_typing_board_land
 layout action_bar_layout
-layout action_bar_layout_land
 layout activity_contacts_list
 layout activity_conversation
 layout activity_login

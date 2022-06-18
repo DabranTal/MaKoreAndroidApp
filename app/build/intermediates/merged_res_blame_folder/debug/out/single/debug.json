@@ -8,6 +8,10 @@
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable-hdpi\\ic_nick.png"
     },
     {
+        "merged": "com.example.makoreandroid.app-merged_res-38:/layout_conv_land.xml.flat",
+        "source": "com.example.makoreandroid.app-main-40:/layout/conv_land.xml"
+    },
+    {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout_conv_land.xml.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\conv_land.xml"
     },
@@ -86,6 +90,10 @@
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout-land_activity_conversation.xml.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout-land\\activity_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout-land_sender_message.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout-land\\sender_message.xml"
     },
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout_contact_conversation.xml.flat",
@@ -184,6 +192,10 @@
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable-hdpi\\ic_server.png"
     },
     {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout-land_custom_list_item.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout-land\\custom_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-xxhdpi_mk.png.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-xxhdpi\\mk.png"
     },
@@ -214,10 +226,6 @@
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-mdpi_mk.png.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-mdpi\\mk.png"
-    },
-    {
-        "merged": "com.example.makoreandroid.app-merged_res-38:/layout-land_activity_contacts_list.xml.flat",
-        "source": "com.example.makoreandroid.app-main-40:/layout-land/activity_contacts_list.xml"
     },
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\drawable-xxhdpi_conversation_background_android_dark.jpg.flat",
@@ -300,6 +308,10 @@
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout-land_action_bar_layout.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout-land\\action_bar_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\layout_activity_conversation.xml.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\activity_conversation.xml"
     },
@@ -370,6 +382,10 @@
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\drawable-xxhdpi_ic_server.png.flat",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\drawable-xxhdpi\\ic_server.png"
+    },
+    {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\menu-land_menu.xml.flat",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\menu-land\\menu.xml"
     },
     {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

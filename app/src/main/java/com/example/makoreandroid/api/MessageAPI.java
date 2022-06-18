@@ -49,12 +49,14 @@ public class MessageAPI {
             @Override
             public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
                 List<Message> messages = response.body();
-                for(Message m: messages) {
-                    m.setSender(userName);
-                    m.setReciver(partnerName);
-                    try {
-                        dao.insert(m);
-                    } catch (Exception e) {
+                if (messages != null) {
+                    for (Message m : messages) {
+                        m.setSender(userName);
+                        m.setReciver(partnerName);
+                        try {
+                            dao.insert(m);
+                        } catch (Exception e) {
+                        }
                     }
                 }
                 adapter.setMessages(messages);

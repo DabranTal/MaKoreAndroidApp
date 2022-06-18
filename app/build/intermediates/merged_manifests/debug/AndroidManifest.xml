@@ -28,10 +28,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.MaKoreAndroid"
         android:usesCleartextTraffic="true" >
-        <activity
-            android:name="com.example.makoreandroid.SharedActivity"
-            android:exported="false" />
-
         <service
             android:name="com.example.makoreandroid.MyService"
             android:enabled="true"
@@ -50,10 +46,10 @@
             android:exported="false" />
         <activity
             android:name="com.example.makoreandroid.activities.ContactActivity"
-            android:exported="false" />
+            android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name="com.example.makoreandroid.activities.ConversationActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:exported="false" />
         <activity
             android:name="com.example.makoreandroid.activities.LoginActivity"
             android:exported="true" >

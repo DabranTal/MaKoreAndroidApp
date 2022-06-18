@@ -41,25 +41,31 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConversationActivity extends AppCompatActivity {
-    String token;
-    String partnerName;
-    RecyclerView lstMessages;
-    MessageListAdapter adapter;
-    MessageDao dao;
-    String UserName;
-    String PartnerServer;
-    NotificationManagerCompat notificationManager;
-    private ImageUserDao IuDao;
+    static String token;
+    static String partnerName;
+    static RecyclerView lstMessages;
+    static MessageListAdapter adapter;
+    static MessageDao messageDao;
+    static String UserName;
+    static String PartnerServer;
+    static NotificationManagerCompat notificationManager;
+    static ImageUserDao IuDao;
+    static MessageAPI messageAPI;
+    static IntentFilter intentFilter;
+    public Context conv_context = ConversationActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        if (intent.getStringExtra("NOT") != null) {
+            finish();
+        }
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         setContentView(R.layout.activity_conversation);
-        Intent intent = getIntent();
         partnerName = intent.getStringExtra("friendID");
         UserName = intent.getStringExtra("UserName");
         PartnerServer =intent.getStringExtra("friendServer");
@@ -87,12 +93,12 @@ public class ConversationActivity extends AppCompatActivity {
         // init Room
         MessageDB db = Room.databaseBuilder(getApplicationContext(), MessageDB.class,
                 "MessageDB").allowMainThreadQueries().build();
-        dao = db.messageDao();
-        adapter.setMessages(dao.get(partnerName, UserName));
+        messageDao = db.messageDao();
+        adapter.setMessages(messageDao.get(partnerName, UserName));
 
         //get messages for conversation
-        MessageAPI messageAPI = new MessageAPI(PartnerServer);
-        messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
+        messageAPI = new MessageAPI(PartnerServer);
+        messageAPI.get(adapter, token, partnerName, lstMessages, messageDao, UserName);
 
         //update local backup messages view
         List<Message> messages = new ArrayList<>();
@@ -109,7 +115,7 @@ public class ConversationActivity extends AppCompatActivity {
             SendingMessageJson sendingMessageJson = new SendingMessageJson(
                     intent.getStringExtra("UserName"),partnerName, et.getText().toString());
             messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages,
-                    dao, UserName, newMessage);
+                    messageDao, UserName, newMessage);
             // clean typing board
             et.setText("");
         });
@@ -119,20 +125,17 @@ public class ConversationActivity extends AppCompatActivity {
         if (btnBack != null) {
             btnBack.setOnClickListener(view-> finish());
         }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration _newConfig) {
-        super.onConfigurationChanged(_newConfig);
-        if (_newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Log.d("coral", "land");
-            // support landscape mode
 
 
-
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // In landscape
+            finish();
         } else {
-            Log.d("coral", "port");
+            // In portrait
+            Log.d("coral", "continue");
         }
+
     }
 
     @Override
@@ -146,7 +149,7 @@ public class ConversationActivity extends AppCompatActivity {
         super.onResume();
         // registering BroadcastReceiver
         if (activityReceiver != null) {
-            IntentFilter intentFilter = new IntentFilter("ACTION_ACTIVITY");
+            intentFilter = new IntentFilter("ACTION_ACTIVITY");
             registerReceiver(activityReceiver, intentFilter);
         }
     }
@@ -172,7 +175,7 @@ public class ConversationActivity extends AppCompatActivity {
             }
             //get messages for conversation
             MessageAPI messageAPI = new MessageAPI(PartnerServer);
-            messageAPI.get(adapter, token, partnerName, lstMessages, dao, UserName);
+            messageAPI.get(adapter, token, partnerName, lstMessages, messageDao, UserName);
         }
 
         private void createNotificationChannel() {

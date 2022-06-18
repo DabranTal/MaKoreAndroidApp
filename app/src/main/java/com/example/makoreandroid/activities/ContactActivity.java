@@ -1,6 +1,4 @@
 package com.example.makoreandroid.activities;
-
-
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -31,18 +30,24 @@ import androidx.appcompat.widget.SearchView;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.room.Room;
 
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
+import com.example.makoreandroid.adapters.MessageListAdapter;
 import com.example.makoreandroid.api.ContactsAPI;
 import com.example.makoreandroid.api.FireBaseAPI;
+import com.example.makoreandroid.api.MessageAPI;
 import com.example.makoreandroid.dao.ImageUserDao;
 import com.example.makoreandroid.dao.RemoteUserDao;
 import com.example.makoreandroid.db.ImageUserDB;
+import com.example.makoreandroid.db.MessageDB;
 import com.example.makoreandroid.db.RemoteUserDB;
 import com.example.makoreandroid.entities.ImageUser;
+import com.example.makoreandroid.entities.Message;
 import com.example.makoreandroid.entities.RemoteUser;
+import com.example.makoreandroid.jsonfiles.SendingMessageJson;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -50,6 +55,7 @@ import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ContactActivity extends AppCompatActivity {
     private final String[] displayingError = {"You can't add your self as a user!",
@@ -63,6 +69,7 @@ public class ContactActivity extends AppCompatActivity {
     private ListView listView;
     private CustomListAdapter adapter;
     private AlertDialog dialog;
+    String token;
     private ArrayList<RemoteUser> remote;
     ContactsAPI contactsAPI = new ContactsAPI();
     TextView error;
@@ -70,9 +77,16 @@ public class ContactActivity extends AppCompatActivity {
     ArrayList<RemoteUser> r = new ArrayList<RemoteUser>();
     NotificationManagerCompat notificationManager;
     private RemoteUserDB db;
-    private RemoteUserDao dao;
+    private RemoteUserDao userDao;
     private ImageUserDB IuDB;
     private ImageUserDao IuDao;
+    private TextView title;
+    private String newTitle;
+    String friendID;
+    String friendNickName;
+    String friendServer;
+    ConversationActivity conversationActivity;
+
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -80,7 +94,7 @@ public class ContactActivity extends AppCompatActivity {
 
         //take the jwt
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        String token = prefs.getString("token","");
+        token = prefs.getString("token","");
         notificationManager = NotificationManagerCompat.from(this);
 
 
@@ -92,7 +106,7 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-                String token = prefs.getString("token","");
+                token = prefs.getString("token","");
                 dialog.show();
             }
         });
@@ -106,41 +120,24 @@ public class ContactActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
-        TextView title = findViewById(R.id.User_name_title);
+        title = findViewById(R.id.User_name_title);
         ImageView img = findViewById(R.id.profile_image1);
         img.setImageBitmap(image.getProfilePic());
-        String newTitle = "Welcome " + UserName + "!";
-        title.setText(newTitle);
+
 
         //Room
         db = Room.databaseBuilder(getApplicationContext(), RemoteUserDB.class,
                 "RemoteUserDB").allowMainThreadQueries().build();
-        dao = db.remoteUserDao();
+        userDao = db.remoteUserDao();
         listView = findViewById(R.id.list_view);
-        ArrayList<RemoteUser> newRemoteArray = new ArrayList<RemoteUser>(dao.get(UserName));
+        ArrayList<RemoteUser> newRemoteArray = new ArrayList<RemoteUser>(userDao.get(UserName));
         Collections.sort(newRemoteArray, (o1, o2) -> o2.getLastdate().compareTo(o1.getLastdate()));
         remote = new ArrayList<RemoteUser>(newRemoteArray);
         adapter = new CustomListAdapter(getApplicationContext(), remote, IuDao);
         adapter.setAdapter(remote);
         listView.setAdapter(adapter);
 
-        //set every contact clickable and define the onItemClick
-        listView.setClickable(true);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ColorDrawable colorDrawable
-                        = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
-                adapterView.getChildAt(i).setBackgroundDrawable(colorDrawable);
-                Intent myIntent = getIntent();
-                Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
-                intent.putExtra("UserName", myIntent.getStringExtra("UserName"));
-                intent.putExtra("friendID", remote.get(i).getId());
-                intent.putExtra("friendNickName", remote.get(i).getName());
-                intent.putExtra("friendServer", remote.get(i).getServer());
-                startActivity(intent);
-            }
-        });
+
         // send Server Firebase Token
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ContactActivity.this, new OnSuccessListener<InstanceIdResult>() {
             @Override
@@ -153,7 +150,141 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
+
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // In landscape
+            newTitle = UserName;
+            title.setText(newTitle);
+
+            Intent temp = new Intent(this, ConversationActivity.class);
+            temp.putExtra("NOT", "NOT");
+            startActivity(temp);
+
+            EditText editText = findViewById(R.id.typing_board_land);
+            androidx.recyclerview.widget.RecyclerView recyclerView = findViewById(R.id.recycler_conversaion_land);
+            com.google.android.material.floatingactionbutton.FloatingActionButton button = findViewById(R.id.button_send_land);
+
+            editText.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.GONE);
+            button.setVisibility(View.GONE);
+
+            //set every contact clickable and define the onItemClick
+            listView.setClickable(true);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    ColorDrawable colorDrawable
+                            = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
+                    adapterView.getChildAt(i).setBackgroundDrawable(colorDrawable);
+                    friendID = remote.get(i).getId();
+                    friendNickName = remote.get(i).getName();
+                    friendServer = remote.get(i).getServer();
+
+                    editText.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.VISIBLE);
+                    button.setVisibility(View.VISIBLE);
+
+                    ConversationActivity.partnerName = friendID;
+                    ConversationActivity.UserName = UserName;
+                    ConversationActivity.PartnerServer = friendServer;
+                    notificationManager = NotificationManagerCompat.from(ContactActivity.this);
+
+                    // init partner props bar
+                    ImageUserDB IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
+                            .allowMainThreadQueries().build();
+                    IuDao = IuDB.imageUserDao();
+//                    TextView partnerNameTV = findViewById(R.id.partner_name);
+//                    partnerNameTV.setText(ConversationActivity.partnerName);
+//                    ImageView imageView = findViewById(R.id.partner_profile_image);
+//                    imageView.setImageBitmap(IuDao.get(ConversationActivity.partnerName).getProfilePic());
+
+                    // init messages RecyclerView
+                    ConversationActivity.lstMessages = findViewById(R.id.recycler_conversaion_land);
+                    ConversationActivity.adapter = new MessageListAdapter(conversationActivity.conv_context);
+                    ConversationActivity.lstMessages.setAdapter(ConversationActivity.adapter);
+                    ConversationActivity.lstMessages.setLayoutManager(new LinearLayoutManager(conversationActivity.conv_context));
+
+                    // init Room
+                    MessageDB db = Room.databaseBuilder(getApplicationContext(), MessageDB.class,
+                            "MessageDB").allowMainThreadQueries().build();
+                    ConversationActivity.messageDao = db.messageDao();
+                    ConversationActivity.adapter.setMessages(ConversationActivity.messageDao.get(friendID, UserName));
+
+                    //get messages for conversation
+                    ConversationActivity.messageAPI = new MessageAPI(friendServer);
+                    ConversationActivity.messageAPI.get(ConversationActivity.adapter, token, friendID,
+                            ConversationActivity.lstMessages, ConversationActivity.messageDao, UserName);
+
+                    //update local backup messages view
+                    List<Message> messages = new ArrayList<>();
+                    ConversationActivity.adapter.copyMessagesTo(messages);
+
+
+                    // on Click on send button
+                    FloatingActionButton btnSend = findViewById(R.id.button_send_land);
+                    btnSend.setOnClickListener(vv->{
+                        EditText et = findViewById(R.id.typing_board_land);
+                        Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
+                        messages.add(newMessage);
+
+                        // post request to save new message
+                        SendingMessageJson sendingMessageJson = new SendingMessageJson(
+                                friendID, friendNickName, et.getText().toString());
+                        ConversationActivity.messageAPI.transferAndGet(sendingMessageJson,
+                                ConversationActivity.adapter, token, friendID,
+                                ConversationActivity.lstMessages,
+                                ConversationActivity.messageDao, UserName, newMessage);
+
+                        // clean typing board
+                        et.setText("");
+                    });
+                }
+            });
+
+        } else {
+            // In portrait
+            newTitle = "Welcome " + UserName + "!";
+            title.setText(newTitle);
+
+            //set every contact clickable and define the onItemClick
+            listView.setClickable(true);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    ColorDrawable colorDrawable
+                            = new ColorDrawable(Color.alpha(R.color.chat_settings_bar));
+                    adapterView.getChildAt(i).setBackgroundDrawable(colorDrawable);
+                    Intent myIntent = getIntent();
+                    Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
+                    intent.putExtra("UserName", myIntent.getStringExtra("UserName"));
+                    intent.putExtra("friendID", remote.get(i).getId());
+                    intent.putExtra("friendNickName", remote.get(i).getName());
+                    intent.putExtra("friendServer", remote.get(i).getServer());
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
+
+//
+//    @Override
+//    public void onConfigurationChanged(Configuration _newConfig) {
+//        super.onConfigurationChanged(_newConfig);
+//        if (_newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            Log.d("coral", "land");
+//            newTitle = UserName;
+//            title.setText(newTitle);
+//            // support landscape mode
+//
+//
+//        } else {
+//            Log.d("coral", "port");
+//            newTitle = "Welcome " + UserName + "!";
+//            title.setText(newTitle);
+//        }
+//    }
 
     private void buildDialog() {
         View view = getLayoutInflater().inflate(R.layout.pop_up_add_contact, null);
@@ -207,7 +338,7 @@ public class ContactActivity extends AppCompatActivity {
                     return;
                 }
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
-                        NickName, adapter, ContactActivity.this, dialog, UserName, r, dao);
+                        NickName, adapter, ContactActivity.this, dialog, UserName, r, userDao);
             }
         });
 
@@ -218,7 +349,7 @@ public class ContactActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("token","");
-        contactsAPI.get(token, remote, adapter, r, dao, UserName);
+        contactsAPI.get(token, remote, adapter, r, userDao, UserName);
         listView.setAdapter(adapter);
         // registering BroadcastReceiver
         if (activityReceiver != null) {
@@ -256,7 +387,15 @@ public class ContactActivity extends AppCompatActivity {
             //get contacts for conversation
             SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
             String token = prefs.getString("token","");
-            contactsAPI.get(token, remote, adapter, r, dao, UserName);
+            contactsAPI.get(token, remote, adapter, r, userDao, UserName);
+
+            int orientation = getResources().getConfiguration().orientation;
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                //get messages for conversation
+                MessageAPI messageAPI = new MessageAPI(friendServer);
+                messageAPI.get(ConversationActivity.adapter, token, friendID,
+                        ConversationActivity.lstMessages, ConversationActivity.messageDao, UserName);
+            }
         }
 
         private void createNotificationChannel() {
@@ -267,6 +406,16 @@ public class ContactActivity extends AppCompatActivity {
 
                 NotificationManager notificationManager1 = getSystemService((NotificationManager.class));
                 notificationManager1.createNotificationChannel(channel);
+
+                int orientation = getResources().getConfiguration().orientation;
+                if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    CharSequence name1 = "Message";
+                    int importance1 = NotificationManager.IMPORTANCE_DEFAULT;
+                    NotificationChannel channel1 = new NotificationChannel("Message", name1, importance1);
+
+                    NotificationManager notificationManager2 = getSystemService((NotificationManager.class));
+                    notificationManager2.createNotificationChannel(channel1);
+                }
             }
         }
     };

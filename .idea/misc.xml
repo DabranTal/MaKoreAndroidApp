@@ -19,8 +19,11 @@
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/rounded_img.xml" value="0.1" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/drawable/sender_message_tail.xml" value="0.1" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/font/anton.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/activity_contacts_list.xml" value="0.152" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/action_bar_layout.xml" value="0.264" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/activity_contacts_list.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/activity_conversation.xml" value="0.2" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/custom_list_item.xml" value="0.1" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout-land/sender_message.xml" value="0.28802083333333334" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/action_bar_layout.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/action_bar_layout_land.xml" value="0.2" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_contacts_list.xml" value="0.264" />
@@ -32,6 +35,7 @@
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/activity_settings.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/contact_conversation.xml" value="0.16" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/conv_land.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/custom_list_item.xml" value="0.264" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/custom_settings_item.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/partner_message.xml" value="0.7682539682539683" />
@@ -39,6 +43,7 @@
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/pop_up_change_server.xml" value="0.25" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/sender_message.xml" value="0.1921875" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/layout/settings_activity.xml" value="0.1921875" />
+        <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/menu-land/menu.xml" value="0.4" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/menu/menu.xml" value="0.4" />
         <entry key="..\:/Users/coral/AndroidStudioProjects/MaKoreAndroid-ex3/app/src/main/res/mipmap-anydpi-v26/MK.xml" value="0.209" />
         <entry key="..\:/Users/dabra/AndroidStudioProjects/MaKoreAndroid/app/src/main/res/drawable/sender_message_tail.xml" value="0.196" />

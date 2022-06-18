@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\coral\.gradle\caches\transforms-3\60369a03b3a09b197b7e6201afa1f6f5\transformed\viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\coral\.gradle\caches\transforms-3\9299ea32c3838a1ab610c6cfa0aa113c\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\coral\.gradle\caches\transforms-3\64dddef30f2fd62a48de8e989239d7e3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -75,22 +75,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\coral\.gradle\caches\transforms-3\99e735ae545d4a7b36ae767622ef1265\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\coral\.gradle\caches\transforms-3\b708d077dc5b7e4d4ae84a0ef1320f65\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\coral\.gradle\caches\transforms-3\a8832bc7a2515e2e895b4f8e4ef1f15f\transformed\transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-65:12
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:2:11-69
@@ -111,7 +111,7 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Us
 	android:name
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:8:5-63:19
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:8:5-60:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\coral\.gradle\caches\transforms-3\9299ea32c3838a1ab610c6cfa0aa113c\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\coral\.gradle\caches\transforms-3\9299ea32c3838a1ab610c6cfa0aa113c\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\coral\.gradle\caches\transforms-3\64dddef30f2fd62a48de8e989239d7e3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -192,80 +192,74 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\coral\.gradle\cach
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:18:9-44
 	android:name
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:9:9-38
-activity#com.example.makoreandroid.SharedActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:20:9-22:40
-	android:exported
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:13-37
-	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:21:13-43
 service#com.example.makoreandroid.MyService
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:24:9-31:19
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:21:9-28:19
 	android:enabled
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:26:13-35
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:23:13-35
 	android:exported
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:27:13-36
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:25:13-38
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:22:13-38
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:28:13-30:29
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:25:13-27:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:29:17-78
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:26:17-78
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:29:25-75
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:26:25-75
 activity#com.example.makoreandroid.activities.SettingsActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:33:9-36:63
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:30:9-33:63
 	android:label
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:36:13-60
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:33:13-60
 	android:exported
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:35:13-37
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:34:13-56
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:31:13-56
 activity#com.example.makoreandroid.activities.RegisterActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:37:9-39:40
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:34:9-36:40
 	android:exported
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:39:13-37
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:35:13-56
 activity#com.example.makoreandroid.activities.ContactActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:40:9-42:40
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:37:9-39:66
+	android:configChanges
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:39:13-63
+	android:name
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:38:13-55
+activity#com.example.makoreandroid.activities.ConversationActivity
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:40:9-42:39
 	android:exported
 		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:41:13-55
-activity#com.example.makoreandroid.activities.ConversationActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:43:9-45:66
-	android:configChanges
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:45:13-63
-	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:44:13-60
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:41:13-60
 activity#com.example.makoreandroid.activities.LoginActivity
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:46:9-54:20
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:43:9-51:20
 	android:exported
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:48:13-36
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:45:13-36
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:47:13-53
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:44:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:49:13-53:29
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:50:17-69
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:50:25-66
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:52:17-77
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:52:27-74
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:49:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:56:9-58:57
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:53:9-55:57
 	android:resource
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:58:13-54
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:55:13-54
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:57:13-43
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:54:13-43
 service#com.example.makoreandroid.activities.BackgroundService
-ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:60:9-62:38
+ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:57:9-59:38
 	android:enabled
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:62:13-35
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:59:13-35
 	android:name
-		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:61:13-57
+		ADDED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml:58:13-57
 uses-sdk
 INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\coral\AndroidStudioProjects\MaKoreAndroid-ex3\app\src\main\AndroidManifest.xml

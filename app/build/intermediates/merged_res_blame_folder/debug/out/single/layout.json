@@ -24,6 +24,10 @@
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\pop_up.xml"
     },
     {
+        "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-37:\\layout\\conv_land.xml",
+        "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\conv_land.xml"
+    },
+    {
         "merged": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-mergeDebugResources-37:\\layout\\activity_register.xml",
         "source": "C:\\Users\\coral\\.gradle\\daemon\\7.3.3\\com.example.makoreandroid.app-main-40:\\layout\\activity_register.xml"
     },

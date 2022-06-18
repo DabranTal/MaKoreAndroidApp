@@ -2787,6 +2787,7 @@ id bounceStart
 id buttonPanel
 id button_back
 id button_send
+id button_send_land
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2901,6 +2902,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id friend_name_title_on_land
 id frost
 id fullscreen_header
 id ghost_view
@@ -3060,12 +3062,14 @@ id position
 id postLayout
 id profile_image
 id profile_image1
+id profile_image_on_land
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
 id rectangles
 id recycler_conversaion
+id recycler_conversaion_land
 id recycler_view
 id registerLogin
 id register_btnRegister
@@ -3184,6 +3188,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id text_bar
+id text_bar_land
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3213,6 +3218,7 @@ id transition_transform
 id triangle
 id tv_title
 id typing_board
+id typing_board_land
 id unchecked
 id uniform
 id unlabeled
@@ -3235,8 +3241,10 @@ id wrap_content
 id wrap_content_constrained
 id wraper_partner_message
 id wraper_recycler_conversation
+id wraper_recycler_conversation_land
 id wraper_sender_message
 id wraper_typing_board
+id wraper_typing_board_land
 id x_left
 id x_right
 id zero_corner_chip
@@ -3334,7 +3342,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout action_bar_layout
-layout action_bar_layout_land
 layout activity_contacts_list
 layout activity_conversation
 layout activity_login
