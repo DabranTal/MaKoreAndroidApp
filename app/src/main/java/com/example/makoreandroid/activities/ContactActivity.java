@@ -233,20 +233,20 @@ public class ContactActivity extends AppCompatActivity {
                     FloatingActionButton btnSend = findViewById(R.id.button_send_land);
                     btnSend.setOnClickListener(vv->{
                         EditText et = findViewById(R.id.typing_board_land);
-                        Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
-                        messages.add(newMessage);
+                        if(!et.getText().toString().trim().equals("")) {
+                            Message newMessage = new Message(3, et.getText().toString(), "21:40", true);
+                            messages.add(newMessage);
+                            Intent myIntent = getIntent();
+                            // post request to save new message
+                            SendingMessageJson sendingMessageJson = new SendingMessageJson(
+                                    myIntent.getStringExtra("UserName"), friendID, et.getText().toString());
+                            messageAPI.transferAndGet(sendingMessageJson,
+                                    messageAdapter, token, friendID, lstMessages,
+                                    messageDao, UserName, newMessage);
 
-
-                        Intent myIntent = getIntent();
-                        // post request to save new message
-                        SendingMessageJson sendingMessageJson = new SendingMessageJson(
-                                myIntent.getStringExtra("UserName"), friendID, et.getText().toString());
-                        messageAPI.transferAndGet(sendingMessageJson,
-                                messageAdapter, token, friendID, lstMessages,
-                                messageDao, UserName, newMessage);
-
-                        // clean typing board
-                        et.setText("");
+                            // clean typing board
+                            et.setText("");
+                        }
                     });
                 }
             });

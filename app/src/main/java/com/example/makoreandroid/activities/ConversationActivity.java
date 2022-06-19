@@ -108,16 +108,19 @@ public class ConversationActivity extends AppCompatActivity {
         FloatingActionButton btnSend = findViewById(R.id.button_send);
         btnSend.setOnClickListener(view->{
             EditText et = findViewById(R.id.typing_board);
-            Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
-            messages.add(newMessage);
-            // post request to save new message
-            SendingMessageJson sendingMessageJson = new SendingMessageJson(
-                    intent.getStringExtra("UserName"),partnerName, et.getText().toString());
-            messageAPI.transferAndGet(sendingMessageJson,adapter, token,partnerName, lstMessages,
-                    messageDao, UserName, newMessage);
-            // clean typing board
+            if(!et.getText().toString().trim().equals("")) {
+                Message newMessage = new Message(3, et.getText().toString().trim(), "21:40", true);
+                messages.add(newMessage);
+                // post request to save new message
+                SendingMessageJson sendingMessageJson = new SendingMessageJson(
+                        intent.getStringExtra("UserName"), partnerName, et.getText().toString());
+                messageAPI.transferAndGet(sendingMessageJson, adapter, token, partnerName, lstMessages,
+                        messageDao, UserName, newMessage);
+                // clean typing board
+            }
             et.setText("");
         });
+
 
         // on Click on back button
         FloatingActionButton btnBack = findViewById(R.id.button_back);
