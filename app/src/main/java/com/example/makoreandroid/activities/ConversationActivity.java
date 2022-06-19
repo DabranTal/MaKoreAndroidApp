@@ -41,31 +41,26 @@ import java.util.List;
 import java.util.Objects;
 
 public class ConversationActivity extends AppCompatActivity {
-    static String token;
-    static String partnerName;
-    static RecyclerView lstMessages;
-    static MessageListAdapter adapter;
-    static MessageDao messageDao;
-    static String UserName;
-    static String PartnerServer;
-    static NotificationManagerCompat notificationManager;
-    static ImageUserDao IuDao;
-    static MessageAPI messageAPI;
-    static IntentFilter intentFilter;
-    public Context conv_context = ConversationActivity.this;
+    String token;
+    String partnerName;
+    RecyclerView lstMessages;
+    MessageListAdapter adapter;
+    MessageDao messageDao;
+    String UserName;
+    String PartnerServer;
+    NotificationManagerCompat notificationManager;
+    ImageUserDao IuDao;
+    MessageAPI messageAPI;
+    IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
-        if (intent.getStringExtra("NOT") != null) {
-            finish();
-        }
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
-
         setContentView(R.layout.activity_conversation);
+        Intent intent = getIntent();
         partnerName = intent.getStringExtra("friendID");
         UserName = intent.getStringExtra("UserName");
         PartnerServer =intent.getStringExtra("friendServer");
@@ -82,7 +77,11 @@ public class ConversationActivity extends AppCompatActivity {
         TextView partnerNameTV = findViewById(R.id.partner_name);
         partnerNameTV.setText(partnerName);
         ImageView imageView = findViewById(R.id.partner_profile_image);
-        imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
+        try {
+            imageView.setImageBitmap(IuDao.get(partnerName).getProfilePic());
+        }catch (Exception e) {
+            imageView.setImageResource(R.drawable.avatar);
+        }
 
         // init messages RecyclerView
         lstMessages = findViewById(R.id.recycler_conversaion);

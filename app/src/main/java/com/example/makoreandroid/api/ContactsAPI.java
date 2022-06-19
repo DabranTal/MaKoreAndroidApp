@@ -1,6 +1,7 @@
 package com.example.makoreandroid.api;
 
 import android.app.AlertDialog;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -116,6 +117,7 @@ public class ContactsAPI {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                Log.d("coral", "coral");
             }
         });
 
@@ -137,7 +139,7 @@ public class ContactsAPI {
                 r.addAll(remote);
                 adapter.setAdapter(remote);
                 Toast.makeText(activity.getBaseContext(), "New Contact has been added",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 RemoteName.setText("");
                 server.setText("");

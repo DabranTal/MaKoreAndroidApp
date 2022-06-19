@@ -1,4 +1,5 @@
 package com.example.makoreandroid.activities;
+
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -31,6 +32,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import com.example.makoreandroid.R;
@@ -40,6 +42,7 @@ import com.example.makoreandroid.api.ContactsAPI;
 import com.example.makoreandroid.api.FireBaseAPI;
 import com.example.makoreandroid.api.MessageAPI;
 import com.example.makoreandroid.dao.ImageUserDao;
+import com.example.makoreandroid.dao.MessageDao;
 import com.example.makoreandroid.dao.RemoteUserDao;
 import com.example.makoreandroid.db.ImageUserDB;
 import com.example.makoreandroid.db.MessageDB;
@@ -63,7 +66,7 @@ public class ContactActivity extends AppCompatActivity {
             "There is no such user!",
             "This server could not be reached",
             "This may take awhile. Please don't Add again",
-            "UserName is required!", "Server is required!",
+            "UserName is required!", "Server is required!", "Nickname is required!",
             "This server could not be reach!", "It might take awhile!"};
     private FloatingActionButton addBtn;
     private ListView listView;
@@ -86,6 +89,10 @@ public class ContactActivity extends AppCompatActivity {
     String friendNickName;
     String friendServer;
     ConversationActivity conversationActivity;
+    MessageListAdapter messageAdapter;
+    MessageDao messageDao;
+    MessageAPI messageAPI;
+    RecyclerView lstMessages;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -162,10 +169,6 @@ public class ContactActivity extends AppCompatActivity {
             newTitle = UserName;
             title.setText(newTitle);
 
-            Intent temp = new Intent(this, ConversationActivity.class);
-            temp.putExtra("NOT", "NOT");
-            startActivity(temp);
-
             EditText editText = findViewById(R.id.typing_board_land);
             androidx.recyclerview.widget.RecyclerView recyclerView = findViewById(R.id.recycler_conversaion_land);
             com.google.android.material.floatingactionbutton.FloatingActionButton button = findViewById(R.id.button_send_land);
@@ -189,10 +192,6 @@ public class ContactActivity extends AppCompatActivity {
                     editText.setVisibility(View.VISIBLE);
                     recyclerView.setVisibility(View.VISIBLE);
                     button.setVisibility(View.VISIBLE);
-
-                    ConversationActivity.partnerName = friendID;
-                    ConversationActivity.UserName = UserName;
-                    ConversationActivity.PartnerServer = friendServer;
                     notificationManager = NotificationManagerCompat.from(ContactActivity.this);
 
                     // init partner props bar
@@ -200,30 +199,34 @@ public class ContactActivity extends AppCompatActivity {
                             .allowMainThreadQueries().build();
                     IuDao = IuDB.imageUserDao();
 //                    TextView partnerNameTV = findViewById(R.id.partner_name);
-//                    partnerNameTV.setText(ConversationActivity.partnerName);
+//                    partnerNameTV.setText(friendID);
 //                    ImageView imageView = findViewById(R.id.partner_profile_image);
-//                    imageView.setImageBitmap(IuDao.get(ConversationActivity.partnerName).getProfilePic());
+//                    try {
+//                        imageView.setImageBitmap(IuDao.get(friendID).getProfilePic());
+//                    }catch (Exception e) {
+//                        imageView.setImageResource(R.drawable.avatar);
+//                    }
 
                     // init messages RecyclerView
-                    ConversationActivity.lstMessages = findViewById(R.id.recycler_conversaion_land);
-                    ConversationActivity.adapter = new MessageListAdapter(conversationActivity.conv_context);
-                    ConversationActivity.lstMessages.setAdapter(ConversationActivity.adapter);
-                    ConversationActivity.lstMessages.setLayoutManager(new LinearLayoutManager(conversationActivity.conv_context));
+                    lstMessages = findViewById(R.id.recycler_conversaion_land);
+                    messageAdapter = new MessageListAdapter(ContactActivity.this);
+                    lstMessages.setAdapter(messageAdapter);
+                    lstMessages.setLayoutManager(new LinearLayoutManager(ContactActivity.this));
 
                     // init Room
                     MessageDB db = Room.databaseBuilder(getApplicationContext(), MessageDB.class,
                             "MessageDB").allowMainThreadQueries().build();
-                    ConversationActivity.messageDao = db.messageDao();
-                    ConversationActivity.adapter.setMessages(ConversationActivity.messageDao.get(friendID, UserName));
+                    messageDao = db.messageDao();
+                    messageAdapter.setMessages(messageDao.get(friendID, UserName));
 
                     //get messages for conversation
-                    ConversationActivity.messageAPI = new MessageAPI(friendServer);
-                    ConversationActivity.messageAPI.get(ConversationActivity.adapter, token, friendID,
-                            ConversationActivity.lstMessages, ConversationActivity.messageDao, UserName);
+                    messageAPI = new MessageAPI(friendServer);
+                    messageAPI.get(messageAdapter, token, friendID,
+                            lstMessages, messageDao, UserName);
 
                     //update local backup messages view
                     List<Message> messages = new ArrayList<>();
-                    ConversationActivity.adapter.copyMessagesTo(messages);
+                    messageAdapter.copyMessagesTo(messages);
 
 
                     // on Click on send button
@@ -233,13 +236,14 @@ public class ContactActivity extends AppCompatActivity {
                         Message newMessage = new Message(3,et.getText().toString(),"21:40",true);
                         messages.add(newMessage);
 
+
+                        Intent myIntent = getIntent();
                         // post request to save new message
                         SendingMessageJson sendingMessageJson = new SendingMessageJson(
-                                friendID, friendNickName, et.getText().toString());
-                        ConversationActivity.messageAPI.transferAndGet(sendingMessageJson,
-                                ConversationActivity.adapter, token, friendID,
-                                ConversationActivity.lstMessages,
-                                ConversationActivity.messageDao, UserName, newMessage);
+                                myIntent.getStringExtra("UserName"), friendID, et.getText().toString());
+                        messageAPI.transferAndGet(sendingMessageJson,
+                                messageAdapter, token, friendID, lstMessages,
+                                messageDao, UserName, newMessage);
 
                         // clean typing board
                         et.setText("");
@@ -342,6 +346,10 @@ public class ContactActivity extends AppCompatActivity {
                     error.setText(displayingError[6]);
                     return;
                 }
+                if(TextUtils.isEmpty(NickName.getText().toString())) {
+                    error.setText(displayingError[7]);
+                    return;
+                }
                 contactsAPI.validation(token, userName, Server, error, displayingError, remote,
                         NickName, adapter, ContactActivity.this, dialog, UserName, r, userDao);
             }
@@ -398,8 +406,7 @@ public class ContactActivity extends AppCompatActivity {
             if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 //get messages for conversation
                 MessageAPI messageAPI = new MessageAPI(friendServer);
-                messageAPI.get(ConversationActivity.adapter, token, friendID,
-                        ConversationActivity.lstMessages, ConversationActivity.messageDao, UserName);
+                messageAPI.get(messageAdapter, token, friendID, lstMessages, messageDao, UserName);
             }
         }
 
