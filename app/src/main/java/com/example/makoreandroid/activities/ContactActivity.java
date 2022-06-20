@@ -177,6 +177,9 @@ public class ContactActivity extends AppCompatActivity {
             recyclerView.setVisibility(View.GONE);
             button.setVisibility(View.GONE);
 
+            com.google.android.material.imageview.ShapeableImageView friendImg = findViewById(R.id.profile_image_on_land);
+            friendImg.setVisibility(View.INVISIBLE);
+
             //set every contact clickable and define the onItemClick
             listView.setClickable(true);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -198,14 +201,14 @@ public class ContactActivity extends AppCompatActivity {
                     ImageUserDB IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
                             .allowMainThreadQueries().build();
                     IuDao = IuDB.imageUserDao();
-//                    TextView partnerNameTV = findViewById(R.id.partner_name);
-//                    partnerNameTV.setText(friendID);
-//                    ImageView imageView = findViewById(R.id.partner_profile_image);
-//                    try {
-//                        imageView.setImageBitmap(IuDao.get(friendID).getProfilePic());
-//                    }catch (Exception e) {
-//                        imageView.setImageResource(R.drawable.avatar);
-//                    }
+                    TextView partnerNameTV = findViewById(R.id.friend_name_title_on_land);
+                    partnerNameTV.setText(friendID);
+                    friendImg.setVisibility(View.VISIBLE);
+                    try {
+                        friendImg.setImageBitmap(IuDao.get(friendID).getProfilePic());
+                    }catch (Exception e) {
+                        friendImg.setImageResource(R.drawable.avatar);
+                    }
 
                     // init messages RecyclerView
                     lstMessages = findViewById(R.id.recycler_conversaion_land);
