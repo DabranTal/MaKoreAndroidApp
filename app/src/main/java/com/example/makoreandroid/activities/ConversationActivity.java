@@ -175,7 +175,13 @@ public class ConversationActivity extends AppCompatActivity {
                         .setContentText(titleAndBody[1])
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                 int notificationID = titleAndBody[0].hashCode();
-                notificationManager.notify(notificationID, builder.build());
+                String partnerUserName ="";
+                if (msg.contains("New message from ")) {
+                    partnerUserName = titleAndBody[0].substring(17);
+                }
+                if (!partnerUserName.equals(UserName))
+                    notificationManager.notify(notificationID, builder.build());
+
             }
             //get messages for conversation
             MessageAPI messageAPI = new MessageAPI(PartnerServer);

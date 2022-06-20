@@ -24,7 +24,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -34,7 +33,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
-
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.adapters.CustomListAdapter;
 import com.example.makoreandroid.adapters.MessageListAdapter;
@@ -55,7 +53,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -382,7 +379,13 @@ public class ContactActivity extends AppCompatActivity {
                         .setContentText(titleAndBody[1])
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                 int notificationID = titleAndBody[0].hashCode();
-                notificationManager.notify(notificationID, builder.build());
+                String partnerUserName ="";
+                if (msg.contains("New message from ")) {
+                    partnerUserName = titleAndBody[0].substring(17);
+                }
+                if (!partnerUserName.equals(UserName))
+                    notificationManager.notify(notificationID, builder.build());
+
             }
             //get contacts for conversation
             SharedPreferences prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
@@ -393,7 +396,8 @@ public class ContactActivity extends AppCompatActivity {
             if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 //get messages for conversation
                 MessageAPI messageAPI = new MessageAPI(friendServer);
-                messageAPI.get(messageAdapter, token, friendID, lstMessages, messageDao, UserName);
+                if (!(friendID == null || lstMessages == null || messageDao == null || friendServer == null))
+                    messageAPI.get(messageAdapter, token, friendID, lstMessages, messageDao, UserName);
             }
         }
 

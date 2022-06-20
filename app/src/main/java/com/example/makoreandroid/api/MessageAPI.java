@@ -25,19 +25,21 @@ public class MessageAPI {
 
 
     public MessageAPI(String server) {
-        String[] newServer = server.split(":");
-        String url;
-        if(!(newServer.length == 1)) {
-            if (newServer[0].equalsIgnoreCase("localhost"))
-                server = "10.0.2.2:" + newServer[1];
-        } else {
-            server = "10.0.2.2:" + server;
+        if (server != null && server.contains(":")) {
+            String[] newServer = server.split(":");
+            String url;
+            if (!(newServer.length == 1)) {
+                if (newServer[0].equalsIgnoreCase("localhost"))
+                    server = "10.0.2.2:" + newServer[1];
+            } else {
+                server = "10.0.2.2:" + server;
+            }
+            retrofit = new Retrofit.Builder()
+                    .baseUrl("http://" + server + "/api/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            webServiceAPI = retrofit.create(WebServiceAPI.class);
         }
-        retrofit = new Retrofit.Builder()
-                .baseUrl("http://" + server + "/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
     // get all messages for this partner conversation
