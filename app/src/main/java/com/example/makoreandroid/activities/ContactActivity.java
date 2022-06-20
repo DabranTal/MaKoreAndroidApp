@@ -197,7 +197,7 @@ public class ContactActivity extends AppCompatActivity {
                     button.setVisibility(View.VISIBLE);
                     notificationManager = NotificationManagerCompat.from(ContactActivity.this);
 
-                    // init partner props bar
+                    // init partner props action bar
                     ImageUserDB IuDB = Room.databaseBuilder(getApplicationContext(), ImageUserDB.class, "ImageUserDB")
                             .allowMainThreadQueries().build();
                     IuDao = IuDB.imageUserDao();
