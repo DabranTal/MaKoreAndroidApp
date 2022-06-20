@@ -88,11 +88,11 @@ public class ContactActivity extends AppCompatActivity {
     String friendID;
     String friendNickName;
     String friendServer;
-    ConversationActivity conversationActivity;
     MessageListAdapter messageAdapter;
     MessageDao messageDao;
     MessageAPI messageAPI;
     RecyclerView lstMessages;
+    String currentConversationName;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -270,6 +270,7 @@ public class ContactActivity extends AppCompatActivity {
                     intent.putExtra("friendID", remote.get(i).getId());
                     intent.putExtra("friendNickName", remote.get(i).getName());
                     intent.putExtra("friendServer", remote.get(i).getServer());
+                    currentConversationName = friendID;
                     startActivity(intent);
                 }
             });
@@ -277,23 +278,6 @@ public class ContactActivity extends AppCompatActivity {
 
     }
 
-//
-//    @Override
-//    public void onConfigurationChanged(Configuration _newConfig) {
-//        super.onConfigurationChanged(_newConfig);
-//        if (_newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            Log.d("coral", "land");
-//            newTitle = UserName;
-//            title.setText(newTitle);
-//            // support landscape mode
-//
-//
-//        } else {
-//            Log.d("coral", "port");
-//            newTitle = "Welcome " + UserName + "!";
-//            title.setText(newTitle);
-//        }
-//    }
 
     private void buildDialog() {
         View view = getLayoutInflater().inflate(R.layout.pop_up_add_contact, null);

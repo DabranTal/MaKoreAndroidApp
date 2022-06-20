@@ -2,17 +2,20 @@ package com.example.makoreandroid.activities;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,18 +25,24 @@ import androidx.appcompat.widget.SwitchCompat;
 import com.example.makoreandroid.R;
 import com.example.makoreandroid.api.ServerAPI;
 import com.example.makoreandroid.databinding.ActivitySettingsBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SettingsActivity extends AppCompatActivity {
     public ActivitySettingsBinding binding;
-    private SwitchCompat switchTheme;
+    static SwitchCompat switchTheme;
     private ImageButton changeServer;
-    private ImageButton changeNickname;
+    private ImageButton logOut;
     private ServerAPI serverAPI;
+    private SharedPreferences prefs;
     private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         ActionBar actionBar;
         actionBar = getSupportActionBar();
@@ -43,13 +52,28 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         switchTheme = binding.settingsNextTheme;
+        
+        // save last theme of client
+        prefs = this.getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+
+        if (prefs.getBoolean("isOriginalTheme", true)) {
+            switchTheme.setChecked(false);
+        } else if (!prefs.getBoolean("isOriginalTheme", true)) {
+            switchTheme.setChecked(true);
+        }
+
         switchTheme.setOnCheckedChangeListener((buttonView, isChecked) -> {
+
             if (isChecked) {
-                Toast.makeText(SettingsActivity.this, "Yellow theme is on", Toast.LENGTH_SHORT).show();
-                goInDarkMode();
+                goThemeYellow();
+                edit.putBoolean("isOriginalTheme", false);
+                edit.commit();
+
             } else {
-                Toast.makeText(SettingsActivity.this, "MaKore original theme is on", Toast.LENGTH_SHORT).show();
-                goInLightMode();
+                goThemeOriginal();
+                edit.putBoolean("isOriginalTheme", true);
+                edit.commit();
             }
         });
 
@@ -59,14 +83,42 @@ public class SettingsActivity extends AppCompatActivity {
             buildDialog();
             dialog.show();
         });
+
+        logOut = binding.settingsNextLogOut;
+        logOut.setOnClickListener(v -> {
+            // delete the token - the user wants to log out
+             try {
+                String saveToken = "";
+                edit.putString("token",saveToken);
+                Log.i("Logout",saveToken);
+                edit.commit();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            // logging out by popping all activities on top of LoginActivity in which we started
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
+
+
+        // on Click on back button
+        FloatingActionButton btnBack = findViewById(R.id.button_back_from_settings);
+        if (btnBack != null) {
+            btnBack.setOnClickListener(view-> finish());
+        }
     }
 
 
-    private void goInDarkMode() {
+    private void goThemeYellow() {
+        Log.d("coral", "in go yellow");
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 
-    private void goInLightMode() {
+    private void goThemeOriginal() {
+        Log.d("coral", "in go original");
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 

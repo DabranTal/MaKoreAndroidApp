@@ -32,6 +32,7 @@
     <color name="btn_1">#A47D3AB7</color>
     <color name="btn_2">#D07D3AB7</color>
     <color name="btn_3">#7D3AB7</color>
+    <color name="chat">#e0e0e0</color>
     <color name="chat_settings_bar">#9E73A8</color>
     <color name="contact_name">#000000</color>
     <color name="conv_text_area_and_sent_btn">#e0e0e0</color>
@@ -106,6 +107,7 @@
     <string name="reply_title">Default reply action</string>
     <string name="search">Search</string>
     <string name="settings">Settings</string>
+    <string name="settings_log_out">Log Out</string>
     <string name="settings_nickname">Nickname</string>
     <string name="settings_server">Server</string>
     <string name="settings_theme">Theme</string>

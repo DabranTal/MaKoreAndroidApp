@@ -46,4 +46,5 @@
     <string name="not_registered_click_to_register">Already registered ? Click here to login !</string>
     <string name="change_the_address_of_your_default_server">Change the address of your default server</string>
     <string name="enter_new_server">Enter new server</string>
+    <string name="settings_log_out">Log Out</string>
 </resources>

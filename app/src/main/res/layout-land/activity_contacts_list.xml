@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/activity_contacts_list"
     android:layout_height="match_parent"
+    android:background="@color/light_grey"
     android:orientation="horizontal"
     android:weightSum="5"
     tools:context=".activities.ContactActivity">

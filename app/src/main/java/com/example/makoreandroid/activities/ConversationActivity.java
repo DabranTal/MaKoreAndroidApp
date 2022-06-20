@@ -125,7 +125,9 @@ public class ConversationActivity extends AppCompatActivity {
         // on Click on back button
         FloatingActionButton btnBack = findViewById(R.id.button_back);
         if (btnBack != null) {
-            btnBack.setOnClickListener(view-> finish());
+            btnBack.setOnClickListener(view ->
+                    finish()
+            );
         }
 
 

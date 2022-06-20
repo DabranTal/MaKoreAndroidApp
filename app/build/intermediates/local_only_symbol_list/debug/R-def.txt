@@ -14,6 +14,7 @@ color btn_1
 color btn_2
 color btn_3
 color button_color
+color chat
 color chat_settings_bar
 color contact_name
 color conv_text_area_and_sent_btn
@@ -46,6 +47,7 @@ drawable add_pic
 drawable avatar
 drawable background
 drawable border
+drawable border_chat
 drawable conversation_background_android
 drawable conversation_background_android_dark
 drawable et_custom
@@ -79,6 +81,7 @@ id activity_conversation
 id add_img
 id add_new_server
 id button_back
+id button_back_from_settings
 id button_send
 id button_send_land
 id card_partner_message
@@ -118,15 +121,16 @@ id register_password
 id register_userName
 id register_vPassword
 id sender_tail
-id setting_option_nickname
+id setting_option_log_out
 id setting_option_server
 id setting_option_theme
 id settings_error_popup_server
-id settings_next_nickname
+id settings_log_out
+id settings_next_log_out
 id settings_next_server
 id settings_next_theme
-id settings_nick
 id settings_server
+id settings_settings
 id settings_theme
 id tableRow
 id text_bar
@@ -157,6 +161,7 @@ layout pop_up_add_contact
 layout pop_up_change_server
 layout sender_message
 menu menu
+menu menu_settings
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap mk
@@ -208,6 +213,7 @@ string register_username_taken
 string reply_title
 string search
 string settings
+string settings_log_out
 string settings_nickname
 string settings_server
 string settings_theme
