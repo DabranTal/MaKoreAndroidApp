@@ -83,7 +83,7 @@ As in for this repository, here is the server. You need to run it first in order
 <br />
 1. Clone this repository - the server:
     ```
-    git clone https://github.com/CoralKuta/MaKoreChat
+    git clone -b ex3 https://github.com/CoralKuta/MaKoreChat
     ```
 2. Enter the MaKore folder and open the project:
     ```
@@ -97,7 +97,7 @@ As in for this repository, here is the server. You need to run it first in order
     ```
     Ctrl+F5
     ```
-5. Clone the Client repository:
+5. Clone the web-Client repository:
     ```
     git clone -b ex2 https://github.com/CoralKuta/MaKore
     ```
@@ -113,7 +113,46 @@ As in for this repository, here is the server. You need to run it first in order
     ```
     npm start
     ```
-9. Sign up and Explore!
+9. Clone the Android-Client repository:
+    ```
+    git clone https://github.com/CoralKuta/MaKoreAndroid
+    ```
+10. Open your Android Studio Or your another IDE For Android App Development
+    ```
+    ```
+11. Open MaKoreAndroid Project from tour local clone you create on section 9
+    ```
+    ```
+12. Change the "local.properties" (under Gradle Scripts) context to your sdk path ( Usually replace just the user folder name) for exemple: 
+    ```
+    "sdk.dir=C\:\\Users\\Coral\\AppData\\Local\\Android\\Sdk" -> "sdk.dir=C\:\\Users\\_YourUserFolderName_\\AppData\\Local\\Android\\Sdk"
+    ```
+13. Connect to FireBase Cloud Messaging:
+    ```
+    Tools->FireBase->Cloud Messaging->Set up Firebase Cloud Messaging->Connect to Firebase
+    ```
+14. For those we gave premission :
+    ```
+    Pick the "MaKoreAndroid" project on the web page that opens after you click "Connect to Firebase"
+    ```
+15. For those we didn't gave premission :
+     ```
+    Read "Important Notes" below
+     ```
+16. Create an imulator on your IDE For Android App Development
+     ```
+     ```
+17. Run the code, Sign up and Explore!
+
+### Important Notes
+- The communication between Android users and other users can take a while. We suggest refreshing the page if the time you wait is too long.
+- For those who haven't premission to our Firebase Cloud Messaging project:
+ You shuold create a Firebase Cloud Messaging on the web page that opened after you clicked "Connect to Firebase".<br/ >
+ After you create your own project and connect it to MaKoreAndroid code, you should generate a new private key for the service MaKoreChat(the Server project folder).<br/>
+After you genrated a new private key, you shuold take the file content and copy it to "private_key.json" files in the main MaKoreChat folder in on the Controllers folder.<br/ >
+We really recommend our customers to ask  for permission to use our Firebase Cloud Messaging project to avoid problems.<br/>
+- We emphasize section 12 in our "How to run" instractures!! tou should change the sdk path if you want the Android code will run.<br/>
+
 
 ### Developers
 - Ido Tavron 316222512
