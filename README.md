@@ -155,7 +155,7 @@ We really recommend our customers to ask  for permission to use our Firebase Clo
 
 
 ### Developers
-- Ido Tavron 316222512
-- Coral Kuta 208649186
-- Tal Dabran 316040898
+- Ido Tavron 
+- Coral Kuta 
+- Tal Dabran 
 
